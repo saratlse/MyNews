@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    //TOOLBAR COLOR
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="colorToolBarBackground">#00BCD4</color>
+    <color name="colorToolbarTop">#0096A7</color>
+
+
+    //COLOR TAB
+
+
+</resources>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MyNews</string>
+    <string name="Notifications">Notifications</string>
+    <string name="Help">Help</string>
+    <string name="Search">Search</string>
+
+    <!--TITLE TABS-->
+    <string name="Tab_1">TOP STORIES</string>
+    <string name="Tab_2">MOST POPULAR</string>
+    <string name="Tab_3">BUSINESS</string>
+
+
+    <!-- Fragments TITLE MY NEWS -->
+    <string name="Fragment_One">TOP STORIES</string>
+    <string name="Fragment_Two">MOST POPULAR</string>
+    <string name="Fragment_Three">BUSINESS</string>
+
+</resources>
