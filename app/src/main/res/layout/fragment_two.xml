@@ -5,14 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".Fragment.FragmentTwo">
 
-    <fragment
-        android:id="@+id/fragment_two"
-        android:name="com.example.mynews.Fragment.FragmentTwo"
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:layout_gravity="center"
-        android:text="@string/Tab_2"
-        android:textSize="@dimen/fragmentTitle" />
+        android:text="@string/Fragment_Two" />
 
 </FrameLayout>
