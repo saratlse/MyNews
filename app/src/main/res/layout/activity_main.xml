@@ -7,11 +7,17 @@
     android:orientation="vertical"
     tools:context=".Controllers.MainActivity">
 
-  
+
     <View
         android:layout_width="match_parent"
         android:layout_height="3dp"
         app:layout_constraintBottom_toBottomOf="@+id/tabLayout" />
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 
     <com.google.android.material.tabs.TabLayout
@@ -19,13 +25,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/include"
         app:tabIndicatorHeight="3dp"
         app:tabMode="fixed"
-        app:tabPaddingTop="15dp"
         app:tabPaddingBottom="8dp"
-
-        />
+        app:tabPaddingTop="15dp" />
 
 
     <androidx.viewpager2.widget.ViewPager2
