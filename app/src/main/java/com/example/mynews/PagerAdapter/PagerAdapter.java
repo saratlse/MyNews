@@ -12,7 +12,8 @@ import com.example.mynews.Fragment.FragmentTwo;
 public class PagerAdapter extends FragmentStateAdapter {
 
     //constructor
-    public PagerAdapter(@NonNull FragmentActivity fragmentActivity) {
+    public PagerAdapter(@NonNull final FragmentActivity fragmentActivity) {
+
         super(fragmentActivity);
     }
 
@@ -25,15 +26,22 @@ public class PagerAdapter extends FragmentStateAdapter {
                 return new FragmentOne();
             case 1:
                 return new FragmentTwo();
-            default:
+            case 2:
                 return new FragmentThree();
+            default:
+                return null;
         }
 
     }
+
 
 
     @Override
     public int getItemCount() {
         return 3;
     }
+
+
 }
+
+

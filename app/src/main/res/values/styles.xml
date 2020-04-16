@@ -3,7 +3,7 @@
 
     <!-- TOOLBAR TITLE THEME -->
     <!-- Color of the title in the Toolbar -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/colorToolBarBackground</item>
         <item name="colorPrimaryDark">@color/colorToolbarTop</item>
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
