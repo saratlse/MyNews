@@ -8,16 +8,19 @@
     tools:context=".Controllers.MainActivity">
 
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tabLayout" />
+
 
     <include
         android:id="@+id/include"
         layout="@layout/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/colorDivider"
+        app:layout_constraintBottom_toBottomOf="@+id/tabLayout" />
 
 
     <com.google.android.material.tabs.TabLayout

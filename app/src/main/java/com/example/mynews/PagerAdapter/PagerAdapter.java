@@ -21,20 +21,17 @@ public class PagerAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(final int position) {
+
         switch (position) {
             case 0:
                 return new FragmentOne();
             case 1:
                 return new FragmentTwo();
-            case 2:
-                return new FragmentThree();
             default:
-                return null;
+                return new FragmentThree();
         }
 
     }
-
-
 
     @Override
     public int getItemCount() {

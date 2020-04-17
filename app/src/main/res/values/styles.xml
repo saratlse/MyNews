@@ -3,6 +3,10 @@
 
     <!-- TOOLBAR TITLE THEME -->
     <!-- Color of the title in the Toolbar -->
+
+    <color name="colorDivider">#ECECEC</color>
+
+
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/colorToolBarBackground</item>
         <item name="colorPrimaryDark">@color/colorToolbarTop</item>
