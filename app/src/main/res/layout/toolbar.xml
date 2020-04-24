@@ -5,17 +5,14 @@
     android:layout_height="112dp"
     android:orientation="vertical">
 
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        style="@style/Toolbar.TitleText"
         android:layout_width="match_parent"
-        android:layout_height="112dp"
+        android:layout_height="wrap_content"
         android:background="@color/colorToolBarBackground"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/Theme.AppCompat.Light"
-        app:logo="@drawable/ic_menu"
-        app:title="My News"
-        app:titleMarginStart="40dp"
         app:titleTextColor="@color/textColorPrimary" />
 
 

@@ -7,9 +7,6 @@
     android:orientation="vertical"
     tools:context=".Controllers.MainActivity">
 
-
-
-
     <include
         android:id="@+id/include"
         layout="@layout/toolbar"
@@ -23,16 +20,22 @@
         app:layout_constraintBottom_toBottomOf="@+id/tabLayout" />
 
 
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="@+id/include"
+        android:background="@color/colorTabLayoutBackground"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:tabIndicatorColor="#FFEB3B"
+        app:tabIndicatorFullWidth="false"
         app:tabIndicatorHeight="3dp"
         app:tabMode="fixed"
         app:tabPaddingBottom="8dp"
-        app:tabPaddingTop="15dp" />
+        app:tabPaddingTop="15dp"
+        app:tabSelectedTextColor="@color/TextColorSelected"
+        app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
+        app:tabTextColor="@color/textColorPrimary" />
 
 
     <androidx.viewpager2.widget.ViewPager2
