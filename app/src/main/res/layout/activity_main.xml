@@ -13,12 +13,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+
     <View
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:background="@color/colorDivider"
         app:layout_constraintBottom_toBottomOf="@+id/tabLayout" />
-
 
 
     <com.google.android.material.tabs.TabLayout

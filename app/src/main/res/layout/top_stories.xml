@@ -13,4 +13,15 @@
         android:textColor="@android:color/black"
         android:textSize="20sp" />
 
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="29dp"
+        android:text="PARSE" />
+
+
 </RelativeLayout>
