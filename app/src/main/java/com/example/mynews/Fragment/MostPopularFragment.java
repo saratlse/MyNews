@@ -13,19 +13,19 @@ import com.example.mynews.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentTwo extends Fragment {
+public class MostPopularFragment extends Fragment {
 
 
-    public FragmentTwo() {
+    public MostPopularFragment() {
         // Required empty public constructor
     }
 
 
     @Override
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
-                             final Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_two, container, false);
+        return inflater.inflate(R.layout.fragment_most_popular, container, false);
     }
 
 }
