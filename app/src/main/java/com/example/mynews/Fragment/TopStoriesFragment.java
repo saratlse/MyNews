@@ -5,13 +5,22 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.example.mynews.ItemByArticle;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.mynews.R;
+import com.example.mynews.TopStoryViewModel;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.List;
 
@@ -21,11 +30,11 @@ import java.util.List;
 public class TopStoriesFragment extends Fragment {
 
 
-    private static final String JSON_URL = "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=zxR4wstV5o10Lush";
-    private List<ItemByArticle> itemByArticles;
+    private static final String JSON_URL = "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=Rcgp5CKAbUEUBl6NlZOppWk0ZN0tmvE7";
+    private List<ItemByArticle> itemByArticle;
 
-    private TextView mtopStoriesResult;
     private RequestQueue mQueue;
+    private TopStoryViewModel mTopStoryViewModel;
 
 
     public TopStoriesFragment() {
@@ -35,49 +44,56 @@ public class TopStoriesFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
-                             final Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        this.requestApi();
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_top_stories, container, false);
 
 
+    }
 
+    private void requestApi() {
 
-
-        /*JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, TopStoriesFragment.JSON_URL,new Response.Listener<String>() {
+        this.mQueue = Volley.newRequestQueue(this.getContext());
+        final JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, JSON_URL, null, new Response.Listener<JSONObject>() {
 
             @Override
-            public void onResponse(String response) {
-
+            public void onResponse(final JSONObject response) {
                 try {
-                    JSONObject objet = new JSONObject(response);
-                    JSONArray newsArray = objet.getJSONArray("results");
 
 
+                    final JSONArray newsArray = response.getJSONArray("results");
 
-                    for (int i = 0; i < newsArray.length(); i++) ;
 
-                    {
-                        JSONObject newsObject = newsArray.getJSONObject();
-                        String sectionObject = newsObject.getString("section");
-                        JSONArray mediaArray = newsObject.getJSONArray("multimedia");
-                        JSONObject mediaObject = mediaArray.getJSONObject(0);
+                    for (int i = 0; i < newsArray.length(); i++) {
+                        final JSONObject newObjet = newsArray.getJSONObject(i);
+                        final String sectionObject = newObjet.getString("section");
+                        final JSONArray mediaArray = newObjet.getJSONArray("multimedia");
+                        final JSONObject mediaObject = mediaArray.getJSONObject(0);
 
 
                     }
 
-                } catch (JSONException e) {
+                } catch (final JSONException e) {
                     e.printStackTrace();
                 }
 
+
             }
-        }, new ErrorListener() {
+        }, new Response.ErrorListener() {
             @Override
-            public void onErrorResponse( VolleyError error) {
+            public void onErrorResponse(final VolleyError error) {
                 error.printStackTrace();
-                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(TopStoriesFragment.this.getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
             }
-        });*/
+        });
+
+        this.mQueue.start();
+
+        this.mQueue.add(request);
 
     }
 }
