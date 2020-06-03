@@ -17,7 +17,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.mynews.R;
 import com.example.mynews.View.ItemByArticle;
-import com.example.mynews.View.TopStoryViewModel;
+import com.example.mynews.View.MostPopularViewModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,38 +28,37 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TopStoriesFragment extends Fragment {
+public class MovieFragment extends Fragment {
 
 
-    private static final String JSON_URL = "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=Rcgp5CKAbUEUBl6NlZOppWk0ZN0tmvE7";
+    private static final String JSON_URL = "https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=lvzzkPeHJEIDxfpTaqSb3Azu9LDnO4Fv";
     private List<ItemByArticle> itemByArticle;
 
     private RequestQueue mQueue;
-    private TopStoryViewModel mTopStoryViewModel;
+    private MostPopularViewModel mMostPopularViewModel;
 
 
-    public TopStoriesFragment() {
+    public MovieFragment() {
         // Required empty public constructor
-
     }
-
 
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
                              final Bundle savedInstanceState) {
 
-        requestApi();
+
+        this.requestApi();
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_top_stories, container, false);
+        return inflater.inflate(R.layout.fragment_movie, container, false);
 
 
     }
 
     private void requestApi() {
 
-        mQueue = Volley.newRequestQueue(getContext());
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, TopStoriesFragment.JSON_URL, null, new Response.Listener<JSONObject>() {
+        this.mQueue = Volley.newRequestQueue(getContext());
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, MovieFragment.JSON_URL, null, new Response.Listener<JSONObject>() {
 
             @Override
             public void onResponse(JSONObject response) {
@@ -92,9 +91,12 @@ public class TopStoriesFragment extends Fragment {
             }
         });
 
-        mQueue.start();
+        this.mQueue.start();
 
-        mQueue.add(request);
+        this.mQueue.add(request);
 
     }
 }
+
+
+

@@ -5,14 +5,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.mynews.Fragment.BusinessFragment;
 import com.example.mynews.Fragment.MostPopularFragment;
+import com.example.mynews.Fragment.MovieFragment;
 import com.example.mynews.Fragment.TopStoriesFragment;
 
 public class PagerAdapter extends FragmentStateAdapter {
 
     //constructor
-    public PagerAdapter(@NonNull FragmentActivity fragmentActivity) {
+    public PagerAdapter(@NonNull final FragmentActivity fragmentActivity) {
 
         super(fragmentActivity);
     }
@@ -20,7 +20,7 @@ public class PagerAdapter extends FragmentStateAdapter {
     //methods
     @NonNull
     @Override
-    public Fragment createFragment(int position) {
+    public Fragment createFragment(final int position) {
 
         switch (position) {
             case 0:
@@ -28,7 +28,7 @@ public class PagerAdapter extends FragmentStateAdapter {
             case 1:
                 return new MostPopularFragment();
             default:
-                return new BusinessFragment();
+                return new MovieFragment();
         }
 
     }

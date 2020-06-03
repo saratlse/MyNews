@@ -1,11 +1,11 @@
-package com.example.mynews.Fragment;
+package com.example.mynews.View;
 
-class ItemByArticle {
+public class ItemByArticle {
 
     private final String title, date, section, imageUrl;
 
 
-    public ItemByArticle(String title, String date, String section, String imageUrl) {
+    public ItemByArticle(final String title, final String date, final String section, final String imageUrl) {
         this.title = title;
         this.date = date;
         this.section = section;
@@ -13,19 +13,19 @@ class ItemByArticle {
     }
 
     public String getTitle() {
-        return title;
+        return this.title;
     }
 
     public String getDate() {
-        return date;
+        return this.date;
     }
 
     public String getSection() {
-        return section;
+        return this.section;
     }
 
     public String getImageUrl() {
-        return imageUrl;
+        return this.imageUrl;
     }
 
 }
