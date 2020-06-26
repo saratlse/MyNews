@@ -37,7 +37,6 @@ public class MostPopularFragment extends Fragment {
     private RequestQueue mQueue;
     private MostPopularViewModel mMostPopularViewModel;
 
-
     public MostPopularFragment() {
         // Required empty public constructor
 
@@ -45,10 +44,10 @@ public class MostPopularFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
-                             final Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
-        requestApi();
+        this.requestApi();
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_most_popular, container, false);
@@ -58,27 +57,25 @@ public class MostPopularFragment extends Fragment {
 
     private void requestApi() {
 
-        mQueue = Volley.newRequestQueue(getContext());
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, MostPopularFragment.JSON_URL, null, new Response.Listener<JSONObject>() {
+        this.mQueue = Volley.newRequestQueue(this.getContext());
+        final JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, JSON_URL, null, new Response.Listener<JSONObject>() {
 
             @Override
-            public void onResponse(JSONObject response) {
+            public void onResponse(final JSONObject response) {
                 try {
 
-
-                    JSONArray newsArray = response.getJSONArray("results");
-
+                    final JSONArray newsArray = response.getJSONArray("results");
 
                     for (int i = 0; i < newsArray.length(); i++) {
-                        JSONObject newObjet = newsArray.getJSONObject(i);
-                        String sectionObject = newObjet.getString("section");
-                        JSONArray mediaArray = newObjet.getJSONArray("multimedia");
-                        JSONObject mediaObject = mediaArray.getJSONObject(0);
+                        final JSONObject newObjet = newsArray.getJSONObject(i);
+                        final String sectionObject = newObjet.getString("section");
+                        final JSONArray mediaArray = newObjet.getJSONArray("multimedia");
+                        final JSONObject mediaObject = mediaArray.getJSONObject(0);
 
 
                     }
 
-                } catch (JSONException e) {
+                } catch (final JSONException e) {
                     e.printStackTrace();
                 }
 
@@ -86,15 +83,15 @@ public class MostPopularFragment extends Fragment {
             }
         }, new Response.ErrorListener() {
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void onErrorResponse(final VolleyError error) {
                 error.printStackTrace();
-                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MostPopularFragment.this.getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
-        mQueue.start();
+        this.mQueue.start();
 
-        mQueue.add(request);
+        this.mQueue.add(request);
 
     }
 }

@@ -12,7 +12,7 @@ import com.example.mynews.Fragment.TopStoriesFragment;
 public class PagerAdapter extends FragmentStateAdapter {
 
     //constructor
-    public PagerAdapter(@NonNull final FragmentActivity fragmentActivity) {
+    public PagerAdapter(@NonNull FragmentActivity fragmentActivity) {
 
         super(fragmentActivity);
     }
@@ -20,19 +20,20 @@ public class PagerAdapter extends FragmentStateAdapter {
     //methods
     @NonNull
     @Override
-    public Fragment createFragment(final int position) {
+    public Fragment createFragment(int position) {
 
         switch (position) {
-            case 0:
+            case 0: //page 1
                 return new TopStoriesFragment();
-            case 1:
+            case 1: //page2
                 return new MostPopularFragment();
-            default:
+            default://page3
                 return new MovieFragment();
         }
 
     }
 
+    //method will be called as soon as a page (fragment) requests to be displayed
     @Override
     public int getItemCount() {
         return 3;
