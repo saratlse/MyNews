@@ -1,11 +1,11 @@
 package com.example.mynews.View;
 
-public class ItemByArticle {
+public class Articles {
 
     private final String title, date, section, imageUrl;
 
 
-    public ItemByArticle(final String title, final String date, final String section, final String imageUrl) {
+    public Articles(final String title, final String date, final String section, final String imageUrl) {
         this.title = title;
         this.date = date;
         this.section = section;

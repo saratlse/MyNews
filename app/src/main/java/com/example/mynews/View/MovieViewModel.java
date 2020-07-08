@@ -10,20 +10,20 @@ import java.util.List;
 
 public class MovieViewModel extends ViewModel {
 
-    private final MutableLiveData<List<ItemByArticle>> mItemByArticle = new MutableLiveData<>();
-    private final LiveData<List<ItemByArticle>> mList = Transformations.map(this.mItemByArticle, new Function<List<ItemByArticle>, List<ItemByArticle>>() {
+    private final MutableLiveData<List<Articles>> mItemByArticle = new MutableLiveData<>();
+    private final LiveData<List<Articles>> mList = Transformations.map(this.mItemByArticle, new Function<List<Articles>, List<Articles>>() {
         @Override
-        public List<ItemByArticle> apply(final List<ItemByArticle> input) {
+        public List<Articles> apply(final List<Articles> input) {
             return input;
         }
     });
 
 
-    public void setItemByArticle(final List<ItemByArticle> itemByArticle) {
-        this.mItemByArticle.setValue(itemByArticle);
+    public void setItemByArticle(final List<Articles> articles) {
+        this.mItemByArticle.setValue(articles);
     }
 
-    public LiveData<List<ItemByArticle>> getList() {
+    public LiveData<List<Articles>> getList() {
         return this.mList;
     }
 }

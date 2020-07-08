@@ -9,8 +9,6 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -18,8 +16,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.mynews.Adapter.MostPopularAdapter;
 import com.example.mynews.R;
-import com.example.mynews.View.ItemByArticle;
+import com.example.mynews.View.Articles;
 import com.example.mynews.View.MostPopularViewModel;
 
 import org.json.JSONArray;
@@ -38,44 +37,35 @@ public class MostPopularFragment extends Fragment {
     private static final String JSON_URL = "https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=lvzzkPeHJEIDxfpTaqSb3Azu9LDnO4Fv";
 
     private RequestQueue mQueue;
-    private List<ItemByArticle> itemByArticle;
-    private MostPopularViewModel mMostPopularViewModel;
+    private List<Articles> articles;
+
+    private MostPopularAdapter mostPopularAdapter;
+    private MostPopularViewModel mostPopularViewModel;
 
     public MostPopularFragment() {
         // Required empty public constructor
-
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        itemByArticle = new ArrayList<>();
-        mMostPopularViewModel = new MostPopularViewModel();
-
+        articles = new ArrayList<>();
+        mostPopularViewModel = new MostPopularViewModel();
+        this.requestApi();
     }
 
     @Override
         public View onCreateView (LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState){
 
-            this.requestApi();
             // Inflate the layout for this fragment
-            return inflater.inflate(R.layout.fragment_most_popular, container, false);
         View root = inflater.inflate(R.layout.fragment_most_popular, container, false);
-
         //LiveData Observer
-        mMostPopularViewModel.getList().observe(getViewLifecycleOwner(), new Observer<List<ItemByArticle>>() {
-            @Override
-            public void onChanged(List<ItemByArticle> itemByArticles) {
-
-            }
-        } );{
+        mostPopularViewModel.getList().observe(getViewLifecycleOwner(), itemByArticles -> {
 
         });
-
         return root;
     }
-
 
         private void requestApi () {
             this.mQueue = Volley.newRequestQueue(this.getContext());
@@ -92,7 +82,7 @@ public class MostPopularFragment extends Fragment {
                             final JSONArray mediaArray = newObjet.getJSONArray("multimedia");
                             final JSONObject mediaObject = mediaArray.getJSONObject(0);
                         }
-                        mMostPopularViewModel.setItemByArticle(itemByArticle);
+                        mostPopularViewModel.setItemByArticle(articles);
                     } catch (final JSONException e) {
                         e.printStackTrace();
                     }

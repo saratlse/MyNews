@@ -9,14 +9,14 @@ import java.util.List;
 
 public class TopStoryViewModel extends ViewModel {
 
-    public MutableLiveData<List<ItemByArticle>> itemByArticleList = new MutableLiveData<>();
-    private final LiveData<List<ItemByArticle>> mList = Transformations.map(this.itemByArticleList, input -> input);
+    public MutableLiveData<List<Articles>> itemByArticleList = new MutableLiveData<>();
+    private final LiveData<List<Articles>> mList = Transformations.map(this.itemByArticleList, input -> input);
 
-    public void setItemByArticle(final List<ItemByArticle> article) {
+    public void setItemByArticle(final List<Articles> article) {
         this.itemByArticleList.setValue(article);
     }
 
-    public LiveData<List<ItemByArticle>> getList() {
+    public LiveData<List<Articles>> getList() {
         return this.mList;
     }
 }
