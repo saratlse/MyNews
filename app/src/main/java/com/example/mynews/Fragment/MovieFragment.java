@@ -36,7 +36,7 @@ public class MovieFragment extends Fragment {
 
 
     private static final String JSON_URL = "https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=lvzzkPeHJEIDxfpTaqSb3Azu9LDnO4Fv";
-    private List<Articles> articles;
+    private ArrayList<Articles> articles;
 
     private RequestQueue mQueue;
 

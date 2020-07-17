@@ -35,7 +35,7 @@ public class TopStoriesFragment extends Fragment {
 
     private static final String JSON_URL = "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=Rcgp5CKAbUEUBl6NlZOppWk0ZN0tmvE7";
     private RequestQueue mQueue;
-    private List<Articles> articles;
+    private ArrayList<Articles> articles;
     private TopStoriesAdapter topStoriesAdapter;
     private TopStoryViewModel topStoryViewModel;
 
@@ -80,6 +80,7 @@ public class TopStoriesFragment extends Fragment {
                         JSONArray mediaArray = newObjet.getJSONArray("multimedia");
                         JSONObject mediaObject = mediaArray.getJSONObject(0);
                     }
+                    topStoryViewModel.setItemByArticle(articles);
 
                 } catch (JSONException e) {
                     e.printStackTrace();

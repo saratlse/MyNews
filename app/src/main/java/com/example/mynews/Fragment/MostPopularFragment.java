@@ -37,7 +37,7 @@ public class MostPopularFragment extends Fragment {
     private static final String JSON_URL = "https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=lvzzkPeHJEIDxfpTaqSb3Azu9LDnO4Fv";
 
     private RequestQueue mQueue;
-    private List<Articles> articles;
+    private ArrayList<Articles> articles;
 
     private MostPopularAdapter mostPopularAdapter;
     private MostPopularViewModel mostPopularViewModel;
