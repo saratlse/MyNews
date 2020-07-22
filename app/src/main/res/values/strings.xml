@@ -22,7 +22,11 @@
 
     <!---URL -->
     <string name="urlserver">https://api.nytimes.com/svc/topstories/v2/{section}.json</string>
-    <string name="todo">TODO</string>
-
+    <string name="action_settings">Setting</string>
+    <string name="section_format">Hello World from sections</string>
+    <string name="title">Title</string>
+    <string name="image">image</string>
+    <string name="section">section</string>
+    <string name="date">date</string>
 
 </resources>

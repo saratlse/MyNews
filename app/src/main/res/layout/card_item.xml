@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,25 +14,69 @@
         android:layout_marginRight="30dp"
         app:cardElevation="8dp">
 
-        <ImageView
-            android:id="@+id/recycler_view_image_article"
-            android:layout_width="80dip"
-            android:layout_height="80dip"
-            android:scaleType="fitCenter"
-            android:contentDescription="@string/todo" />
-
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center">
 
-            <TextView
-                android:id="@+id/mtopStoriesResult"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            <!-- Media -->
+            <ImageView
+                android:id="@+id/newsImage"
+                android:layout_width="@dimen/recycler_image_width"
+                android:layout_height="@dimen/recycler_image_height"
+                android:layout_margin="@dimen/recycler_image_margin"
+                android:contentDescription="@string/image"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <!-- Title, secondary and supporting text -->
+                    <TextView
+                        android:id="@+id/newsCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:hint="@string/section"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/newsDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:hint="@string/date"
+                        android:maxLines="1" />
+
+                </LinearLayout>
+
+                <!-- Buttons -->
+
+                <TextView
+                    android:id="@+id/newsDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="top"
+                    android:layout_marginEnd="@dimen/recycler_text_margin"
+                    android:ellipsize="end"
+                    android:hint="@string/title"
+                    android:maxLines="2" />
+            </LinearLayout>
+
         </LinearLayout>
-        
+
+
     </com.google.android.material.card.MaterialCardView>
-</RelativeLayout>
+</androidx.cardview.widget.CardView>
