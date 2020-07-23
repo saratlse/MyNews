@@ -23,7 +23,7 @@
 
             <!-- Media -->
             <ImageView
-                android:id="@+id/newsImage"
+                android:id="@+id/articleImage"
                 android:layout_width="@dimen/recycler_image_width"
                 android:layout_height="@dimen/recycler_image_height"
                 android:layout_margin="@dimen/recycler_image_margin"
@@ -45,7 +45,7 @@
 
                     <!-- Title, secondary and supporting text -->
                     <TextView
-                        android:id="@+id/newsCategory"
+                        android:id="@+id/articleCategory"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -53,7 +53,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/newsDate"
+                        android:id="@+id/articleDate"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -65,7 +65,7 @@
                 <!-- Buttons -->
 
                 <TextView
-                    android:id="@+id/newsDescription"
+                    android:id="@+id/articleDescription"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="top"

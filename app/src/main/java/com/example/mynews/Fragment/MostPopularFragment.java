@@ -26,7 +26,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -81,6 +80,8 @@ public class MostPopularFragment extends Fragment {
                             final String sectionObject = newObjet.getString("section");
                             final JSONArray mediaArray = newObjet.getJSONArray("multimedia");
                             final JSONObject mediaObject = mediaArray.getJSONObject(0);
+
+
                         }
                         mostPopularViewModel.setItemByArticle(articles);
                     } catch (final JSONException e) {
