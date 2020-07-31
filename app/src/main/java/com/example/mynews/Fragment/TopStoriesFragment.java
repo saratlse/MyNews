@@ -9,6 +9,9 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -26,6 +29,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,6 +39,7 @@ public class TopStoriesFragment extends Fragment {
     private static final String JSON_URL = "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=Rcgp5CKAbUEUBl6NlZOppWk0ZN0tmvE7";
     private RequestQueue mQueue;
     private ArrayList<Articles> articles;
+
     private TopStoriesAdapter topStoriesAdapter;
     private TopStoryViewModel topStoryViewModel;
 
@@ -57,9 +62,15 @@ public class TopStoriesFragment extends Fragment {
                              final Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_top_stories, container, false);
-        //LiveData Observer
-        topStoryViewModel.getList().observe(getViewLifecycleOwner(), itemByArticles -> {
+        RecyclerView recyclerView = root.findViewById(R.id.most_popular_recyclerView);
 
+        //LiveData Observer
+        topStoryViewModel.getList().observe(getViewLifecycleOwner(), new Observer<List<Articles>>() {
+            @Override
+            public void onChanged(List<Articles> articles) {
+                recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                topStoriesAdapter = new TopStoriesAdapter(getContext(),articles);
+            }
         });
         return root;
     }
@@ -89,7 +100,7 @@ public class TopStoriesFragment extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
-                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(TopStoriesFragment.this.getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
         mQueue.start();

@@ -9,6 +9,9 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -26,6 +29,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -51,6 +55,7 @@ public class MostPopularFragment extends Fragment {
         articles = new ArrayList<>();
         mostPopularViewModel = new MostPopularViewModel();
         this.requestApi();
+
     }
 
     @Override
@@ -59,9 +64,15 @@ public class MostPopularFragment extends Fragment {
 
             // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_most_popular, container, false);
-        //LiveData Observer
-        mostPopularViewModel.getList().observe(getViewLifecycleOwner(), itemByArticles -> {
+        RecyclerView recyclerView = root.findViewById(R.id.most_popular_recyclerView);
 
+        //LiveData Observer
+        mostPopularViewModel.getList().observe(getViewLifecycleOwner(), new Observer<List<Articles>>() {
+            @Override
+            public void onChanged(List<Articles> articles) {
+                recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                mostPopularAdapter = new MostPopularAdapter(getContext(),articles) ;
+                }
         });
         return root;
     }
