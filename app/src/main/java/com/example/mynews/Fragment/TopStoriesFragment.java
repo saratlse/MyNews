@@ -62,7 +62,7 @@ public class TopStoriesFragment extends Fragment {
                              final Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_top_stories, container, false);
-        RecyclerView recyclerView = root.findViewById(R.id.most_popular_recyclerView);
+        RecyclerView recyclerView = root.findViewById(R.id.top_stories_recyclerView);
 
         //LiveData Observer
         topStoryViewModel.getList().observe(getViewLifecycleOwner(), new Observer<List<Articles>>() {
