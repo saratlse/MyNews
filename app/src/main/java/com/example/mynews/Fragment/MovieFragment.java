@@ -73,6 +73,7 @@ public class MovieFragment extends Fragment {
             public void onChanged(List<Articles> articles) {
                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
                 movieAdapter = new MovieAdapter(getContext(), articles);
+                recyclerView.setAdapter(movieAdapter);
             }
         });
         return root;

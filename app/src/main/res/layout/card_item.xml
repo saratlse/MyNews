@@ -74,7 +74,6 @@
                     android:hint="@string/title"
                     android:maxLines="2" />
             </LinearLayout>
-
         </LinearLayout>
 
 
