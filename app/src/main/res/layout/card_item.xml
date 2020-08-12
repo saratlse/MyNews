@@ -2,30 +2,26 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
 
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
-        app:cardElevation="8dp">
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp">
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center">
 
             <!-- Media -->
             <ImageView
                 android:id="@+id/articleImage"
-                android:layout_width="@dimen/recycler_image_width"
-                android:layout_height="@dimen/recycler_image_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/recycler_image_margin"
                 android:contentDescription="@string/image"
                 android:scaleType="centerCrop" />
@@ -38,7 +34,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:gravity="center"
                     android:orientation="horizontal">
@@ -49,7 +45,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:hint="@string/section"
+                        android:hint="@string/title"
                         android:textStyle="bold" />
 
                     <TextView
@@ -57,8 +53,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:hint="@string/date"
-                        android:maxLines="1" />
+                        android:hint="@string/date" />
 
                 </LinearLayout>
 
@@ -71,7 +66,7 @@
                     android:layout_gravity="top"
                     android:layout_marginEnd="@dimen/recycler_text_margin"
                     android:ellipsize="end"
-                    android:hint="@string/title"
+                    android:hint="@string/description"
                     android:maxLines="2" />
             </LinearLayout>
         </LinearLayout>

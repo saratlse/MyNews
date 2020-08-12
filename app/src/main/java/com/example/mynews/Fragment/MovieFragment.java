@@ -52,16 +52,19 @@ public class MovieFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         articles = new ArrayList<>();
+        for (int i =0; i <45 ; i++){
+            articles.add(new Articles("titre","11 aout 2020", "Section", "PhotoURL"));
+        }
         movieViewModel = new MovieViewModel();
-        this.requestApi();
+        requestApi();
     }
 
     @Override
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
-                             final Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_movie, container, false);
@@ -107,8 +110,8 @@ public class MovieFragment extends Fragment {
                     Toast.makeText(MovieFragment.this.getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
-            this.mQueue.start();
-            this.mQueue.add(request);
+            mQueue.start();
+            mQueue.add(request);
         }
     }
 

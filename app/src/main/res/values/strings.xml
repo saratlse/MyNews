@@ -28,5 +28,6 @@
     <string name="image">image</string>
     <string name="section">section</string>
     <string name="date">date</string>
+    <string name="description">description</string>
 
 </resources>

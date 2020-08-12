@@ -50,7 +50,7 @@ public class TopStoriesFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         articles = new ArrayList<>();
         for (int i =0; i <45 ; i++){
@@ -61,8 +61,8 @@ public class TopStoriesFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
-                             final Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_top_stories, container, false);
         RecyclerView recyclerView = root.findViewById(R.id.top_stories_recyclerView);
