@@ -9,8 +9,8 @@ import androidx.lifecycle.ViewModel;
 import java.util.List;
 
 public class MostPopularViewModel extends ViewModel {
-    private final MutableLiveData<List<Articles>> mItemByArticle = new MutableLiveData<>();
-    private final LiveData<List<Articles>> mList = Transformations.map(this.mItemByArticle, new Function<List<Articles>, List<Articles>>() {
+    public MutableLiveData<List<Articles>> mItemByArticleList = new MutableLiveData<>();
+    private final LiveData<List<Articles>> mList = Transformations.map(this.mItemByArticleList, new Function<List<Articles>, List<Articles>>() {
         @Override
         public List<Articles> apply(final List<Articles> input) {
             return input;
@@ -18,8 +18,8 @@ public class MostPopularViewModel extends ViewModel {
     });
 
 
-    public void setItemByArticle(final List<Articles> articles) {
-        this.mItemByArticle.setValue(articles);
+    public void setItemByArticle(final List<Articles> article) {
+        this.mItemByArticleList.setValue(article);
     }
 
     public LiveData<List<Articles>> getList() {

@@ -31,14 +31,13 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
 
 
     //inflate the card_item layout from xml
-    @NonNull
     @Override
-    public MostPopularViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MostPopularViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_item, parent, false);
         return new MostPopularViewHolder(view);
     }
 
-    public void onBindViewHolder(@NonNull MostPopularAdapter.MostPopularViewHolder holder, int position) {
+    public void onBindViewHolder( MostPopularAdapter.MostPopularViewHolder holder, int position) {
         Articles articles = articlesList.get(position);
 
 

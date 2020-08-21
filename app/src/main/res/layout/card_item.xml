@@ -70,7 +70,5 @@
                     android:maxLines="2" />
             </LinearLayout>
         </LinearLayout>
-
-
     </com.google.android.material.card.MaterialCardView>
 </androidx.cardview.widget.CardView>

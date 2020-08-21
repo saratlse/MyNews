@@ -53,9 +53,9 @@ public class TopStoriesFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         articles = new ArrayList<>();
-        for (int i =0; i <45 ; i++){
-            articles.add(new Articles("titre","11 aout 2020", "Section", "PhotoURL"));
-        }
+        //for (int i =0; i <45 ; i++){
+       //     articles.add(new Articles("titre","11 aout 2020", "Section", "PhotoURL"));
+       // }
         topStoryViewModel = new TopStoryViewModel();
         requestApi();
     }
@@ -91,8 +91,11 @@ public class TopStoriesFragment extends Fragment {
                     for (int i = 0; i < newsArray.length(); i++) {
                         JSONObject newObjet = newsArray.getJSONObject(i);
                         String sectionObject = newObjet.getString("section");
-                        JSONArray mediaArray = newObjet.getJSONArray("multimedia");
-                        JSONObject mediaObject = mediaArray.getJSONObject(0);
+                        JSONArray multimediaArray = newObjet.getJSONArray("multimedia");
+                        JSONObject mediaObject = multimediaArray.getJSONObject(0);
+
+                        articles.add(new Articles(newObjet.getString("title"),newObjet.getString("date"),sectionObject,mediaObject.getString("url")));
+
                     }
                     topStoryViewModel.setItemByArticle(articles);
 

@@ -5,7 +5,7 @@ public class Articles {
     private final String title, date, section, imageUrl;
 
 
-    public Articles(final String title, final String date, final String section, final String imageUrl) {
+    public Articles( String section,String title,  String date,  String imageUrl) {
         this.title = title;
         this.date = date;
         this.section = section;

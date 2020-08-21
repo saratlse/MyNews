@@ -57,7 +57,7 @@ public class MostPopularFragment extends Fragment {
             articles.add(new Articles("titre","11 aout 2020", "Section", "PhotoURL"));
         }
         mostPopularViewModel = new MostPopularViewModel();
-        this.requestApi();
+        requestApi();
 
     }
 
@@ -82,21 +82,19 @@ public class MostPopularFragment extends Fragment {
     }
 
         private void requestApi () {
-            this.mQueue = Volley.newRequestQueue(this.getContext());
-            final JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, JSON_URL, null, new Response.Listener<JSONObject>() {
+            mQueue = Volley.newRequestQueue(this.getContext());
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, JSON_URL, null, new Response.Listener<JSONObject>() {
 
                 @Override
                 public void onResponse(final JSONObject response) {
                     try {
-                        final JSONArray newsArray = response.getJSONArray("results");
+                         JSONArray newsArray = response.getJSONArray("results");
 
                         for (int i = 0; i < newsArray.length(); i++) {
                             final JSONObject newObjet = newsArray.getJSONObject(i);
                             final String sectionObject = newObjet.getString("section");
-                            final JSONArray mediaArray = newObjet.getJSONArray("multimedia");
+                            final JSONArray mediaArray = newObjet.getJSONArray("media");
                             final JSONObject mediaObject = mediaArray.getJSONObject(0);
-
-
                         }
                         mostPopularViewModel.setItemByArticle(articles);
                     } catch (final JSONException e) {
@@ -110,8 +108,8 @@ public class MostPopularFragment extends Fragment {
                     Toast.makeText(MostPopularFragment.this.getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
-            this.mQueue.start();
-            this.mQueue.add(request);
+            mQueue.start();
+            mQueue.add(request);
         }
     }
 
