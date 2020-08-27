@@ -93,10 +93,12 @@ public class MovieFragment extends Fragment {
                         JSONArray newsArray = response.getJSONArray("results");
 
                         for (int i = 0; i < newsArray.length(); i++) {
-                            JSONObject newObjet = newsArray.getJSONObject(i);
-                            String sectionObject = newObjet.getString("section");
-                            JSONArray mediaArray = newObjet.getJSONArray("multimedia");
+                            JSONObject newObject = newsArray.getJSONObject(i);
+                            String sectionObject = newObject.getString("section");
+                            JSONArray mediaArray = newObject.getJSONArray("multimedia");
                             JSONObject mediaObject = mediaArray.getJSONObject(0);
+
+                            articles.add(new Articles(newObject.getString("title"),sectionObject,newObject.getString("published_date"), mediaObject.getString("url")));
                         }
                         movieViewModel.setItemByArticle(articles);
                     } catch (JSONException e) {

@@ -61,7 +61,7 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
         private ImageView articleImage;
         private TextView articleDescription, articleCategory, articleDate;
 
-        public MostPopularViewHolder(@NonNull View itemView) {
+        public MostPopularViewHolder(View itemView) {
             super(itemView);
 
             articleDescription = itemView.findViewById(R.id.articleCategory);

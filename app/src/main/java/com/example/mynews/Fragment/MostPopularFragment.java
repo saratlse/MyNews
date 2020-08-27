@@ -91,10 +91,12 @@ public class MostPopularFragment extends Fragment {
                          JSONArray newsArray = response.getJSONArray("results");
 
                         for (int i = 0; i < newsArray.length(); i++) {
-                            final JSONObject newObjet = newsArray.getJSONObject(i);
-                            final String sectionObject = newObjet.getString("section");
-                            final JSONArray mediaArray = newObjet.getJSONArray("media");
-                            final JSONObject mediaObject = mediaArray.getJSONObject(0);
+                            JSONObject newObject = newsArray.getJSONObject(i);
+                            String sectionObject = newObject.getString("section");
+                            JSONArray mediaArray = newObject.getJSONArray("media");
+                            JSONObject mediaObject = mediaArray.getJSONObject(0);
+
+                            articles.add(new Articles(newObject.getString("title"),sectionObject,newObject.getString("published_date"), mediaObject.getString("url")));
                         }
                         mostPopularViewModel.setItemByArticle(articles);
                     } catch (final JSONException e) {

@@ -24,7 +24,7 @@ public class MovieViewModel extends ViewModel {
     }
 
     public LiveData<List<Articles>> getList() {
-        return this.mList;
+        return this.mItemByArticle;
     }
 }
 

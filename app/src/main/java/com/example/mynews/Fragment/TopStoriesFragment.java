@@ -89,12 +89,15 @@ public class TopStoriesFragment extends Fragment {
                     JSONArray newsArray = response.getJSONArray("results");
 
                     for (int i = 0; i < newsArray.length(); i++) {
-                        JSONObject newObjet = newsArray.getJSONObject(i);
-                        String sectionObject = newObjet.getString("section");
-                        JSONArray multimediaArray = newObjet.getJSONArray("multimedia");
+
+                        JSONObject newObject = newsArray.getJSONObject(i);
+                        String sectionObject = newObject.getString("section");
+                        String dateObject = newObject.getString("published_date");
+
+                        JSONArray multimediaArray = newObject.getJSONArray("multimedia");
                         JSONObject mediaObject = multimediaArray.getJSONObject(0);
 
-                        articles.add(new Articles(newObjet.getString("title"),newObjet.getString("date"),sectionObject,mediaObject.getString("url")));
+                        articles.add(new Articles(newObject.getString("title"),sectionObject,dateObject, mediaObject.getString("url")));
 
                     }
                     topStoryViewModel.setItemByArticle(articles);
