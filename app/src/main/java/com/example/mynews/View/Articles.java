@@ -13,19 +13,19 @@ public class Articles {
     }
 
     public String getTitle() {
-        return this.title;
+        return title;
     }
 
     public String getDate() {
-        return this.date;
+        return date;
     }
 
     public String getSection() {
-        return this.section;
+        return section;
     }
 
     public String getImageUrl() {
-        return this.imageUrl;
+        return imageUrl;
     }
 
 }

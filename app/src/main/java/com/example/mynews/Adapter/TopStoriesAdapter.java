@@ -27,13 +27,13 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.To
 
     @NonNull
     @Override
-    public TopStoriesAdapter.TopStoriesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public TopStoriesAdapter.TopStoriesViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_item,parent,false);
         return new TopStoriesViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TopStoriesAdapter.TopStoriesViewHolder holder, int position) {
+    public void onBindViewHolder( TopStoriesAdapter.TopStoriesViewHolder holder, int position) {
         Articles articles = articlesList.get(position);
         //insert the JSON queried Data in each section
         holder.articleDescription.setText(articles.getTitle());
@@ -52,7 +52,7 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.To
         private ImageView articleImage;
         private TextView articleDescription, articleCategory, articleDate;
 
-        public TopStoriesViewHolder(@NonNull View itemView) {
+        public TopStoriesViewHolder(View itemView) {
             super(itemView);
             articleDescription = itemView.findViewById(R.id.articleCategory);
             articleDate = itemView.findViewById(R.id.articleDate);

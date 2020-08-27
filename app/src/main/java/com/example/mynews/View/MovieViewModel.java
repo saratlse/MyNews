@@ -13,13 +13,13 @@ public class MovieViewModel extends ViewModel {
     private final MutableLiveData<List<Articles>> mItemByArticle = new MutableLiveData<>();
     private final LiveData<List<Articles>> mList = Transformations.map(this.mItemByArticle, new Function<List<Articles>, List<Articles>>() {
         @Override
-        public List<Articles> apply(final List<Articles> input) {
+        public List<Articles> apply(List<Articles> input) {
             return input;
         }
     });
 
 
-    public void setItemByArticle(final List<Articles> articles) {
+    public void setItemByArticle(List<Articles> articles) {
         this.mItemByArticle.setValue(articles);
     }
 

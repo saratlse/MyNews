@@ -19,7 +19,7 @@ public class TopStoryViewModel extends ViewModel {
     });
 
 
-    public void setItemByArticle(final List<Articles> article) {
+    public void setItemByArticle(List<Articles> article) {
         this.mItemByArticleList.setValue(article);
     }
 

@@ -12,7 +12,7 @@ import com.example.mynews.Fragment.TopStoriesFragment;
 public class PagerAdapter extends FragmentStateAdapter {
 
     //constructor
-    public PagerAdapter(@NonNull FragmentActivity fragmentActivity) {
+    public PagerAdapter(FragmentActivity fragmentActivity) {
 
         super(fragmentActivity);
     }
