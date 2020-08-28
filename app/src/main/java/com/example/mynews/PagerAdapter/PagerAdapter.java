@@ -27,7 +27,7 @@ public class PagerAdapter extends FragmentStateAdapter {
                 return new TopStoriesFragment();
             case 1: //page2
                 return new MostPopularFragment();
-            default://page3
+           default://page3
                 return new MovieFragment();
         }
 
@@ -37,6 +37,7 @@ public class PagerAdapter extends FragmentStateAdapter {
     @Override
     public int getItemCount() {
         return 3;
+
     }
 
 

@@ -39,6 +39,7 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.To
         holder.articleDescription.setText(articles.getTitle());
         holder.articleCategory.setText(articles.getSection());
         holder.articleDate.setText(articles.getDate());
+        holder.articleSubsection.setText(articles.getSubsection());
         String imageUrl = articles.getImageUrl();
         Picasso.get().load(imageUrl).into(holder.articleImage);
     }
@@ -50,13 +51,15 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.To
 
     public class TopStoriesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ImageView articleImage;
-        private TextView articleDescription, articleCategory, articleDate;
+        private TextView articleDescription, articleSubsection, articleCategory, articleDate;
 
         public TopStoriesViewHolder(View itemView) {
             super(itemView);
-            articleDescription = itemView.findViewById(R.id.articleCategory);
-            articleDate = itemView.findViewById(R.id.articleDate);
+
             articleCategory = itemView.findViewById(R.id.articleCategory);
+            articleSubsection = itemView.findViewById(R.id.subSection);
+            articleDate = itemView.findViewById(R.id.articleDate);
+            articleDescription = itemView.findViewById(R.id.articleDescription);
             articleImage = itemView.findViewById(R.id.articleImage);
             itemView.setOnClickListener(this);
 

@@ -56,7 +56,7 @@ public class MovieFragment extends Fragment {
         super.onCreate(savedInstanceState);
         articles = new ArrayList<>();
         for (int i =0; i <45 ; i++){
-            articles.add(new Articles("titre","11 aout 2020", "Section", "PhotoURL"));
+//            articles.add(new Articles("titre","11 aout 2020", "Section", "PhotoURL"));
         }
         movieViewModel = new MovieViewModel();
         requestApi();
@@ -95,10 +95,11 @@ public class MovieFragment extends Fragment {
                         for (int i = 0; i < newsArray.length(); i++) {
                             JSONObject newObject = newsArray.getJSONObject(i);
                             String sectionObject = newObject.getString("section");
+                            String subSectionObject = newObject.getString("subsection");
                             JSONArray mediaArray = newObject.getJSONArray("multimedia");
                             JSONObject mediaObject = mediaArray.getJSONObject(0);
 
-                            articles.add(new Articles(newObject.getString("title"),sectionObject,newObject.getString("published_date"), mediaObject.getString("url")));
+                    //        articles.add(new Articles(newObject.getString("title"),sectionObject,newObject.getString("published_date"), mediaObject.getString("url")));
                         }
                         movieViewModel.setItemByArticle(articles);
                     } catch (JSONException e) {

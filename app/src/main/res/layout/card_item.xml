@@ -20,8 +20,8 @@
             <!-- Media -->
             <ImageView
                 android:id="@+id/articleImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="75dip"
+                android:layout_height="75dip"
                 android:layout_margin="@dimen/recycler_image_margin"
                 android:contentDescription="@string/image"
                 android:scaleType="centerCrop" />
@@ -47,12 +47,19 @@
                         android:layout_weight="1"
                         android:hint="@string/title"
                         android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/subSection"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/articleDate"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:maxLines="1"
                         android:hint="@string/date" />
 
                 </LinearLayout>

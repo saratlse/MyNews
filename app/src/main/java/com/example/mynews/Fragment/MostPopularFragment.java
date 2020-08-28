@@ -54,7 +54,7 @@ public class MostPopularFragment extends Fragment {
         super.onCreate(savedInstanceState);
         articles = new ArrayList<>();
         for (int i =0; i <45 ; i++){
-            articles.add(new Articles("titre","11 aout 2020", "Section", "PhotoURL"));
+         //   articles.add(new Articles("titre","11 aout 2020", "Section", "PhotoURL"));
         }
         mostPopularViewModel = new MostPopularViewModel();
         requestApi();
@@ -96,7 +96,7 @@ public class MostPopularFragment extends Fragment {
                             JSONArray mediaArray = newObject.getJSONArray("media");
                             JSONObject mediaObject = mediaArray.getJSONObject(0);
 
-                            articles.add(new Articles(newObject.getString("title"),sectionObject,newObject.getString("published_date"), mediaObject.getString("url")));
+      //                      articles.add(new Articles(newObject.getString("title"),sectionObject,newObject.getString("published_date"), mediaObject.getString("url")));
                         }
                         mostPopularViewModel.setItemByArticle(articles);
                     } catch (final JSONException e) {
