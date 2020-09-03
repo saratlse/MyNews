@@ -88,22 +88,32 @@ public class MostPopularFragment extends Fragment {
                 @Override
                 public void onResponse(final JSONObject response) {
                     try {
-                         JSONArray newsArray = response.getJSONArray("results");
+                        JSONArray newsArray = response.getJSONArray("results");
 
                         for (int i = 0; i < newsArray.length(); i++) {
                             JSONObject newObject = newsArray.getJSONObject(i);
                             String sectionObject = newObject.getString("section");
+                            String subSectionObject = newObject.getString("subsection");
+                            String dateObject = newObject.getString("published_date");
                             JSONArray mediaArray = newObject.getJSONArray("media");
-                            JSONObject mediaObject = mediaArray.getJSONObject(0);
+                            JSONObject mediaIndex;
+                            if (mediaArray.length() > 0) {
+                                JSONObject mediaObject = mediaArray.getJSONObject(0);
+                                JSONArray mediaData = mediaObject.getJSONArray("media-metadata");
+                                mediaIndex = mediaData.getJSONObject(0);
 
-      //                      articles.add(new Articles(newObject.getString("title"),sectionObject,newObject.getString("published_date"), mediaObject.getString("url")));
+                                articles.add(new Articles(newObject.getString("title"), sectionObject, subSectionObject, dateObject, mediaIndex.getString("url")));
+
+                            }
+                            mostPopularViewModel.setItemByArticle(articles);
+
                         }
-                        mostPopularViewModel.setItemByArticle(articles);
-                    } catch (final JSONException e) {
+                    } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
-            }, new Response.ErrorListener() {
+                },
+                    new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(final VolleyError error) {
                     error.printStackTrace();

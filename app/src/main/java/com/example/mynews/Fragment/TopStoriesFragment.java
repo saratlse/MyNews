@@ -28,6 +28,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -91,13 +92,13 @@ public class TopStoriesFragment extends Fragment {
                     for (int i = 0; i < newsArray.length(); i++) {
 
                         JSONObject newObject = newsArray.getJSONObject(i);
-                        String sectionObject = newObject.getString("section");
+                        String sectionObject = newObject.getString("section").toUpperCase();
                         String subSectionObject = newObject.getString("subsection");
                         String dateObject = newObject.getString("published_date");
                         JSONArray multimediaArray = newObject.getJSONArray("multimedia");
                         JSONObject mediaObject = multimediaArray.getJSONObject(0);
 
-                        articles.add(new Articles(sectionObject.toUpperCase(),subSectionObject.toUpperCase(),newObject.getString("title"),dateObject,mediaObject.getString("url")));
+                        articles.add(new Articles(sectionObject,subSectionObject,newObject.getString("title"),dateObject,mediaObject.getString("url")));
 
                     }
                     topStoryViewModel.setItemByArticle(articles);
@@ -115,5 +116,12 @@ public class TopStoriesFragment extends Fragment {
         });
         mQueue.start();
         mQueue.add(request);
+    }
+
+    public static String capitalize(String str) {
+        if(str == null || str.isEmpty()) {
+            return str;
+        }
+        return str.substring(0, 1).toUpperCase()+ str.substring(1);
     }
 }
