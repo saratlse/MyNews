@@ -3,6 +3,7 @@ package com.example.mynews.Controllers;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -66,7 +67,20 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean onCreateOptionsMenu(final Menu menu) {
         this.getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
+        MenuItem item = menu.findItem(R.id.search);
+       SearchView searchView =(SearchView)item.getActionView();
+      searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
     }
 
     public boolean onOptionsItemSelected(final MenuItem item) {

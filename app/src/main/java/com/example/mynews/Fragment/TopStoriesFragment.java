@@ -90,7 +90,6 @@ public class TopStoriesFragment extends Fragment {
                     JSONArray newsArray = response.getJSONArray("results");
 
                     for (int i = 0; i < newsArray.length(); i++) {
-
                         JSONObject newObject = newsArray.getJSONObject(i);
                         String sectionObject = newObject.getString("section").toUpperCase();
                         String subSectionObject = newObject.getString("subsection");

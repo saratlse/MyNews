@@ -72,7 +72,6 @@
                     android:layout_gravity="top"
                     android:layout_marginEnd="@dimen/recycler_text_margin"
                     android:ellipsize="end"
-                    android:hint="@string/description"
                     android:maxLines="2" />
             </LinearLayout>
         </LinearLayout>

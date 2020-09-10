@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyNews</string>
+    <string name="app_name">My News</string>
     <string name="Notifications">Notifications</string>
     <string name="Help">Help</string>
     <string name="Search">Search</string>
@@ -31,5 +31,17 @@
     <string name="description">description</string>
     <string name="subtitle">subtitle</string>
     <string name="subsection">subsection</string>
+
+    <!-- TITLE  Search CheckBox -->
+    <string name="checkbox_arts">Arts</string>
+    <string name="checkbox_business">Business</string>
+    <string name="checkbox_entrepreneurs">Entrepreneurs</string>
+    <string name="checkbox_politics">Politics</string>
+    <string name="checkbox_sports">Sports</string>
+    <string name="checkbox_travel">Travel</string>
+    <string name="button_search">SEARCH</string>
+    <string name="edittext_hint">seacrh query term</string>
+    <string name="pick_date_begin">Begin Date</string>
+    <string name="pick_date_End">End Date</string>
 
 </resources>
