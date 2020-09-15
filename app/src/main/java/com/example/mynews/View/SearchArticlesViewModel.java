@@ -9,10 +9,9 @@ import androidx.lifecycle.ViewModel;
 import java.util.List;
 
 public class SearchArticlesViewModel extends ViewModel {
-    // TODO: Implement the ViewModel
 
         private final MutableLiveData<List<Articles>> mItemByArticle = new MutableLiveData<>();
-        private MutableLiveData<String> newsTabTitle = new MutableLiveData<>();
+        private MutableLiveData<String> nycTabTitle = new MutableLiveData<>();
 
         private final LiveData<List<Articles>> mList = Transformations.map(this.mItemByArticle, new Function<List<Articles>, List<Articles>>() {
             @Override
@@ -22,14 +21,14 @@ public class SearchArticlesViewModel extends ViewModel {
         });
 
     public MutableLiveData<String> getTabTitle(){
-        if(newsTabTitle == null) {
+        if(nycTabTitle == null) {
             return new MutableLiveData<>();
         }
-        return newsTabTitle;
+        return nycTabTitle;
     }
 
-    public void setNewsTabTitle(String title){
-        newsTabTitle.setValue(title);
+    public void setTabTitle(String title){
+        nycTabTitle.setValue(title);
     }
 
 

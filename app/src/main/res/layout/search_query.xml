@@ -9,7 +9,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/edittext_hint"
-        android:id="@+id/search_editText"
+        android:hint="Search query term"
+        android:id="@+id/search_query_term_editText"
         />
 </LinearLayout>

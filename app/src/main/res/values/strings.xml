@@ -40,8 +40,10 @@
     <string name="checkbox_sports">Sports</string>
     <string name="checkbox_travel">Travel</string>
     <string name="button_search">SEARCH</string>
-    <string name="edittext_hint">seacrh query term</string>
+    <string name="search_query_term_editText">Search query term</string>
     <string name="pick_date_begin">Begin Date</string>
     <string name="pick_date_End">End Date</string>
+    <string name="begin_date_editText">Begin date</string>
+    <string name="end_date_editText">End Date</string>
 
 </resources>
