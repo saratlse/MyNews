@@ -1,5 +1,6 @@
 package com.example.mynews.Controllers;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -90,7 +91,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Menu", Toast.LENGTH_LONG).show();
                 break;
             case R.id.search:
-                Toast.makeText(this, "Search", Toast.LENGTH_LONG).show();
+                Intent searchIntent = new Intent(this, SearchArticlesActivity.class);
+                startActivity(searchIntent);
                 break;
 
             default:
