@@ -17,6 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/begin_date_editText"/>
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,8 +26,7 @@
             android:focusable="false"
             android:inputType="date"
             android:layout_marginBottom="10dp"
-            />
-
+            android:drawableEnd="@drawable/triangle" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -47,7 +47,8 @@
             android:focusable="false"
             android:inputType="date"
             android:layout_marginBottom="10dp"
-            />
+            android:drawableEnd="@drawable/triangle" />
 
     </LinearLayout>
+
 </LinearLayout>

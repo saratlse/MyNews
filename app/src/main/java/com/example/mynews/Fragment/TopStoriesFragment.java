@@ -91,20 +91,50 @@ public class TopStoriesFragment extends Fragment {
 
                     for (int i = 0; i < newsArray.length(); i++) {
                         JSONObject newObject = newsArray.getJSONObject(i);
-                        String sectionObject = newObject.getString("section").toUpperCase();
+                        String sectionObject = newObject.getString("section");
+
+
+                        if (sectionObject.length() >0){
+                           sectionObject = sectionObject.substring(0,1).toUpperCase() + sectionObject.substring(1).toLowerCase();
+                       }
+                       capitalize(sectionObject);// ???
+
+
                         String subSectionObject = newObject.getString("subsection");
+                        if (subSectionObject.length() >0){
+                            subSectionObject = subSectionObject.substring(0,1).toUpperCase() + subSectionObject.substring(1).toLowerCase();
+                        }
+                        capitalize(subSectionObject);// ???
+
+                        //show > between section and subsection
+                        StringBuilder subsectionStringBuilder = new StringBuilder();
+                        subsectionStringBuilder.append(sectionObject);
+                        subsectionStringBuilder.append(">");
+                        subsectionStringBuilder.append(subSectionObject);
+                        String sectionArticle = subsectionStringBuilder.toString();
+
+
                         String dateObject = newObject.getString("published_date");
                         JSONArray multimediaArray = newObject.getJSONArray("multimedia");
                         JSONObject mediaObject = multimediaArray.getJSONObject(0);
 
                         articles.add(new Articles(sectionObject,subSectionObject,newObject.getString("title"),dateObject,mediaObject.getString("url")));
-
+                        capitalize(subSectionObject);
                     }
                     topStoryViewModel.setItemByArticle(articles);
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+            }
+
+            private String capitalize(String sectionObject) {
+                if (sectionObject.length() > 0){
+                    sectionObject = sectionObject.substring(0,1).toUpperCase() + sectionObject.substring(1).toLowerCase();
+                }
+                return sectionObject;
+
             }
         }, new Response.ErrorListener() {
             @Override
@@ -117,10 +147,4 @@ public class TopStoriesFragment extends Fragment {
         mQueue.add(request);
     }
 
-    public static String capitalize(String str) {
-        if(str == null || str.isEmpty()) {
-            return str;
-        }
-        return str.substring(0, 1).toUpperCase()+ str.substring(1);
-    }
 }
