@@ -10,20 +10,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_weight="1"
-        >
+        android:layout_weight="1">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/begin_date_editText"/>
 
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/search_begin_date"
             android:clickable="true"
-            android:focusable="false"
+            android:focusable="true"
             android:inputType="date"
             android:layout_marginBottom="10dp"
             android:drawableEnd="@drawable/triangle" />
@@ -32,8 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_weight="1"
-        >
+        android:layout_weight="1">
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,10 +43,11 @@
             android:layout_height="wrap_content"
             android:id="@+id/search_end_date"
             android:clickable="true"
-            android:focusable="false"
+            android:focusable="true"
             android:inputType="date"
             android:layout_marginBottom="10dp"
-            android:drawableEnd="@drawable/triangle" />
+            android:drawableEnd="@drawable/triangle"
+            />
 
     </LinearLayout>
 
