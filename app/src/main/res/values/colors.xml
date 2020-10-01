@@ -14,4 +14,7 @@
     <color name="colorTabLayoutBackground">#00BCD4</color>
 
 
+    //PICKER COLOR
+    <color name="textColorDatePicker">#000000</color>
+
 </resources>
