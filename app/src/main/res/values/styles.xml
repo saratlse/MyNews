@@ -16,7 +16,6 @@
     <style name="Toolbar.TitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textSize">21sp</item>
         <item name="android:textStyle">bold</item>
-
     </style>
 
     <style name="MyTabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
@@ -24,6 +23,31 @@
         <item name="android:textAllCaps">true</item>
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
     </style>
+
+    <style name="MyDatePickerDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorToolbarTop</item>
+        <item name="colorControlActivated">@color/colorToolbarTop</item>
+        <item name="android:selectableItemBackgroundBorderless">@color/colorToolbarTop</item>
+        <item name="colorControlHighlight">#FFEB3B</item>
+        <item name="android:textColor">@color/material_on_background_emphasis_medium</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+    </style>
+
+
+        <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+            <item name="android:textColor">#f000</item>
+
+        </style>
+
+    <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">#f000</item>
+
+    </style>
+        <!-- No need to override 'datePickerStyle' -->
+        <!-- <item name="android:datePickerStyle">@style/MyDatePickerStyle</item> -->
+
+
 
 
 </resources>

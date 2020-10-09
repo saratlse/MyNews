@@ -22,6 +22,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -47,10 +48,11 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
     @BindView(R.id.search_query_term_editText)
     EditText mSearchQueryTerm;
     @BindView(R.id.search_begin_date)
-   EditText mSearchBeginDate;
-   @BindView(R.id.search_end_date)
-   EditText mSearchEndDate;
-    //  @BindView(R.id.checkbox_container) CheckBox mCheckBox;
+    EditText mSearchBeginDate;
+    @BindView(R.id.search_end_date)
+    EditText mSearchEndDate;
+    //@BindView(R.id.checkbox_container)
+  //  CheckBox mCheckBoxContainer;
     @BindView(R.id.search_articles_arts)
     CheckBox mCheckBoxArts;
     @BindView(R.id.search_articles_business)
@@ -61,15 +63,20 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
     Button mButton;
 
 
+    
+    public static final String MyPref = "MyPrefsFile";
+    protected SharedPreferences.Editor mEditor;
+    protected SharedPreferences mSharedPreferences;
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        mSharedPreferences = getSharedPreferences(MyPref, MODE_PRIVATE);
 
         setContentView(R.layout.activity_search_articles);
         ButterKnife.bind(this);
-
 
         DialogFragment datePicker = new DatePickerFragment();
 
@@ -96,7 +103,12 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
                 }
             }
         });
+
+
     }
+        //CheckBox
+
+
 
 
 
@@ -127,6 +139,8 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
             //mEditor.commit();
         }
     }
+
+
 
 
 }

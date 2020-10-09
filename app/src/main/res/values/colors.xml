@@ -16,5 +16,7 @@
 
     //PICKER COLOR
     <color name="textColorDatePicker">#000000</color>
+    <color name="backGroundColorDatePicker">#00BCD4</color>
+    <color name="backgroundColorTopBarDatePicker">#0096A7</color>
 
 </resources>
