@@ -6,7 +6,6 @@
 
     <color name="colorDivider">#ECECEC</color>
 
-
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/colorToolBarBackground</item>
         <item name="colorPrimaryDark">@color/colorToolbarTop</item>
@@ -24,6 +23,7 @@
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
     </style>
 
+    <!-- DATE PICKER THEME -->
     <style name="MyDatePickerDialogTheme" parent="Theme.AppCompat.Light.Dialog">
         <item name="colorAccent">@color/colorToolbarTop</item>
         <item name="colorControlActivated">@color/colorToolbarTop</item>
@@ -34,20 +34,12 @@
         <item name="android:buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
     </style>
 
-
         <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
             <item name="android:textColor">#f000</item>
-
         </style>
 
-    <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+         <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
         <item name="android:textColor">#f000</item>
-
-    </style>
-        <!-- No need to override 'datePickerStyle' -->
-        <!-- <item name="android:datePickerStyle">@style/MyDatePickerStyle</item> -->
-
-
-
+        </style>
 
 </resources>

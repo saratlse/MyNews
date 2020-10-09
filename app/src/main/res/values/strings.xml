@@ -2,7 +2,7 @@
     <string name="app_name">My News</string>
     <string name="Notifications">Notifications</string>
     <string name="Help">Help</string>
-    <string name="Search">Search</string>
+    <string name="Search">Search Articles</string>
 
     <!--TITLE TABS-->
     <string name="Tab_1">TOP STORIES</string>

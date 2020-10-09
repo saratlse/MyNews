@@ -6,6 +6,7 @@ import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.DialogFragment;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
@@ -20,6 +21,7 @@ import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -31,6 +33,7 @@ import android.widget.TimePicker;
 import com.example.mynews.Fragment.DatePickerFragment;
 import com.example.mynews.R;
 import com.example.mynews.View.SearchArticlesViewModel;
+import com.google.android.material.appbar.MaterialToolbar;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -63,23 +66,35 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
     Button mButton;
 
 
-    
+    //Shared preferences variables
     public static final String MyPref = "MyPrefsFile";
-    protected SharedPreferences.Editor mEditor;
-    protected SharedPreferences mSharedPreferences;
+    SharedPreferences.Editor editor;
+
+
+
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mSharedPreferences = getSharedPreferences(MyPref, MODE_PRIVATE);
+        //method getSharedPreferences invoked to get an instance of sharedPreferences
+        SharedPreferences mSharedPreferences = getSharedPreferences(MyPref, MODE_PRIVATE);
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+
 
         setContentView(R.layout.activity_search_articles);
         ButterKnife.bind(this);
 
+       MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.Search);
+
         DialogFragment datePicker = new DatePickerFragment();
 
+
+
+        //recover the begin date with the sharedPref
+        mSearchBeginDate.setText(mSharedPreferences.getString("Begin Date","begin Date"));
         mSearchBeginDate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -93,6 +108,9 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
 
             }
         });
+
+        //recover the end date with the sharedPref
+        mSearchEndDate.setText(mSharedPreferences.getString("End date","end date"));
         mSearchEndDate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -106,9 +124,6 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
 
 
     }
-        //CheckBox
-
-
 
 
 
@@ -129,20 +144,39 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
                 case R.id.search_begin_date:
                     calendar.set(year, month, dayOfMonth);
                     mSearchBeginDate.setText(sdf.format(calendar.getTime()));
-                    // mEditor.putString("beginDate", sdf.format(calendar.getTime()));
+                    //editor.putString("beginDate", sdf.format(calendar.getTime()));
                     break;
                 case R.id.search_end_date:
                     calendar.set(year, month, dayOfMonth);
                     mSearchEndDate.setText(sdf.format(calendar.getTime()));
-                    // mEditor.putString("endDate", sdf.format(calendar.getTime()));
+                    //editor.putString("endDate", sdf.format(calendar.getTime()));
             }
-            //mEditor.commit();
+           // editor.commit();
         }
     }
 
+    public void setmCheckBoxArts(CheckBox mCheckBoxArts) {
+        this.mCheckBoxArts = mCheckBoxArts;
+    }
 
+    public CheckBox getmCheckBoxArts() {
+        return mCheckBoxArts;
+    }
 
+    public CheckBox getmCheckBoxBusiness() {
+        return mCheckBoxBusiness;
+    }
 
+    public CheckBox getmCheckBoxEntrepreneurs() {
+        return mCheckBoxEntrepreneurs;
+    }
+
+    public void onCheckBoxClicked (View view){
+
+        if (mCheckBoxArts.isChecked()){
+
+        }
+    }
 }
 
 

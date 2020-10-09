@@ -14,13 +14,14 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.mynews.PagerAdapter.PagerAdapter;
 import com.example.mynews.R;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    private Toolbar toolbar;
+    private MaterialToolbar toolbar;
 
 
     @Override
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         this.toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        this.toolbar.setTitle(R.string.app_name);
 
 
         ViewPager2 viewPager2 = findViewById(R.id.viewPager);
