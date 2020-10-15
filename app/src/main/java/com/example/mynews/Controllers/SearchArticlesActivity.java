@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -42,7 +43,7 @@ import java.util.Locale;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SearchArticlesActivity extends AppCompatActivity implements DatePickerFragment.OnDateSetListener {
+public class SearchArticlesActivity extends AppCompatActivity implements DatePickerFragment.OnDateSetListener, CompoundButton.OnCheckedChangeListener {
 
     //  Adding @BindView in order to indicate to ButterKnife to get & serialise it
     //@BindView(R.id.menu) Menu mMenu;
@@ -62,6 +63,12 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
     CheckBox mCheckBoxBusiness;
     @BindView(R.id.search_articles_entrepreneurs)
     CheckBox mCheckBoxEntrepreneurs;
+    @BindView(R.id.search_articles_politics)
+    CheckBox mCheckBoxPolitics;
+    @BindView(R.id.search_articles_sports)
+    CheckBox mCheckboxSports;
+    @BindView(R.id.search_articles_travel)
+    CheckBox mCheckBoxTravel;
     @BindView(R.id.search_button)
     Button mButton;
 
@@ -72,21 +79,26 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
 
 
 
-
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         //method getSharedPreferences invoked to get an instance of sharedPreferences
-        SharedPreferences mSharedPreferences = getSharedPreferences(MyPref, MODE_PRIVATE);
-        SharedPreferences.Editor editor = mSharedPreferences.edit();
+       SharedPreferences mSharedPreferences = getSharedPreferences(MyPref, MODE_PRIVATE);
+       SharedPreferences.Editor editor = mSharedPreferences.edit();
+        mCheckBoxArts.setChecked(getFromSharedPref("arts"));
+        mCheckBoxArts.setOnCheckedChangeListener(this);
+        mCheckBoxBusiness.setChecked(getFromSharedPref("business"));
+        mCheckBoxBusiness.setOnCheckedChangeListener(this);
+        mCheckBoxEntrepreneurs.setChecked(getFromSharedPref("entrepreneurs"));
+        mCheckBoxEntrepreneurs.setOnCheckedChangeListener(this);
 
 
         setContentView(R.layout.activity_search_articles);
         ButterKnife.bind(this);
 
-       MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.Search);
 
         DialogFragment datePicker = new DatePickerFragment();
@@ -94,7 +106,7 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
 
 
         //recover the begin date with the sharedPref
-        mSearchBeginDate.setText(mSharedPreferences.getString("Begin Date","begin Date"));
+       // mSearchBeginDate.setText(mSharedPreferences.getString("Begin Date","begin Date"));
         mSearchBeginDate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -110,7 +122,7 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
         });
 
         //recover the end date with the sharedPref
-        mSearchEndDate.setText(mSharedPreferences.getString("End date","end date"));
+       // mSearchEndDate.setText(mSharedPreferences.getString("End date","end date"));
         mSearchEndDate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -122,7 +134,12 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
             }
         });
 
+        mButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
     }
 
 
@@ -155,26 +172,66 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
         }
     }
 
-    public void setmCheckBoxArts(CheckBox mCheckBoxArts) {
-        this.mCheckBoxArts = mCheckBoxArts;
+    private boolean getFromSharedPref(String key){
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("MyPrefsFile", Context.MODE_PRIVATE);
+        return preferences.getBoolean(key,false);
     }
 
-    public CheckBox getmCheckBoxArts() {
-        return mCheckBoxArts;
+    private void saveInSharedPref(String key, boolean value){
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("MyPrefsFile", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean(key, value);
+        editor.commit();
+
     }
 
-    public CheckBox getmCheckBoxBusiness() {
-        return mCheckBoxBusiness;
-    }
-
-    public CheckBox getmCheckBoxEntrepreneurs() {
-        return mCheckBoxEntrepreneurs;
-    }
-
-    public void onCheckBoxClicked (View view){
-
-        if (mCheckBoxArts.isChecked()){
-
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        switch (buttonView.getId()){
+            case R.id.search_articles_arts:
+                if (isChecked){
+                saveInSharedPref("arts",true);
+                }
+                else {
+                    saveInSharedPref("arts",false);
+                }
+                break;
+            case R.id.search_articles_business:
+                if (isChecked){
+                saveInSharedPref("business", true);
+                }
+                else {
+                    saveInSharedPref("business", false);
+                }
+                break;
+            case R.id.search_articles_entrepreneurs:
+                if (isChecked){
+                saveInSharedPref("entrepreneurs",true);
+                } else  {
+                    saveInSharedPref("entrepreneurs", false);
+                }
+                break;
+            case R.id.search_articles_politics:
+                if (isChecked){
+                    saveInSharedPref("politics",true);
+                } else {
+                    saveInSharedPref("politics", false);
+                }
+                break;
+            case R.id.search_articles_sports:
+                if (isChecked){
+                    saveInSharedPref("sports",true);
+                } else {
+                    saveInSharedPref("sports", false);
+                }
+                break;
+            case R.id.search_articles_travel:
+                if (isChecked){
+                    saveInSharedPref("travel",true);
+                } else {
+                    saveInSharedPref("travel",false);
+                }
+                break;
         }
     }
 }

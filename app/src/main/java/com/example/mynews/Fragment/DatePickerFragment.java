@@ -85,7 +85,9 @@ public  class DatePickerFragment extends DialogFragment
 
        if (onDateSetListener!= null) {
            onDateSetListener.onDateSet(view, year, month, dayOfMonth);
+
+       }
     }
-    }
+
 }
 

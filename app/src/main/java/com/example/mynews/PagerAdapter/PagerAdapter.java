@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.mynews.Fragment.MostPopularFragment;
-import com.example.mynews.Fragment.MovieFragment;
+import com.example.mynews.Fragment.SearchArticlesFragment;
 import com.example.mynews.Fragment.TopStoriesFragment;
 
 public class PagerAdapter extends FragmentStateAdapter {
@@ -28,7 +28,7 @@ public class PagerAdapter extends FragmentStateAdapter {
             case 1: //page2
                 return new MostPopularFragment();
            default://page3
-                return new MovieFragment();
+                return new SearchArticlesFragment();
         }
 
     }

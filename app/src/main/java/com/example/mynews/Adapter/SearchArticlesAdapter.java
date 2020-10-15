@@ -17,20 +17,20 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 
-public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
+public class SearchArticlesAdapter extends RecyclerView.Adapter<SearchArticlesAdapter.MovieViewHolder> {
 
     List<Articles> articlesList;
 
 
     // data is passed into the constructor
-    public MovieAdapter(Context context, List<Articles> listArticles){
+    public SearchArticlesAdapter(Context context, List<Articles> listArticles){
         this.articlesList = listArticles;
     }
 
     //inflate the card_item layout from xml
     @NonNull
     @Override
-    public MovieAdapter.MovieViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
+    public SearchArticlesAdapter.MovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_item, parent, false);
         return new MovieViewHolder(view);
     }

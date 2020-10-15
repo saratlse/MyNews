@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel;
 
 import java.util.List;
 
-public class MovieViewModel extends ViewModel {
+public class SearchResultViewModel extends ViewModel {
 
     private final MutableLiveData<List<Articles>> mItemByArticle = new MutableLiveData<>();
     private final LiveData<List<Articles>> mList = Transformations.map(this.mItemByArticle, new Function<List<Articles>, List<Articles>>() {

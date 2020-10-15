@@ -9,7 +9,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Controllers.SearchArticlesActivity"></activity>
+        <activity android:name=".Controllers.ResultActivity"></activity>
+        <activity android:name=".Controllers.SearchArticlesActivity" />
         <activity
             android:name=".Controllers.MainActivity"
             android:label="My News"
