@@ -9,6 +9,7 @@ import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
 import androidx.appcompat.widget.Toolbar;
 import butterknife.Unbinder;
+import butterknife.internal.DebouncingOnClickListener;
 import butterknife.internal.Utils;
 import com.example.mynews.R;
 import java.lang.IllegalStateException;
@@ -17,15 +18,18 @@ import java.lang.Override;
 public class SearchArticlesActivity_ViewBinding implements Unbinder {
   private SearchArticlesActivity target;
 
+  private View view7f080140;
+
   @UiThread
   public SearchArticlesActivity_ViewBinding(SearchArticlesActivity target) {
     this(target, target.getWindow().getDecorView());
   }
 
   @UiThread
-  public SearchArticlesActivity_ViewBinding(SearchArticlesActivity target, View source) {
+  public SearchArticlesActivity_ViewBinding(final SearchArticlesActivity target, View source) {
     this.target = target;
 
+    View view;
     target.mToolbar = Utils.findRequiredViewAsType(source, R.id.toolbar, "field 'mToolbar'", Toolbar.class);
     target.mSearchQueryTerm = Utils.findRequiredViewAsType(source, R.id.search_query_term_editText, "field 'mSearchQueryTerm'", EditText.class);
     target.mSearchBeginDate = Utils.findRequiredViewAsType(source, R.id.search_begin_date, "field 'mSearchBeginDate'", EditText.class);
@@ -36,7 +40,15 @@ public class SearchArticlesActivity_ViewBinding implements Unbinder {
     target.mCheckBoxPolitics = Utils.findRequiredViewAsType(source, R.id.search_articles_politics, "field 'mCheckBoxPolitics'", CheckBox.class);
     target.mCheckboxSports = Utils.findRequiredViewAsType(source, R.id.search_articles_sports, "field 'mCheckboxSports'", CheckBox.class);
     target.mCheckBoxTravel = Utils.findRequiredViewAsType(source, R.id.search_articles_travel, "field 'mCheckBoxTravel'", CheckBox.class);
-    target.mButton = Utils.findRequiredViewAsType(source, R.id.search_button, "field 'mButton'", Button.class);
+    view = Utils.findRequiredView(source, R.id.search_button, "field 'mButton' and method 'onViewClicked'");
+    target.mButton = Utils.castView(view, R.id.search_button, "field 'mButton'", Button.class);
+    view7f080140 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.onViewClicked();
+      }
+    });
   }
 
   @Override
@@ -57,5 +69,8 @@ public class SearchArticlesActivity_ViewBinding implements Unbinder {
     target.mCheckboxSports = null;
     target.mCheckBoxTravel = null;
     target.mButton = null;
+
+    view7f080140.setOnClickListener(null);
+    view7f080140 = null;
   }
 }

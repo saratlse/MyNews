@@ -1,9 +1,11 @@
 package com.example.mynews.Controllers;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.ViewPropertyAnimatorListenerAdapter;
 import androidx.fragment.app.DialogFragment;
 
 import android.app.Activity;
@@ -17,6 +19,7 @@ import android.content.SharedPreferences;
 import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.InputType;
 import android.text.format.DateFormat;
 import android.view.Menu;
@@ -38,15 +41,21 @@ import com.google.android.material.appbar.MaterialToolbar;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+import static android.view.View.GONE;
 
 public class SearchArticlesActivity extends AppCompatActivity implements DatePickerFragment.OnDateSetListener, CompoundButton.OnCheckedChangeListener {
 
     //  Adding @BindView in order to indicate to ButterKnife to get & serialise it
-    //@BindView(R.id.menu) Menu mMenu;
+    // @BindView(R.id.menu)
+    //Menu mMenu;
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
     @BindView(R.id.search_query_term_editText)
@@ -55,8 +64,8 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
     EditText mSearchBeginDate;
     @BindView(R.id.search_end_date)
     EditText mSearchEndDate;
-    //@BindView(R.id.checkbox_container)
-  //  CheckBox mCheckBoxContainer;
+    // @BindView(R.id.checkbox_container)
+    // CheckBox mCheckBoxContainer;
     @BindView(R.id.search_articles_arts)
     CheckBox mCheckBoxArts;
     @BindView(R.id.search_articles_business)
@@ -75,28 +84,47 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
 
     //Shared preferences variables
     public static final String MyPref = "MyPrefsFile";
+    private SharedPreferences mSharedPreferences;
     SharedPreferences.Editor editor;
 
 
+    private List<String> categoriesCBSelected = new ArrayList<>();
+    final String[] beginDate = new String[1];
+    final String[] theEndDate = new String[1];
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setContentView(R.layout.activity_search_articles);
+        ButterKnife.bind(this);
+        setActionBar(mToolbar);
+
         //method getSharedPreferences invoked to get an instance of sharedPreferences
-       SharedPreferences mSharedPreferences = getSharedPreferences(MyPref, MODE_PRIVATE);
-       SharedPreferences.Editor editor = mSharedPreferences.edit();
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mSharedPreferences = getSharedPreferences(MyPref, MODE_PRIVATE);
+        editor = mSharedPreferences.edit();
+
         mCheckBoxArts.setChecked(getFromSharedPref("arts"));
         mCheckBoxArts.setOnCheckedChangeListener(this);
+
         mCheckBoxBusiness.setChecked(getFromSharedPref("business"));
         mCheckBoxBusiness.setOnCheckedChangeListener(this);
+
         mCheckBoxEntrepreneurs.setChecked(getFromSharedPref("entrepreneurs"));
         mCheckBoxEntrepreneurs.setOnCheckedChangeListener(this);
 
+        mCheckBoxPolitics.setChecked(getFromSharedPref("politics"));
+        mCheckBoxPolitics.setOnCheckedChangeListener(this);
 
-        setContentView(R.layout.activity_search_articles);
-        ButterKnife.bind(this);
+        mCheckboxSports.setChecked(getFromSharedPref("sports"));
+        mCheckboxSports.setOnCheckedChangeListener(this);
+
+        mCheckBoxTravel.setChecked(getFromSharedPref("travel"));
+        mCheckBoxTravel.setOnCheckedChangeListener(this);
+
+
 
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.Search);
@@ -104,25 +132,30 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
         DialogFragment datePicker = new DatePickerFragment();
 
 
-
-        //recover the begin date with the sharedPref
-       // mSearchBeginDate.setText(mSharedPreferences.getString("Begin Date","begin Date"));
-        mSearchBeginDate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                //This method calls show() on a new instance of the DialogFragment defined above.
-                // The show() method requires an instance of FragmentManager and a unique tag name for the fragment.
-                if (hasFocus) {
-                    datePicker.show(getSupportFragmentManager(), "beginDatePicker");
-                } else {
-                    datePicker.dismiss();
-                }
-
+        //Search edit text
+        mSearchQueryTerm.setText(mSharedPreferences.getString("searchQuery",""));
+        mSearchQueryTerm.setOnFocusChangeListener((view, b) -> {
+            if (!b) {
+                hideKeyboard(view);
             }
         });
 
+
+        //recover the begin date with the sharedPref
+        mSearchBeginDate.setText(mSharedPreferences.getString("beginDate","begin Date"));
+        mSearchBeginDate.setOnFocusChangeListener((v, hasFocus) -> {
+            //This method calls show() on a new instance of the DialogFragment defined above.
+            // The show() method requires an instance of FragmentManager and a unique tag name for the fragment.
+            if (hasFocus) {
+                datePicker.show(getSupportFragmentManager(), "beginDatePicker");
+            } else {
+                datePicker.dismiss();
+            }
+
+        });
+
         //recover the end date with the sharedPref
-       // mSearchEndDate.setText(mSharedPreferences.getString("End date","end date"));
+        mSearchEndDate.setText(mSharedPreferences.getString("endDate","end date"));
         mSearchEndDate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -134,15 +167,17 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
             }
         });
 
-        mButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        mButton.setOnClickListener(v -> {
 
-            }
         });
     }
 
-
+    private void setActionBar(Toolbar toolbar) {
+        setSupportActionBar(toolbar);
+         Objects.requireNonNull(getSupportActionBar()).setTitle(null);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -151,7 +186,7 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
         // display the date chosen by the user
         Locale locale = getResources().getConfiguration().locale;
         final Calendar calendar = Calendar.getInstance(locale);
-       // final DateFormat dateFormat = DateFormat.getDateFormat(DateFormat.MEDIUM, locale);
+        // final DateFormat dateFormat = DateFormat.getDateFormat(DateFormat.MEDIUM, locale);
         final String myFormat = "dd/MM/yy";
         final SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
@@ -161,23 +196,23 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
                 case R.id.search_begin_date:
                     calendar.set(year, month, dayOfMonth);
                     mSearchBeginDate.setText(sdf.format(calendar.getTime()));
-                    //editor.putString("beginDate", sdf.format(calendar.getTime()));
+                    editor.putString("beginDate", sdf.format(calendar.getTime()));
                     break;
                 case R.id.search_end_date:
                     calendar.set(year, month, dayOfMonth);
                     mSearchEndDate.setText(sdf.format(calendar.getTime()));
-                    //editor.putString("endDate", sdf.format(calendar.getTime()));
+                    editor.putString("endDate", sdf.format(calendar.getTime()));
             }
-           // editor.commit();
+            editor.commit();
         }
     }
 
-    private boolean getFromSharedPref(String key){
+    private boolean getFromSharedPref(String key) {
         SharedPreferences preferences = getApplicationContext().getSharedPreferences("MyPrefsFile", Context.MODE_PRIVATE);
-        return preferences.getBoolean(key,false);
+        return preferences.getBoolean(key, false);
     }
 
-    private void saveInSharedPref(String key, boolean value){
+    private void saveInSharedPref(String key, boolean value) {
         SharedPreferences preferences = getApplicationContext().getSharedPreferences("MyPrefsFile", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putBoolean(key, value);
@@ -185,56 +220,162 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
 
     }
 
+
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        switch (buttonView.getId()){
+        switch (buttonView.getId()) {
             case R.id.search_articles_arts:
-                if (isChecked){
-                saveInSharedPref("arts",true);
-                }
-                else {
-                    saveInSharedPref("arts",false);
+                if (isChecked) {
+                    saveInSharedPref("arts", true);
+                } else {
+                    saveInSharedPref("arts", false);
                 }
                 break;
             case R.id.search_articles_business:
-                if (isChecked){
-                saveInSharedPref("business", true);
-                }
-                else {
+                if (isChecked) {
+                    saveInSharedPref("business", true);
+                } else {
                     saveInSharedPref("business", false);
                 }
                 break;
             case R.id.search_articles_entrepreneurs:
-                if (isChecked){
-                saveInSharedPref("entrepreneurs",true);
-                } else  {
+                if (isChecked) {
+                    saveInSharedPref("entrepreneurs", true);
+                } else {
                     saveInSharedPref("entrepreneurs", false);
                 }
                 break;
             case R.id.search_articles_politics:
-                if (isChecked){
-                    saveInSharedPref("politics",true);
+                if (isChecked) {
+                    saveInSharedPref("politics", true);
                 } else {
                     saveInSharedPref("politics", false);
                 }
                 break;
             case R.id.search_articles_sports:
-                if (isChecked){
-                    saveInSharedPref("sports",true);
+                if (isChecked) {
+                    saveInSharedPref("sports", true);
                 } else {
                     saveInSharedPref("sports", false);
                 }
                 break;
             case R.id.search_articles_travel:
-                if (isChecked){
-                    saveInSharedPref("travel",true);
+                if (isChecked) {
+                    saveInSharedPref("travel", true);
                 } else {
-                    saveInSharedPref("travel",false);
+                    saveInSharedPref("travel", false);
                 }
                 break;
         }
+        // --------------------------------
+        // Hide Key board Methods
+        // -------------------------------
+
     }
+
+    private void hideKeyboard(View rootView) {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        Objects.requireNonNull(inputMethodManager).hideSoftInputFromWindow(rootView.getWindowToken(), 0);
+    }
+
+    public void onCheckboxClicked(View view) {
+        // Is the view now checked?
+        boolean checked = ((CheckBox) view).isChecked();
+
+        // Check which checkbox was clicked
+        switch (view.getId()) {
+            case R.id.search_articles_arts:
+                if (checked) {
+                    editor.putBoolean("arts", false);
+                } else
+                    mCheckBoxArts = findViewById(R.id.search_articles_arts);
+                mCheckBoxArts.setChecked(true);
+                categoriesCBSelected.add("arts");
+                break;
+            case R.id.search_articles_business:
+                if (checked) {
+                    // Cheese me
+                } else
+                    // I'm lactose intolerant
+                    break;
+
+        }
+    }
+    @OnClick(R.id.search_button)
+    public void onViewClicked() {
+
+        String searchQuery = mSearchQueryTerm.getText().toString();
+
+        if (mCheckBoxArts.isChecked()) {
+            categoriesCBSelected.add("arts");
+        }
+        if (mCheckBoxPolitics.isChecked()) {
+            categoriesCBSelected.add("politics");
+        }
+        if (mCheckBoxBusiness.isChecked()) {
+            categoriesCBSelected.add("business");
+        }
+        if (mCheckboxSports.isChecked()) {
+            categoriesCBSelected.add("sports");
+        }
+        if (mCheckBoxEntrepreneurs.isChecked()) {
+            categoriesCBSelected.add("entrepreneurs");
+        }
+        if (mCheckBoxEntrepreneurs.isChecked()) {
+            categoriesCBSelected.add("travel");
+        }
+        String theBeginDateString = beginDate[0];
+        String theEndDateString = theEndDate[0];
+
+
+        Intent myIntent = new Intent(String.valueOf(SearchArticlesActivity.this));
+        myIntent.putExtra("searchQuery", searchQuery);
+        myIntent.putExtra("categoriesSelected", (ArrayList) categoriesCBSelected);
+        myIntent.putExtra("theBeginDateString", theBeginDateString);
+        myIntent.putExtra("theEndDateString", theEndDateString);
+        //SearchArticlesActivity,this.startActivity(myIntent);
+
+        categoriesCBSelected.clear();
+    }
+
+
+
+    // ---------------------------------
+    // Display/Hide UI elements methods
+    // ---------------------------------
+
+
+    // Hides Search elements
+    private void displayNotificationsInterfaceElements() {
+        hideSearchBeginDateLabel();
+        hideSearchBeginDatePicker();
+        hideSearchEndDateLabel();
+        hideSearchEndDatePicker();
+    }
+
+    // Hides Text label: "Begin date"
+    private void hideSearchBeginDateLabel() {
+        mSearchBeginDate = findViewById(R.id.search_begin_date);
+        mSearchBeginDate.setVisibility(GONE);
+    }
+
+    // Hides TextView: "Begin date"
+    private void hideSearchBeginDatePicker() {
+        mSearchBeginDate= findViewById(R.id.search_begin_date);
+        mSearchBeginDate.setVisibility(GONE);
+    }
+
+    // Hides Text label: "End date"
+    private void hideSearchEndDateLabel() {
+        mSearchEndDate= findViewById(R.id.search_end_date);
+        mSearchEndDate.setVisibility(GONE);
+    }
+
+    // Hides TextView: "End date"
+    private void hideSearchEndDatePicker() {
+       mSearchEndDate = findViewById(R.id.search_end_date);
+        mSearchEndDate.setVisibility(GONE);
+    }
+
 }
-
-
 

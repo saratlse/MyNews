@@ -46,6 +46,7 @@ public class SearchArticlesFragment extends Fragment {
 
     private SearchArticlesAdapter searchArticlesAdapter;
     private SearchArticlesViewModel searchArticlesViewModel;
+
     // SharedPreferences variable
     private static final String MyPref = "MyPrefsFile";
     private SharedPreferences.Editor mEditor;
@@ -74,7 +75,7 @@ public class SearchArticlesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_search_articles, container, false);
-        RecyclerView recyclerView = root.findViewById(R.id.top_stories_recyclerView);
+        RecyclerView recyclerView = root.findViewById(R.id.movie_recyclerView);
 
         //LiveData Observer
         searchArticlesViewModel.getList().observe(getViewLifecycleOwner(), new Observer<List<Articles>>() {
@@ -137,6 +138,7 @@ public class SearchArticlesFragment extends Fragment {
                 }
             }
 
+
             private String capitalize(String sectionObject) {
                 if (sectionObject.length() > 0){
                     sectionObject = sectionObject.substring(0,1).toUpperCase() + sectionObject.substring(1).toLowerCase();
@@ -154,5 +156,50 @@ public class SearchArticlesFragment extends Fragment {
         mQueue.start();
         mQueue.add(request);
     }
+
+    /**
+     * @return
+     */
+    //Simple method to retrieve if a checkBox is checked in the searchActivity
+    private boolean isArtChecked() {
+        return mSharedPreferences.getBoolean("arts", true);
+    }
+
+    private boolean isPoliticsIsChecked(){
+        return mSharedPreferences.getBoolean("politics", true);
+    }
+
+    private boolean businessIsChecked(){
+        return mSharedPreferences.getBoolean("business", false);
+    }
+
+    private boolean sportsIsChecked(){
+        return mSharedPreferences.getBoolean("sports", false);
+    }
+
+    private boolean entrepreneursIsChecked(){
+        return mSharedPreferences.getBoolean("entrepreneurs", false);
+    }
+
+    private boolean travelsIsChecked(){
+        return mSharedPreferences.getBoolean("travels", false);
+    }
+    // end of the method
+
+    //method to retrieve the search query from the SearchActivity
+    private String searchQueryValue(){
+        return mSharedPreferences.getString("searchQuery","");
+    }
+
+    //method to retrieve the start date from the searchActivity
+    private String startDateValue(){
+        return mSharedPreferences.getString("beginDate", "");
+    }
+
+    //method to retrieve the end date from the searchActivity
+    private String endDateValue(){
+        return mSharedPreferences.getString("endDate", "");
+    }
+
 
 }

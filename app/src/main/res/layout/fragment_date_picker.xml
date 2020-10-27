@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".Fragment.DatePickerFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <DatePicker
         android:id="@+id/dialog_date_picker"
         android:layout_width="wrap_content"
