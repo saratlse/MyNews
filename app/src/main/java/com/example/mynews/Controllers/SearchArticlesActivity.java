@@ -22,9 +22,11 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.InputType;
 import android.text.format.DateFormat;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -54,8 +56,7 @@ import static android.view.View.GONE;
 public class SearchArticlesActivity extends AppCompatActivity implements DatePickerFragment.OnDateSetListener, CompoundButton.OnCheckedChangeListener {
 
     //  Adding @BindView in order to indicate to ButterKnife to get & serialise it
-    // @BindView(R.id.menu)
-    //Menu mMenu;
+
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
     @BindView(R.id.search_query_term_editText)
@@ -64,8 +65,6 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
     EditText mSearchBeginDate;
     @BindView(R.id.search_end_date)
     EditText mSearchEndDate;
-    // @BindView(R.id.checkbox_container)
-    // CheckBox mCheckBoxContainer;
     @BindView(R.id.search_articles_arts)
     CheckBox mCheckBoxArts;
     @BindView(R.id.search_articles_business)
@@ -129,15 +128,24 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.Search);
 
+
         DialogFragment datePicker = new DatePickerFragment();
 
 
         //Search edit text
         mSearchQueryTerm.setText(mSharedPreferences.getString("searchQuery",""));
+        mSearchQueryTerm.setOnEditorActionListener((v, actionId, event) -> {
+            boolean handled = false;
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                mSearchQueryTerm.setText(mSearchQueryTerm.getText().toString());
+                editor.putString("searchQuery",mSearchQueryTerm.getText().toString()).apply();
+                handled = true;
+            }hideKeyboard(v);
+            return handled;
+
+        });
         mSearchQueryTerm.setOnFocusChangeListener((view, b) -> {
-            if (!b) {
-                hideKeyboard(view);
-            }
+
         });
 
 
@@ -174,12 +182,14 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
 
     private void setActionBar(Toolbar toolbar) {
         setSupportActionBar(toolbar);
-         Objects.requireNonNull(getSupportActionBar()).setTitle(null);
+        Objects.requireNonNull(getSupportActionBar()).setTitle(null);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-
+    // --------------------------------
+    // DATE PICKER AND FORMAT TIME
+    // -------------------------------
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -328,12 +338,13 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
         String theEndDateString = theEndDate[0];
 
 
-        Intent myIntent = new Intent(String.valueOf(SearchArticlesActivity.this));
+        Intent myIntent = new Intent();
+
         myIntent.putExtra("searchQuery", searchQuery);
         myIntent.putExtra("categoriesSelected", (ArrayList) categoriesCBSelected);
         myIntent.putExtra("theBeginDateString", theBeginDateString);
         myIntent.putExtra("theEndDateString", theEndDateString);
-        //SearchArticlesActivity,this.startActivity(myIntent);
+        editor.commit();
 
         categoriesCBSelected.clear();
     }
