@@ -96,9 +96,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent searchIntent = new Intent(this, SearchArticlesActivity.class);
                 startActivity(searchIntent);
                 break;
-
             default:
-                return super.onOptionsItemSelected(item);
+              return super.onOptionsItemSelected(item);
 
         }
         return super.onOptionsItemSelected(item);

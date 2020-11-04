@@ -2,6 +2,7 @@ package com.example.mynews.Controllers;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
@@ -20,7 +21,9 @@ import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.text.Editable;
 import android.text.InputType;
+import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -142,10 +145,22 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
                 handled = true;
             }hideKeyboard(v);
             return handled;
-
         });
-        mSearchQueryTerm.setOnFocusChangeListener((view, b) -> {
+        mSearchQueryTerm.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                editor.putString("searchQuery",mSearchQueryTerm.getText().toString()).apply();
+            }
         });
 
 
@@ -182,6 +197,11 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
 
     private void setActionBar(Toolbar toolbar) {
         setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        //Enable the Up button
+        assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setTitle("Search Articles");
         Objects.requireNonNull(getSupportActionBar()).setTitle(null);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -334,17 +354,11 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
         if (mCheckBoxEntrepreneurs.isChecked()) {
             categoriesCBSelected.add("travel");
         }
-        String theBeginDateString = beginDate[0];
-        String theEndDateString = theEndDate[0];
-
 
         Intent myIntent = new Intent();
-
-        myIntent.putExtra("searchQuery", searchQuery);
-        myIntent.putExtra("categoriesSelected", (ArrayList) categoriesCBSelected);
-        myIntent.putExtra("theBeginDateString", theBeginDateString);
-        myIntent.putExtra("theEndDateString", theEndDateString);
+        myIntent.putExtra("SearchTitle",true);
         editor.commit();
+        finish();
 
         categoriesCBSelected.clear();
     }
