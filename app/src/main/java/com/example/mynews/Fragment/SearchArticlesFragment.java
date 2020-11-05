@@ -40,7 +40,7 @@ import static android.content.Context.MODE_PRIVATE;
  */
 public class SearchArticlesFragment extends Fragment {
 
-    private static final String JSON_URL = "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=lvzzkPeHJEIDxfpTaqSb3Azu9LDnO4Fv";
+    private static final String JSON_URL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=lvzzkPeHJEIDxfpTaqSb3Azu9LDnO4Fv";
     private RequestQueue mQueue;
     private ArrayList<Articles> articles;
 
@@ -75,7 +75,7 @@ public class SearchArticlesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_search_articles, container, false);
-        RecyclerView recyclerView = root.findViewById(R.id.movie_recyclerView);
+        RecyclerView recyclerView = root.findViewById(R.id.search_recyclerView);
 
         //LiveData Observer
         searchArticlesViewModel.getList().observe(getViewLifecycleOwner(), new Observer<List<Articles>>() {

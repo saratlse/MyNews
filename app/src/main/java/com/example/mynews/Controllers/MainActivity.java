@@ -1,6 +1,8 @@
 package com.example.mynews.Controllers;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -8,12 +10,15 @@ import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.Observer;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.mynews.PagerAdapter.PagerAdapter;
 import com.example.mynews.R;
+import com.example.mynews.View.SearchArticlesViewModel;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -22,6 +27,8 @@ import com.google.android.material.tabs.TabLayoutMediator;
 public class MainActivity extends AppCompatActivity {
 
     private MaterialToolbar toolbar;
+    private SharedPreferences getFromSharedPreferences;
+    private SearchArticlesViewModel searchArticlesViewModel;
 
 
     @Override
@@ -38,6 +45,22 @@ public class MainActivity extends AppCompatActivity {
 
         ViewPager2 viewPager2 = findViewById(R.id.viewPager);
         viewPager2.setAdapter(new PagerAdapter(this));
+
+        StringBuilder searchStringBuilder = new StringBuilder();
+        if (getFromSharedPreferences("arts")){
+            searchStringBuilder.append("Arts,");
+        }
+        if (getFromSharedPreferences("travel")){
+            searchStringBuilder.append("Travel,");
+        }
+        if (getFromSharedPreferences("business")){
+            searchStringBuilder.append("Business,");
+        }
+
+           searchStringBuilder.replace(searchStringBuilder.length()-1,searchStringBuilder.length(),"");
+        searchArticlesViewModel= new SearchArticlesViewModel();
+
+
 
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(
@@ -56,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     }
                     case 2: {
-                        tab.setText("BUSINESS");
+                        tab.setText(searchStringBuilder.toString());
                         break;
                     }
                 }
@@ -65,14 +88,28 @@ public class MainActivity extends AppCompatActivity {
         );
         tabLayoutMediator.attach();
 
+
+        searchArticlesViewModel.getTabTitle().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String title) {
+                TabLayout.Tab tab = tabLayout.getTabAt(3);
+            //TabLayout.Tab tab = tab.getTabAt(3);
+            tab.setText(title);
+            viewPager2.getAdapter().notifyDataSetChanged();
+            }
+        });
+    }
+
+    private boolean getFromSharedPreferences(String arts) {
+        return true;
     }
 
 
     public boolean onCreateOptionsMenu(final Menu menu) {
         this.getMenuInflater().inflate(R.menu.menu, menu);
         MenuItem item = menu.findItem(R.id.search);
-       SearchView searchView =(SearchView)item.getActionView();
-      searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        SearchView searchView =(SearchView)item.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 return false;
@@ -94,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.search:
                 Intent searchIntent = new Intent(this, SearchArticlesActivity.class);
-                startActivity(searchIntent);
+                this.onActivityResult(0000,3,searchIntent);
                 break;
             default:
               return super.onOptionsItemSelected(item);
@@ -103,6 +140,17 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode){
+            case 0000:
+                if (resultCode == Activity.RESULT_OK){
+                this.searchArticlesViewModel.setTabTitle(data.getStringExtra("SearchTitle"));
+                }
+                break;
+        }
+    }
 }
 
 

@@ -103,6 +103,7 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
         ButterKnife.bind(this);
         setActionBar(mToolbar);
 
+
         //method getSharedPreferences invoked to get an instance of sharedPreferences
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mSharedPreferences = getSharedPreferences(MyPref, MODE_PRIVATE);
@@ -135,17 +136,18 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
         DialogFragment datePicker = new DatePickerFragment();
 
 
+
         //Search edit text
         mSearchQueryTerm.setText(mSharedPreferences.getString("searchQuery",""));
-        mSearchQueryTerm.setOnEditorActionListener((v, actionId, event) -> {
-            boolean handled = false;
-            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                mSearchQueryTerm.setText(mSearchQueryTerm.getText().toString());
-                editor.putString("searchQuery",mSearchQueryTerm.getText().toString()).apply();
-                handled = true;
-            }hideKeyboard(v);
-            return handled;
-        });
+        //mSearchQueryTerm.setOnEditorActionListener((v, actionId, event) -> {
+           // boolean handled = false;
+           // if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+              //  mSearchQueryTerm.setText(mSearchQueryTerm.getText().toString());
+               // editor.putString("searchQuery",mSearchQueryTerm.getText().toString()).apply();
+           //     handled = true;
+          //  }hideKeyboard(v);
+           // return handled;
+       // });
         mSearchQueryTerm.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -194,8 +196,17 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
 
         });
     }
+    private void configureToolbar() {
+        //Set the toolbar
+        setSupportActionBar(mToolbar);
+        //Get a support Action Bar corresponding to this Toolbar
+        ActionBar actionBar = getSupportActionBar();
+        //Enable the Up button
+        assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setTitle("Search Articles");}
 
-    private void setActionBar(Toolbar toolbar) {
+        private void setActionBar(Toolbar toolbar) {
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         //Enable the Up button

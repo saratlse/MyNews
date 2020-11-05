@@ -17,7 +17,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 
-public class SearchArticlesAdapter extends RecyclerView.Adapter<SearchArticlesAdapter.MovieViewHolder> {
+public class SearchArticlesAdapter extends RecyclerView.Adapter<SearchArticlesAdapter.SearchResultViewHolder> {
 
     List<Articles> articlesList;
 
@@ -30,13 +30,13 @@ public class SearchArticlesAdapter extends RecyclerView.Adapter<SearchArticlesAd
     //inflate the card_item layout from xml
     @NonNull
     @Override
-    public SearchArticlesAdapter.MovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public SearchArticlesAdapter.SearchResultViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_item, parent, false);
-        return new MovieViewHolder(view);
+        return new SearchResultViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder( MovieViewHolder holder, int position) {
+    public void onBindViewHolder( SearchResultViewHolder holder, int position) {
 
         Articles articles = articlesList.get(position);
 
@@ -56,13 +56,13 @@ public class SearchArticlesAdapter extends RecyclerView.Adapter<SearchArticlesAd
         return articlesList.size();
     }
 
-    public class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class SearchResultViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
 
         private ImageView articleImage;
         private TextView articleDescription, articleCategory, articleDate;
 
-        public MovieViewHolder(@NonNull View itemView) {
+        public SearchResultViewHolder(@NonNull View itemView) {
             super(itemView);
 
             articleDescription = itemView.findViewById(R.id.articleCategory);
