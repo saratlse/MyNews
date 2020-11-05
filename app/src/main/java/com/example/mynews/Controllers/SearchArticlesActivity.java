@@ -101,7 +101,7 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
 
         setContentView(R.layout.activity_search_articles);
         ButterKnife.bind(this);
-        setActionBar(mToolbar);
+        //setActionBar(mToolbar);
 
 
         //method getSharedPreferences invoked to get an instance of sharedPreferences
@@ -134,6 +134,7 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
 
 
         DialogFragment datePicker = new DatePickerFragment();
+
 
 
 
@@ -196,7 +197,7 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
 
         });
     }
-    private void configureToolbar() {
+   /* private void configureToolbar() {
         //Set the toolbar
         setSupportActionBar(mToolbar);
         //Get a support Action Bar corresponding to this Toolbar
@@ -216,7 +217,7 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
         Objects.requireNonNull(getSupportActionBar()).setTitle(null);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
+    }*/
 
     // --------------------------------
     // DATE PICKER AND FORMAT TIME

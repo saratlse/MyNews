@@ -12,7 +12,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -27,7 +26,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 public class MainActivity extends AppCompatActivity {
 
     private MaterialToolbar toolbar;
-    private SharedPreferences getFromSharedPreferences;
+
     private SearchArticlesViewModel searchArticlesViewModel;
 
 
@@ -88,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
         );
         tabLayoutMediator.attach();
 
-
         searchArticlesViewModel.getTabTitle().observe(this, new Observer<String>() {
             @Override
             public void onChanged(String title) {
@@ -131,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.search:
                 Intent searchIntent = new Intent(this, SearchArticlesActivity.class);
-                this.onActivityResult(0000,3,searchIntent);
+                startActivity(searchIntent);
                 break;
             default:
               return super.onOptionsItemSelected(item);

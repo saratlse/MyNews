@@ -69,7 +69,6 @@ public  class DatePickerFragment extends DialogFragment
 
        DatePickerDialog  datePickerDialog = new DatePickerDialog(getActivity(),R.style.MyDatePickerDialogTheme, this, year,month,day);
 
-       //DatePickerDialog  datePickerDialog = new DatePickerDialog(getActivity(),AlertDialog.THEME_DEVICE_DEFAULT_DARK,this,year,month,day);
 
         // Create a new instance of DatePickerDialog and return it
         return datePickerDialog;

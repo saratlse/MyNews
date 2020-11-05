@@ -68,6 +68,7 @@ public class SearchArticlesFragment extends Fragment {
         mSharedPreferences = getActivity().getSharedPreferences(MyPref, MODE_PRIVATE);
         mEditor = mSharedPreferences.edit();
 
+
     }
 
     @Override
@@ -88,6 +89,7 @@ public class SearchArticlesFragment extends Fragment {
         });
         return root;
     }
+
 
     private void requestApi() {
         mQueue = Volley.newRequestQueue(getContext());
@@ -156,6 +158,7 @@ public class SearchArticlesFragment extends Fragment {
         mQueue.start();
         mQueue.add(request);
     }
+
 
     /**
      * @return
