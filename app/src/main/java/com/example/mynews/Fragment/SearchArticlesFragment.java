@@ -63,7 +63,10 @@ public class SearchArticlesFragment extends Fragment {
         articles = new ArrayList<>();
 
         searchArticlesViewModel = new SearchArticlesViewModel();
-        requestApi();
+        StringBuilder searchQueryAPIURL = new StringBuilder();
+        searchQueryAPIURL.append(JSON_URL);
+        searchQueryAPIURL.append(mSharedPreferences.getString("searchQuery","url"));
+        requestApi(searchQueryAPIURL.toString());
 
         mSharedPreferences = getActivity().getSharedPreferences(MyPref, MODE_PRIVATE);
         mEditor = mSharedPreferences.edit();
@@ -91,9 +94,9 @@ public class SearchArticlesFragment extends Fragment {
     }
 
 
-    private void requestApi() {
+    private void requestApi(String url) {
         mQueue = Volley.newRequestQueue(getContext());
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, SearchArticlesFragment.JSON_URL, null, new Response.Listener<JSONObject>() {
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
 
             @Override
             public void onResponse(JSONObject response) {
@@ -108,7 +111,7 @@ public class SearchArticlesFragment extends Fragment {
                         if (sectionObject.length() >0){
                             sectionObject = sectionObject.substring(0,1).toUpperCase() + sectionObject.substring(1).toLowerCase();
                         }
-                        capitalize(sectionObject);// ???
+                        capitalize(sectionObject);
 
 
                         String subSectionObject = newObject.getString("subsection");

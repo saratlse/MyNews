@@ -31,11 +31,14 @@
         android:id="@+id/search_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_search"
+        android:layout_margin="10dp"
         android:layout_marginTop="20dp"
         android:background="@color/colorTabLayoutBackground"
-        android:textColor="@color/design_default_color_on_primary"
-        android:layout_margin="10dp"
-        />
+        android:clickable="true"
+        android:enabled="true"
+        android:focusable="true"
+        android:onClick="searchButtonClicked"
+        android:text="@string/button_search"
+        android:textColor="@color/design_default_color_on_primary" />
 
 </LinearLayout>

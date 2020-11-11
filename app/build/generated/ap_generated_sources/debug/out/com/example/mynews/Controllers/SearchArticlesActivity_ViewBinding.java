@@ -40,13 +40,13 @@ public class SearchArticlesActivity_ViewBinding implements Unbinder {
     target.mCheckBoxPolitics = Utils.findRequiredViewAsType(source, R.id.search_articles_politics, "field 'mCheckBoxPolitics'", CheckBox.class);
     target.mCheckboxSports = Utils.findRequiredViewAsType(source, R.id.search_articles_sports, "field 'mCheckboxSports'", CheckBox.class);
     target.mCheckBoxTravel = Utils.findRequiredViewAsType(source, R.id.search_articles_travel, "field 'mCheckBoxTravel'", CheckBox.class);
-    view = Utils.findRequiredView(source, R.id.search_button, "field 'mButton' and method 'onViewClicked'");
-    target.mButton = Utils.castView(view, R.id.search_button, "field 'mButton'", Button.class);
+    view = Utils.findRequiredView(source, R.id.search_button, "field 'searchButton' and method 'searchButtonClicked'");
+    target.searchButton = Utils.castView(view, R.id.search_button, "field 'searchButton'", Button.class);
     view7f08013f = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
-        target.onViewClicked();
+        target.searchButtonClicked(p0);
       }
     });
   }
@@ -68,7 +68,7 @@ public class SearchArticlesActivity_ViewBinding implements Unbinder {
     target.mCheckBoxPolitics = null;
     target.mCheckboxSports = null;
     target.mCheckBoxTravel = null;
-    target.mButton = null;
+    target.searchButton = null;
 
     view7f08013f.setOnClickListener(null);
     view7f08013f = null;

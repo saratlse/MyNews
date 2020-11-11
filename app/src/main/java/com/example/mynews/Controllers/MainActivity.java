@@ -1,6 +1,7 @@
 package com.example.mynews.Controllers;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -55,8 +56,20 @@ public class MainActivity extends AppCompatActivity {
         if (getFromSharedPreferences("business")){
             searchStringBuilder.append("Business,");
         }
+        if (getFromSharedPreferences("politics")){
+            searchStringBuilder.append("Politics,");
+        }
+        if (getFromSharedPreferences("sports")){
+            searchStringBuilder.append("Sports,");
+        }
+        if (getFromSharedPreferences("entrepreneurs")){
+            searchStringBuilder.append("Entrepreneurs,");
+        }
 
-           searchStringBuilder.replace(searchStringBuilder.length()-1,searchStringBuilder.length(),"");
+        if (searchStringBuilder.length() > 0){
+            searchStringBuilder.replace(searchStringBuilder.length()-1,searchStringBuilder.length(),"");
+        }
+
         searchArticlesViewModel= new SearchArticlesViewModel();
 
 
@@ -90,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         searchArticlesViewModel.getTabTitle().observe(this, new Observer<String>() {
             @Override
             public void onChanged(String title) {
-                TabLayout.Tab tab = tabLayout.getTabAt(3);
+                TabLayout.Tab tab = tabLayout.getTabAt(2);
             //TabLayout.Tab tab = tab.getTabAt(3);
             tab.setText(title);
             viewPager2.getAdapter().notifyDataSetChanged();
@@ -98,8 +111,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private boolean getFromSharedPreferences(String arts) {
-        return true;
+    private boolean getFromSharedPreferences(String key) {
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("MyPrefsFile", Context.MODE_PRIVATE);
+        return preferences.getBoolean(key, false);
     }
 
 
@@ -129,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.search:
                 Intent searchIntent = new Intent(this, SearchArticlesActivity.class);
-                startActivity(searchIntent);
+                startActivityForResult(searchIntent,0000);
                 break;
             default:
               return super.onOptionsItemSelected(item);
