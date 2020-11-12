@@ -101,7 +101,7 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
 
         setContentView(R.layout.activity_search_articles);
         ButterKnife.bind(this);
-        setActionBar(mToolbar);
+
 
 
         //method getSharedPreferences invoked to get an instance of sharedPreferences
@@ -131,7 +131,8 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
 
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.Search);
-
+        //setSupportActionBar(toolbar);
+        this.configureToolbar();
 
         DialogFragment datePicker = new DatePickerFragment();
 
@@ -197,27 +198,7 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
 
         searchButton.setOnClickListener(v -> searchButtonClicked(v));
     }
-        private void configureToolbar() {
-        //Set the toolbar
-        setSupportActionBar(mToolbar);
-        //Get a support Action Bar corresponding to this Toolbar
-        ActionBar actionBar = getSupportActionBar();
-        //Enable the Up button
-        assert actionBar != null;
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setTitle("Search Articles");}
 
-        private void setActionBar(Toolbar toolbar) {
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        //Enable the Up button
-        assert actionBar != null;
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setTitle("Search Articles");
-        Objects.requireNonNull(getSupportActionBar()).setTitle(null);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
 
     // --------------------------------
     // DATE PICKER AND FORMAT TIME
@@ -381,6 +362,15 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
     // ---------------------------------
     // Display/Hide UI elements methods
     // ---------------------------------
+        private void configureToolbar() {
+        setSupportActionBar(mToolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setTitle("Search Articles");
+
+    }
+
+
 
 
     // Hides Search elements
@@ -414,6 +404,7 @@ public class SearchArticlesActivity extends AppCompatActivity implements DatePic
        mSearchEndDate = findViewById(R.id.search_end_date);
         mSearchEndDate.setVisibility(GONE);
     }
+
 
 }
 

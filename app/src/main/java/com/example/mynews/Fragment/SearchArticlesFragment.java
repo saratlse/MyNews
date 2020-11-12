@@ -65,7 +65,7 @@ public class SearchArticlesFragment extends Fragment {
         searchArticlesViewModel = new SearchArticlesViewModel();
         StringBuilder searchQueryAPIURL = new StringBuilder();
         searchQueryAPIURL.append(JSON_URL);
-        searchQueryAPIURL.append(mSharedPreferences.getString("searchQuery","url"));
+//        searchQueryAPIURL.append(mSharedPreferences.getString("searchQuery","url"));
         requestApi(searchQueryAPIURL.toString());
 
         mSharedPreferences = getActivity().getSharedPreferences(MyPref, MODE_PRIVATE);
