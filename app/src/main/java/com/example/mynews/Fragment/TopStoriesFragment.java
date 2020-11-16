@@ -37,7 +37,7 @@ import java.util.List;
  */
 public class TopStoriesFragment extends Fragment {
 
-    private static final String JSON_URL = "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=lvzzkPeHJEIDxfpTaqSb3Azu9LDnO4Fv";
+    private static final String JSON_URL = "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=jM2fsht0Q5b6cviIbvKsFn1yQYUf5Evd";
     private RequestQueue mQueue;
     private ArrayList<Articles> articles;
 

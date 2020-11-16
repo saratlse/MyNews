@@ -23,12 +23,14 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+import butterknife.BindView;
+
 
 public class MainActivity extends AppCompatActivity {
 
     private MaterialToolbar toolbar;
-
     private SearchArticlesViewModel searchArticlesViewModel;
+
 
 
     @Override
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         this.toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+         setSupportActionBar(toolbar);
         this.toolbar.setTitle(R.string.app_name);
 
 
@@ -104,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChanged(String title) {
                 TabLayout.Tab tab = tabLayout.getTabAt(2);
-            //TabLayout.Tab tab = tab.getTabAt(3);
             tab.setText(title);
             viewPager2.getAdapter().notifyDataSetChanged();
             }
@@ -120,26 +121,27 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(final Menu menu) {
         this.getMenuInflater().inflate(R.menu.menu, menu);
         MenuItem item = menu.findItem(R.id.search);
-        SearchView searchView =(SearchView)item.getActionView();
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
+       // SearchView searchView =(SearchView)item.getActionView();
+      //  searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        //   @Override
+         //   public boolean onQueryTextSubmit(String query) {
+        //        return false;
+        //    }
 
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
-            }
-        });
+         //   @Override
+        //    public boolean onQueryTextChange(String newText) {
+        //        return false;
+      //      }
+     //   });
         return super.onCreateOptionsMenu(menu);
     }
 
     public boolean onOptionsItemSelected(final MenuItem item) {
+
         switch (item.getItemId()) {
 
             case R.id.menu:
-                Toast.makeText(this, "Menu", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Notifications", Toast.LENGTH_LONG).show();
                 break;
             case R.id.search:
                 Intent searchIntent = new Intent(this, SearchArticlesActivity.class);
@@ -163,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
+
 }
 
 
