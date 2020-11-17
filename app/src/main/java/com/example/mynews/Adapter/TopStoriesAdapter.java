@@ -58,7 +58,6 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.To
 
         public TopStoriesViewHolder(View itemView) {
             super(itemView);
-
             articleCategory = itemView.findViewById(R.id.articleCategory);
             articleSubsection = itemView.findViewById(R.id.subSection);
             articleDate = itemView.findViewById(R.id.articleDate);
@@ -69,9 +68,9 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.To
         }
         @Override
         public void onClick(View view) {
-          //  Intent intent = new Intent(view.getContext(), WebView.class);
-         //  intent.putExtra(WebViewActivity.WebUrl,"http://wwww.google.fr");
-        //   view.getContext().startActivities(new Intent[]{intent});
+           Intent intent = new Intent(view.getContext(), WebViewActivity.class);
+            intent.putExtra("KEY_URL",articlesList.get(getAdapterPosition()).getImageUrl());
+        view.getContext().startActivities(new Intent[]{intent});
 
         }
     }

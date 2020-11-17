@@ -10,7 +10,7 @@ import com.example.mynews.View.Articles;
 
 import java.util.List;
 
-public class WebViewNewsAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     // For data
     private List<Articles> articlesList;

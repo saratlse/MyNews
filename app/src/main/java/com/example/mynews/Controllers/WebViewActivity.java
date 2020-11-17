@@ -1,6 +1,7 @@
 package com.example.mynews.Controllers;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import com.example.mynews.Adapter.SearchArticlesAdapter;
@@ -14,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -27,6 +29,8 @@ public class WebViewActivity extends AppCompatActivity {
     @BindView(R.id.webView)
     WebView webView;
 
+    String url ="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,22 +40,38 @@ public class WebViewActivity extends AppCompatActivity {
 
         //Get the transferred data from the source activity
         Intent intent = getIntent();
-        String url = intent.getStringExtra(KEY_URL);
+        url = intent.getStringExtra(KEY_URL);
 
-       // webView.loadUrl(url);
-        //this.configureWebViewMostPopular();
+
 
         // Open the webView in the app instead of a browser
-        webView.setWebViewClient(new WebViewClient());
         webView.loadUrl(url);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebViewClient(new WebViewClient());
+        webView.setWebChromeClient(new WebChromeClient(){
+                                       @Override
+                                       public void onProgressChanged(WebView view, int newProgress) {
+                                           super.onProgressChanged(view, newProgress);
+                                       }
 
+            @Override
+            public void onReceivedTitle(WebView view, String title) {
+                super.onReceivedTitle(view, title);
+            }
+
+            @Override
+            public void onReceivedIcon(WebView view, Bitmap icon) {
+                super.onReceivedIcon(view, icon);
+            }
+        });
     }
-   /* public void configureWebViewMostPopular() {
-        String url = getIntent().getStringExtra(MostPopularFragment.BUNDLE_URL);
-        webView.loadUrl(url);
-        webView.setWebViewClient(new WebViewClient());
-    }*/
 
-
-
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack()){
+            webView.goBack();
+        }else {
+            finish();
+        }
+    }
 }

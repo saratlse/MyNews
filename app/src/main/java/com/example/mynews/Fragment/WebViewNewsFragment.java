@@ -9,11 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.mynews.Adapter.WebViewNewsAdapter;
+import com.example.mynews.Adapter.NewsAdapter;
 import com.example.mynews.R;
 
-public class WebViewNewsFragment extends Fragment implements WebViewNewsAdapter.Listener {
-    protected WebViewNewsAdapter webViewNewsAdapter;
+public class WebViewNewsFragment extends Fragment implements NewsAdapter.Listener {
+    protected NewsAdapter newsAdapter;
     protected RecyclerView recyclerView;
 
     // Declare callback
@@ -51,7 +51,7 @@ public class WebViewNewsFragment extends Fragment implements WebViewNewsAdapter.
 
     @Override
     public void onClickItem(int position) {
-        String url = webViewNewsAdapter.getPosition(position).getImageUrl();
+        String url = newsAdapter.getPosition(position).getImageUrl();
 
     }
 
