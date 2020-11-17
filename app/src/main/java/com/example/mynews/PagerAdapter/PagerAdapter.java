@@ -30,7 +30,6 @@ public class PagerAdapter extends FragmentStateAdapter {
            default://page3
                 return new SearchArticlesFragment();
         }
-
     }
 
     //method will be called as soon as a page (fragment) requests to be displayed

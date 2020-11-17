@@ -18,7 +18,7 @@ import java.lang.Override;
 public class SearchArticlesActivity_ViewBinding implements Unbinder {
   private SearchArticlesActivity target;
 
-  private View view7f08013f;
+  private View view7f080147;
 
   @UiThread
   public SearchArticlesActivity_ViewBinding(SearchArticlesActivity target) {
@@ -42,7 +42,7 @@ public class SearchArticlesActivity_ViewBinding implements Unbinder {
     target.mCheckBoxTravel = Utils.findRequiredViewAsType(source, R.id.search_articles_travel, "field 'mCheckBoxTravel'", CheckBox.class);
     view = Utils.findRequiredView(source, R.id.search_button, "field 'searchButton' and method 'searchButtonClicked'");
     target.searchButton = Utils.castView(view, R.id.search_button, "field 'searchButton'", Button.class);
-    view7f08013f = view;
+    view7f080147 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -70,7 +70,7 @@ public class SearchArticlesActivity_ViewBinding implements Unbinder {
     target.mCheckBoxTravel = null;
     target.searchButton = null;
 
-    view7f08013f.setOnClickListener(null);
-    view7f08013f = null;
+    view7f080147.setOnClickListener(null);
+    view7f080147 = null;
   }
 }

@@ -36,7 +36,7 @@ import java.util.List;
  */
 public class MostPopularFragment extends Fragment {
 
-
+    public static final String BUNDLE_URL= "BUNDLE_URL";
     private static final String JSON_URL = "https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=lvzzkPeHJEIDxfpTaqSb3Azu9LDnO4Fv";
 
     private RequestQueue mQueue;
@@ -53,9 +53,9 @@ public class MostPopularFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         articles = new ArrayList<>();
-        for (int i =0; i <45 ; i++){
+        //for (int i =0; i <45 ; i++){
          //   articles.add(new Articles("titre","11 aout 2020", "Section", "PhotoURL"));
-        }
+       // }
         mostPopularViewModel = new MostPopularViewModel();
         requestApi();
 
@@ -79,6 +79,8 @@ public class MostPopularFragment extends Fragment {
                 }
         });
         return root;
+
+
     }
 
         private void requestApi () {
@@ -123,5 +125,6 @@ public class MostPopularFragment extends Fragment {
             mQueue.start();
             mQueue.add(request);
         }
+
     }
 

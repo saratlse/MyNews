@@ -20,17 +20,20 @@ import com.example.mynews.PagerAdapter.PagerAdapter;
 import com.example.mynews.R;
 import com.example.mynews.View.SearchArticlesViewModel;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import butterknife.BindView;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
     private MaterialToolbar toolbar;
     private SearchArticlesViewModel searchArticlesViewModel;
 
+    // Create a key for the url of the chosen article to be consulted on the website
+    public static final String KEY_URL = "url";
 
 
     @Override
@@ -164,6 +167,20 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
         }
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
+    // Implement listener from NewsFragment to open WebViewActivity when click on an article
+
+
+    public void onWebClicked(int position, String url) {
+        // Spread the click with the url of the article to open WebViewActivity
+        Intent webViewActivity = new Intent(MainActivity.this, WebViewActivity.class);
+        webViewActivity.putExtra(KEY_URL, url);
+        startActivity(webViewActivity);
     }
 
 }

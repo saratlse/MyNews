@@ -20,7 +20,7 @@ import java.util.List;
 public class SearchArticlesAdapter extends RecyclerView.Adapter<SearchArticlesAdapter.SearchResultViewHolder> {
 
     List<Articles> articlesList;
-
+    public static final String EXTRA_MESSAGE = "test";
 
     // data is passed into the constructor
     public SearchArticlesAdapter(Context context, List<Articles> listArticles){

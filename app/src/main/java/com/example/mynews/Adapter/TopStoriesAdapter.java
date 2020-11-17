@@ -1,15 +1,18 @@
 package com.example.mynews.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mynews.Controllers.WebViewActivity;
 import com.example.mynews.R;
 import com.example.mynews.View.Articles;
 import com.squareup.picasso.Picasso;
@@ -18,7 +21,7 @@ import java.util.List;
 
 public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.TopStoriesViewHolder> {
     private List<Articles> articlesList;
-
+    public static final String EXTRA_MESSAGE = "test";
 
     // data is passed into the constructor
     public TopStoriesAdapter(Context context, List<Articles> listArticles){
@@ -66,6 +69,9 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.To
         }
         @Override
         public void onClick(View view) {
+          //  Intent intent = new Intent(view.getContext(), WebView.class);
+         //  intent.putExtra(WebViewActivity.WebUrl,"http://wwww.google.fr");
+        //   view.getContext().startActivities(new Intent[]{intent});
 
         }
     }

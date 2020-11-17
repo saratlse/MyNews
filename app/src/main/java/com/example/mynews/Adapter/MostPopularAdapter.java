@@ -74,6 +74,7 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
         @Override
         public void onClick(View view) {
 
+
         }
     }
 }

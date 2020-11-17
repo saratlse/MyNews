@@ -6,4 +6,5 @@
     <dimen name="recycler_image_width">75dip</dimen>
     <dimen name="recycler_image_height">75dip</dimen>
     <dimen name="recycler_image_margin">15dip</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>
