@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,6 +19,8 @@ import com.example.mynews.View.Articles;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import static androidx.core.content.ContextCompat.startActivity;
 
 public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.TopStoriesViewHolder> {
     private List<Articles> articlesList;
@@ -69,8 +72,12 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.To
         @Override
         public void onClick(View view) {
            Intent intent = new Intent(view.getContext(), WebViewActivity.class);
-            intent.putExtra("KEY_URL",articlesList.get(getAdapterPosition()).getImageUrl());
-        view.getContext().startActivities(new Intent[]{intent});
+           // intent.putExtra("KEY_URL",articlesList.get(getAdapterPosition()).getImageUrl());
+            intent.putExtra("url", "https://www.nytimes.com/subscription?campaignId=7UXFY&ds_c=71700000074377394&gclid=Cj0KCQiAqdP9BRDVARIsAGSZ8AllWN-ve3Ld3Y3mRU02FW72QWFfc5vKBkCLGXt16cZauEgYr-WrYVsaAik9EALw_wcB&gclsrc=aw.ds");
+            view.getContext().startActivities(new Intent[]{intent});
+
+
+
 
         }
     }

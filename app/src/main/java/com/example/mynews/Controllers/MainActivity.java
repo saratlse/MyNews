@@ -174,8 +174,6 @@ public class MainActivity extends AppCompatActivity  {
 
     }
     // Implement listener from NewsFragment to open WebViewActivity when click on an article
-
-
     public void onWebClicked(int position, String url) {
         // Spread the click with the url of the article to open WebViewActivity
         Intent webViewActivity = new Intent(MainActivity.this, WebViewActivity.class);
