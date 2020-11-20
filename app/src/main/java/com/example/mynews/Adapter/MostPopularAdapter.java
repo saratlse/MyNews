@@ -1,6 +1,7 @@
 package com.example.mynews.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.mynews.Controllers.WebViewActivity;
 import com.example.mynews.R;
 import com.example.mynews.View.Articles;
 import com.squareup.picasso.Picasso;
@@ -71,10 +73,12 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
             itemView.setOnClickListener(this);
         }
 
-        @Override
+       @Override
         public void onClick(View view) {
-
-
+           Intent intent = new Intent(view.getContext(), WebViewActivity.class);
+           //intent.putExtra("KEY_URL",articlesList.get(getAdapterPosition()).getUrl());
+           intent.putExtra("url", "https://www.nytimes.com/subscription?campaignId=7UXFY&ds_c=71700000074377394&gclid=Cj0KCQiAqdP9BRDVARIsAGSZ8AllWN-ve3Ld3Y3mRU02FW72QWFfc5vKBkCLGXt16cZauEgYr-WrYVsaAik9EALw_wcB&gclsrc=aw.ds");
+            view.getContext().startActivities(new Intent[]{intent});
         }
     }
 }

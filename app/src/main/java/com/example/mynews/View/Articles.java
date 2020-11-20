@@ -2,7 +2,7 @@ package com.example.mynews.View;
 
 public class Articles {
 
-    private  String title, date, subsection,section, imageUrl,href;
+    private  String title, date, subsection,section, imageUrl,url;
 
 
 
@@ -13,12 +13,17 @@ public class Articles {
         this.section = section;
         this.imageUrl = imageUrl;
         this.subsection = subsection;
-        this.href = href;
+        this.url = url;
     }
 
-    public String getHref() {
-        return href;
+    public String getUrl() {
+        return url;
     }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
 
     public String getTitle() {
         return title;
@@ -38,7 +43,5 @@ public class Articles {
     public String getImageUrl() {
         return imageUrl;
     }
-
-
 
 }

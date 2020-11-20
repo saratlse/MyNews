@@ -28,7 +28,6 @@ import static com.example.mynews.Controllers.MainActivity.KEY_URL;
 public class WebViewActivity extends AppCompatActivity {
     @BindView(R.id.webView)
     WebView webView;
-
     String url ="";
 
     @Override
@@ -46,13 +45,15 @@ public class WebViewActivity extends AppCompatActivity {
 
         // Open the webView in the app instead of a browser
         webView.loadUrl(url);
+        webView.getUrl();
+
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
         webView.setWebChromeClient(new WebChromeClient(){
-                                       @Override
-                                       public void onProgressChanged(WebView view, int newProgress) {
-                                           super.onProgressChanged(view, newProgress);
-                                       }
+            @Override
+            public void onProgressChanged(WebView view, int newProgress) {
+                super.onProgressChanged(view, newProgress);
+            }
 
             @Override
             public void onReceivedTitle(WebView view, String title) {

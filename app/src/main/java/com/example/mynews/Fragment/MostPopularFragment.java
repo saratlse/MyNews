@@ -21,6 +21,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.mynews.Adapter.MostPopularAdapter;
 import com.example.mynews.R;
+import com.example.mynews.Utils.JSONParser;
 import com.example.mynews.View.Articles;
 import com.example.mynews.View.MostPopularViewModel;
 
@@ -89,30 +90,8 @@ public class MostPopularFragment extends Fragment {
 
                 @Override
                 public void onResponse(final JSONObject response) {
-                    try {
-                        JSONArray newsArray = response.getJSONArray("results");
-
-                        for (int i = 0; i < newsArray.length(); i++) {
-                            JSONObject newObject = newsArray.getJSONObject(i);
-                            String sectionObject = newObject.getString("section");
-                            String subSectionObject = newObject.getString("subsection");
-                            String dateObject = newObject.getString("published_date");
-                            JSONArray mediaArray = newObject.getJSONArray("media");
-                            JSONObject mediaIndex;
-                            if (mediaArray.length() > 0) {
-                                JSONObject mediaObject = mediaArray.getJSONObject(0);
-                                JSONArray mediaData = mediaObject.getJSONArray("media-metadata");
-                                mediaIndex = mediaData.getJSONObject(0);
-
-                                articles.add(new Articles(newObject.getString("title"), sectionObject, subSectionObject, dateObject, mediaIndex.getString("url")));
-
-                            }
-                            mostPopularViewModel.setItemByArticle(articles);
-
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+                    JSONParser jsonParser = new JSONParser();
+                    mostPopularViewModel.setItemByArticle(jsonParser.parseAPIResponse(response));
                 }
                 },
                     new Response.ErrorListener() {

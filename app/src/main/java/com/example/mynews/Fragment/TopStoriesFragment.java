@@ -21,6 +21,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.mynews.Adapter.TopStoriesAdapter;
 import com.example.mynews.R;
+import com.example.mynews.Utils.JSONParser;
 import com.example.mynews.View.Articles;
 import com.example.mynews.View.TopStoryViewModel;
 
@@ -54,9 +55,7 @@ public class TopStoriesFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         articles = new ArrayList<>();
-        //for (int i =0; i <45 ; i++){
-       //     articles.add(new Articles("titre","11 aout 2020", "Section", "PhotoURL"));
-       // }
+
         topStoryViewModel = new TopStoryViewModel();
         requestApi();
     }
@@ -86,28 +85,32 @@ public class TopStoriesFragment extends Fragment {
 
             @Override
             public void onResponse(JSONObject response) {
-                try {
-                    JSONArray newsArray = response.getJSONArray("results");
+                JSONParser jsonParser = new JSONParser();
+                topStoryViewModel.setItemByArticle(jsonParser.parseAPIResponse(response));
+            }
+        },
+               // try {
+                   // JSONArray newsArray = response.getJSONArray("results");
 
-                    for (int i = 0; i < newsArray.length(); i++) {
-                        JSONObject newObject = newsArray.getJSONObject(i);
-                        String sectionObject = newObject.getString("section");
-
-
-                        if (sectionObject.length() >0){
-                           sectionObject = sectionObject.substring(0,1).toUpperCase() + sectionObject.substring(1).toLowerCase();
-                       }
-                       capitalize(sectionObject);// ???
+                    //for (int i = 0; i < newsArray.length(); i++) {
+                    //    JSONObject newObject = newsArray.getJSONObject(i);
+                     //   String sectionObject = newObject.getString("section");
 
 
-                        String subSectionObject = newObject.getString("subsection");
-                        if (subSectionObject.length() >0){
-                            subSectionObject = subSectionObject.substring(0,1).toUpperCase() + subSectionObject.substring(1).toLowerCase();
-                        }
-                        capitalize(subSectionObject);// ???
+                       // if (sectionObject.length() >0){
+                      //     sectionObject = sectionObject.substring(0,1).toUpperCase() + sectionObject.substring(1).toLowerCase();
+                     //  }
+                     //  capitalize(sectionObject);// ???
+
+
+                       // String subSectionObject = newObject.getString("subsection");
+                       // if (subSectionObject.length() >0){
+                       //     subSectionObject = subSectionObject.substring(0,1).toUpperCase() + subSectionObject.substring(1).toLowerCase();
+                     //   }
+                    //    capitalize(subSectionObject);// ???
 
                         //show > between section and subsection
-                        StringBuilder subsectionStringBuilder = new StringBuilder();
+                       /* StringBuilder subsectionStringBuilder = new StringBuilder();
                         subsectionStringBuilder.append(sectionObject);
                         subsectionStringBuilder.append(">");
                         subsectionStringBuilder.append(subSectionObject);
@@ -116,27 +119,27 @@ public class TopStoriesFragment extends Fragment {
 
                         String dateObject = newObject.getString("published_date");
                         JSONArray multimediaArray = newObject.getJSONArray("multimedia");
-                        JSONObject mediaObject = multimediaArray.getJSONObject(0);
+                        JSONObject mediaObject = multimediaArray.getJSONObject(0);*/
 
-                        articles.add(new Articles(sectionObject,subSectionObject,newObject.getString("title"),dateObject,mediaObject.getString("url")));
-                        capitalize(subSectionObject);
-                    }
-                    topStoryViewModel.setItemByArticle(articles);
+                        //articles.add(new Articles(sectionObject,subSectionObject,newObject.getString("title"),dateObject,mediaObject.getString("url")));
+                        //capitalize(subSectionObject);
+               //     }
+                //    topStoryViewModel.setItemByArticle(articles);
 
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
+        //        } catch (JSONException e) {
+       //             e.printStackTrace();
+      //          }
+      //      }
 
-            private String capitalize(String sectionObject) {
-                if (sectionObject.length() > 0){
-                    sectionObject = sectionObject.substring(0,1).toUpperCase() + sectionObject.substring(1).toLowerCase();
-                }
-                return sectionObject;
+            //private String capitalize(String sectionObject) {
+           //     if (sectionObject.length() > 0){
+           //         sectionObject = sectionObject.substring(0,1).toUpperCase() + sectionObject.substring(1).toLowerCase();
+             //   }
+          //      return sectionObject;
 
-            }
-        }, new Response.ErrorListener() {
+
+                    new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
