@@ -54,6 +54,7 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
 
     @Override
     public int getItemCount() {
+
         return articlesList.size();
     }
 

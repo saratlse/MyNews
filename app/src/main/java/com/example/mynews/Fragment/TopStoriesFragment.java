@@ -55,7 +55,6 @@ public class TopStoriesFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         articles = new ArrayList<>();
-
         topStoryViewModel = new TopStoryViewModel();
         requestApi();
     }
@@ -80,8 +79,8 @@ public class TopStoriesFragment extends Fragment {
     }
 
     private void requestApi() {
-        mQueue = Volley.newRequestQueue(getContext());
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, TopStoriesFragment.JSON_URL, null, new Response.Listener<JSONObject>() {
+        mQueue = Volley.newRequestQueue(this.getContext());
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, JSON_URL,  null, new Response.Listener<JSONObject>() {
 
             @Override
             public void onResponse(JSONObject response) {
@@ -89,6 +88,18 @@ public class TopStoriesFragment extends Fragment {
                 topStoryViewModel.setItemByArticle(jsonParser.parseAPIResponse(response));
             }
         },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                        Toast.makeText(TopStoriesFragment.this.getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+        mQueue.start();
+        mQueue.add(request);
+    }
+
+}
                // try {
                    // JSONArray newsArray = response.getJSONArray("results");
 
@@ -139,15 +150,4 @@ public class TopStoriesFragment extends Fragment {
           //      return sectionObject;
 
 
-                    new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-                Toast.makeText(TopStoriesFragment.this.getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-        mQueue.start();
-        mQueue.add(request);
-    }
 
-}

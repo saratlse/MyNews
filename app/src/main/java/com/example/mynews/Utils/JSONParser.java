@@ -11,9 +11,11 @@ import java.util.List;
 
 public class JSONParser {
 
+
     public List<Articles> parseAPIResponse(JSONObject response){
-       List articles = new ArrayList<>();
-        try {
+        List articles = new ArrayList<>();
+            try {
+
             JSONArray newsArray = response.getJSONArray("results");
 
             for (int i = 0; i < newsArray.length(); i++) {
@@ -22,49 +24,62 @@ public class JSONParser {
                 String subSectionObject = newObject.getString("subsection");
                 String dateObject = newObject.getString("published_date");
                 JSONArray mediaArray = newObject.getJSONArray("media");
-                JSONObject mediaIndex;
+                JSONObject mediaIndex = new JSONObject();
 
 
 
-                //Check if "media" is in MostPopular and return the image url
+                //MOST POPULAR//
                 if (newObject.getJSONArray("media") != null ){
                     mediaArray = newObject.getJSONArray("media");
                 }
                 if (mediaArray.length() > 0) {
                     JSONObject mediaObject = mediaArray.getJSONObject(0);
                     JSONArray mediaData = mediaObject.getJSONArray("media-metadata");
-                    mediaIndex = mediaData.getJSONObject(0);
-                    articles.add(new Articles(newObject.getString("title"),sectionObject, subSectionObject, dateObject, mediaIndex.getString("url")));
-
-                }
-
-                if (sectionObject.length() >0){
-                    sectionObject = sectionObject.substring(0,1).toUpperCase() + sectionObject.substring(1).toLowerCase();
-                }
-                capitalize(sectionObject);
+                    mediaIndex = mediaData.getJSONObject(0); }
 
 
-                subSectionObject = newObject.getString("subsection");
-                if (subSectionObject.length() >0){
-                    subSectionObject = subSectionObject.substring(0,1).toUpperCase() + subSectionObject.substring(1).toLowerCase();
-                }
+
+                //TOP STORIES//
                 //show > between section and subsection
-                StringBuilder subsectionStringBuilder = new StringBuilder();
+               /* StringBuilder subsectionStringBuilder = new StringBuilder();
                 subsectionStringBuilder.append(sectionObject);
                 subsectionStringBuilder.append(">");
                 subsectionStringBuilder.append(subSectionObject);
                 subsectionStringBuilder.toString();
 
-
                 newObject.getString("published_date");
                 JSONArray multimediaArray = newObject.getJSONArray("multimedia");
                 multimediaArray.getJSONObject(0);
 
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
+                if (newObject.getJSONArray("multimedia")!= null) {
+                    JSONArray mediaArray2 = newObject.getJSONArray("multimedia");
+                    if (mediaArray2.length() > 0) {
+                        JSONObject mediaObject = mediaArray2.getJSONObject(0);
+                        mediaObject.getJSONArray("media-metadata");
+                        mediaIndex = mediaArray2.getJSONObject(0);
 
-        }return articles;
+                    }
+                    if (sectionObject.length() >0){
+                            sectionObject = sectionObject.substring(0,1).toUpperCase() + sectionObject.substring(1).toLowerCase();
+                         }
+                          capitalize(sectionObject);
+                    if (subSectionObject.length() >0){
+                        subSectionObject = subSectionObject.substring(0,1).toUpperCase() + subSectionObject.substring(1).toLowerCase();
+                    }
+                    subSectionObject = newObject.getString("subsection");
+                    if (subSectionObject.length() >0){
+                        subSectionObject = subSectionObject.substring(0,1).toUpperCase() + subSectionObject.substring(1).toLowerCase();
+                    }
+
+                }*/
+
+                articles.add(new Articles(newObject.getString("title"),sectionObject, subSectionObject, dateObject, mediaIndex.getString("url")));
+
+            }
+            } catch (JSONException e) {
+                e.printStackTrace();
+
+            }return articles;
     }
 
     private String capitalize(String sectionObject) {

@@ -44,11 +44,11 @@ public class WebViewActivity extends AppCompatActivity {
 
 
         // Open the webView in the app instead of a browser
-        webView.loadUrl(url);
         webView.getUrl();
+        webView.loadUrl(url);
 
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.setWebViewClient(new WebViewClient());
+       // webView.setWebViewClient(new WebViewClient());
         webView.setWebChromeClient(new WebChromeClient(){
             @Override
             public void onProgressChanged(WebView view, int newProgress) {
