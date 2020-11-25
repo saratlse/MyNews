@@ -80,7 +80,7 @@ public class TopStoriesFragment extends Fragment {
 
     private void requestApi() {
         mQueue = Volley.newRequestQueue(this.getContext());
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, JSON_URL,  null, new Response.Listener<JSONObject>() {
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, JSON_URL, null, new Response.Listener<JSONObject>() {
 
             @Override
             public void onResponse(JSONObject response) {

@@ -48,11 +48,12 @@ public class WebViewActivity extends AppCompatActivity {
         webView.loadUrl(url);
 
         webView.getSettings().setJavaScriptEnabled(true);
-       // webView.setWebViewClient(new WebViewClient());
+        webView.setWebViewClient(new WebViewClient());
         webView.setWebChromeClient(new WebChromeClient(){
             @Override
             public void onProgressChanged(WebView view, int newProgress) {
                 super.onProgressChanged(view, newProgress);
+
             }
 
             @Override

@@ -101,5 +101,5 @@ public class MostPopularFragment extends Fragment {
             mQueue.start();
             mQueue.add(request);
         }
-}
+    }
 

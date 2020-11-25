@@ -21,6 +21,7 @@ public class SearchArticlesAdapter extends RecyclerView.Adapter<SearchArticlesAd
 
     List<Articles> articlesList;
     public static final String EXTRA_MESSAGE = "test";
+    private View.OnClickListener clickListener;
 
     // data is passed into the constructor
     public SearchArticlesAdapter(Context context, List<Articles> listArticles){
@@ -32,6 +33,13 @@ public class SearchArticlesAdapter extends RecyclerView.Adapter<SearchArticlesAd
     @Override
     public SearchArticlesAdapter.SearchResultViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_item, parent, false);
+        RecyclerView.ViewHolder holder = new SearchResultViewHolder(view);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickListener.onClick(view);
+            }
+        });
         return new SearchResultViewHolder(view);
     }
 
@@ -77,5 +85,9 @@ public class SearchArticlesAdapter extends RecyclerView.Adapter<SearchArticlesAd
         public void onClick(View view) {
 
         }
+        public void setClickListener(View.OnClickListener callback) {
+            clickListener = callback;
+        }
     }
+    
 }
