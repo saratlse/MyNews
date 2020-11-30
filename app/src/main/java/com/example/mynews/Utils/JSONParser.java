@@ -38,18 +38,19 @@ public class JSONParser {
                 }
 
 
-               //fonctionne mais pas les 2 en même temps
+
 
                 
                 //TOP STORIES//
-              /*  JSONArray multimediaArray = newObject.getJSONArray("multimedia");
-                multimediaArray.getJSONObject(0);
+
                 if (newObject.has("multimedia")){
+                    JSONArray multimediaArray = newObject.getJSONArray("multimedia");
+                    multimediaArray.getJSONObject(0);
                     JSONArray mediaArray2 = newObject.getJSONArray("multimedia");
                     if (mediaArray2.length() > 0) {
                         mediaIndex = mediaArray2.getJSONObject(0);
                     }
-                }*/
+                }
 
 
                 articles.add(new Articles(newObject.getString("title"), sectionObject, subSectionObject, dateObject, mediaIndex.getString("url")));
