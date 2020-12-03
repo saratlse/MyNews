@@ -6,16 +6,23 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.FileReader;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.Objects;
 
 public class JSONParser {
+
+
+    private static String date;
 
     public List parseAPIResponse(JSONObject response) {
         List articles = new ArrayList<>();
         try {
-
-
 
             JSONArray newsArray = response.getJSONArray("results");
 
@@ -28,7 +35,7 @@ public class JSONParser {
 
 
                 //MOST POPULAR//
-               if (newObject.has("media")){
+                if (newObject.has("media")) {
                     JSONArray mediaArray = newObject.getJSONArray("media");
                     if (mediaArray.length() > 0) {
                         JSONObject mediaObject = mediaArray.getJSONObject(0);
@@ -38,12 +45,9 @@ public class JSONParser {
                 }
 
 
-
-
-                
                 //TOP STORIES//
 
-                if (newObject.has("multimedia")){
+                if (newObject.has("multimedia")) {
                     JSONArray multimediaArray = newObject.getJSONArray("multimedia");
                     multimediaArray.getJSONObject(0);
                     JSONArray mediaArray2 = newObject.getJSONArray("multimedia");
@@ -54,17 +58,39 @@ public class JSONParser {
 
 
                 articles.add(new Articles(newObject.getString("title"), sectionObject, subSectionObject, dateObject, mediaIndex.getString("url")));
-                //articles.add(new Articles(sectionObject,subSectionObject,newObject.getString("title"),dateObject,mediaObject.getString("url")));
 
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
         return articles;
+
     }
+
+
+    public static String convertDate(String longDateFormat) {
+        //The SimpleDateFormat that will be use to check our JSON query value
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+        try {
+            Date shortDate = dateFormat.parse(date);
+            //Returning the date they way I want it to look
+            return new SimpleDateFormat("dd MMMM yyyy", Locale.US).format(Objects.requireNonNull(shortDate));
+
+        } catch (ParseException e) {
+            return "";
+        }
+
+    }
+
+    public List<Articles> parseAPIResponse(String toString) {
+        return null;
+    }
+
+
+    //public List<Articles> parseAPIResponse(String toString) {
+    //    return null;
+  //  }
 }
-
-
 
 
   /*private String capitalize(String sectionObject) {
@@ -83,6 +109,7 @@ public class JSONParser {
                 subsectionStringBuilder.append(subSectionObject);
                 subsectionStringBuilder.toString();
                 newObject.getString("published_date");
+
                 JSONArray multimediaArray = newObject.getJSONArray("multimedia");
                 multimediaArray.getJSONObject(0);
                 if (newObject.getJSONArray("multimedia")!= null) {

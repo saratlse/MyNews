@@ -25,29 +25,12 @@ import static androidx.core.content.ContextCompat.startActivity;
 
 public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.TopStoriesViewHolder> {
     private List<Articles> articlesList;
-    private OnItemClickListener onItemClickListener;
-    private View.OnLongClickListener onLongItemClickListener;
-    public static final String EXTRA_MESSAGE = "test";
-    Context context;
 
 
-    public interface OnItemClickListener {
-        void onItemClick(int position);
-    }
-    public void setOnItemClickListener(OnItemClickListener listener){
-        onItemClickListener = listener;
-    }
-
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(articlesList, context);
-    }
 
     // data is passed into the constructor
     public TopStoriesAdapter(Context context, List<Articles> listArticles){
         this.articlesList = listArticles;
-        context = context;
     }
 
     @NonNull
@@ -67,6 +50,14 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.To
         holder.articleSubsection.setText(articles.getSubsection());
         String imageUrl = articles.getImageUrl();
         Picasso.get().load(imageUrl).into(holder.articleImage);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), WebViewActivity.class);
+                intent.putExtra("url",articles.getUrl());
+                v.getContext().startActivities(new Intent[]{intent});
+            }
+        });
     }
 
     @Override
@@ -74,7 +65,7 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.To
         return articlesList.size();
     }
 
-    public class TopStoriesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class TopStoriesViewHolder extends RecyclerView.ViewHolder  {
         private ImageView articleImage;
         private TextView articleDescription, articleSubsection, articleCategory, articleDate;
 
@@ -85,7 +76,7 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.To
             articleDate = itemView.findViewById(R.id.articleDate);
             articleDescription = itemView.findViewById(R.id.articleDescription);
             articleImage = itemView.findViewById(R.id.articleImage);
-            //itemView.setOnClickListener(this);
+
 
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -94,23 +85,21 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.To
                     //Toast.makeText(context,"my webview is clicked",Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(view.getContext(), WebViewActivity.class);
                     intent.putExtra("KEY_URL",articlesList.get(getAdapterPosition()).getUrl());
+                  //  intent.putExtra("url", "https://www.nytimes.com/subscription?campaignId=7UXFY&ds_c=71700000074377394&gclid=Cj0KCQiAqdP9BRDVARIsAGSZ8AllWN-ve3Ld3Y3mRU02FW72QWFfc5vKBkCLGXt16cZauEgYr-WrYVsaAik9EALw_wcB&gclsrc=aw.ds");
+                    view.getContext().startActivities(new Intent[]{intent});
                 }
             });
-            itemView.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View view) {
-                    onItemClickListener.onItemClick(getAdapterPosition());
-                    return true;
-                }
-            });
+
+
         }
 
-        @Override
+      /*  @Override
         public void onClick(View view) {
            Intent intent = new Intent(view.getContext(), WebViewActivity.class);
-           //intent.putExtra("KEY_URL",articlesList.get(getAdapterPosition()).getUrl());
+           intent.putExtra("KEY_URL",articlesList.get(getAdapterPosition()).getUrl());
            intent.putExtra("url", "https://www.nytimes.com/subscription?campaignId=7UXFY&ds_c=71700000074377394&gclid=Cj0KCQiAqdP9BRDVARIsAGSZ8AllWN-ve3Ld3Y3mRU02FW72QWFfc5vKBkCLGXt16cZauEgYr-WrYVsaAik9EALw_wcB&gclsrc=aw.ds");
-            view.getContext().startActivities(new Intent[]{intent});
-        }
+          // view.getContext().startActivities(new Intent[]{intent});
+
+        }*/
     }
 }

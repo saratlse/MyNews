@@ -34,6 +34,7 @@ public class SearchArticlesAdapter extends RecyclerView.Adapter<SearchArticlesAd
     public SearchArticlesAdapter.SearchResultViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_item, parent, false);
         RecyclerView.ViewHolder holder = new SearchResultViewHolder(view);
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,6 +86,10 @@ public class SearchArticlesAdapter extends RecyclerView.Adapter<SearchArticlesAd
         public void onClick(View view) {
 
         }
+
+        /**
+         * @param callback
+         */
         public void setClickListener(View.OnClickListener callback) {
             clickListener = callback;
         }
