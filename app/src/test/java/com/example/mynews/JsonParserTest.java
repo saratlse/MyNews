@@ -56,19 +56,21 @@ public class JsonParserTest {
                 stringBuilder.append(line);
             }
             JSONParser parser = new JSONParser();
-            newsList = parser.parseAPIResponse(stringBuilder.toString());
+            JSONObject jsonObject = new JSONObject(stringBuilder.toString());
+            newsList = parser.parseAPIResponse(jsonObject);
+
             JSONObject mainObject = new JSONObject(stringBuilder.toString());
             int object = mainObject.getInt("num_results");
             assertEquals(newsList.size(), object);
 
-        } catch (IOException | JSONException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     @Test
     public void JsonResponseIsWrong() {
-        List<Articles> newsList;
+        JSONObject newsList;
         File jsonAPIFile = new File(Paths.get("src/test/java/com/example/mynews/testParseInvalid.json").toAbsolutePath().toString());
         try {
             FileInputStream inputStream = new FileInputStream((jsonAPIFile));
@@ -78,22 +80,24 @@ public class JsonParserTest {
             while ((line = bufferedReader.readLine()) != null) {
                 stringBuilder.append(line);
             }
-            JSONParser JSONQuery = new JSONParser();
-            newsList = JSONQuery.parseAPIResponse(stringBuilder.toString());
+            JSONParser jsonParser= new JSONParser();
+            JSONObject jsonObject = new JSONObject(stringBuilder.toString());
+            newsList = jsonObject.getJSONObject(stringBuilder.toString());
 
-            assertTrue(newsList.isEmpty());
+           //assertTrue(newsList.isEmpty());
 
 
-        } catch (IOException e) {
+
+        } catch (Exception e) {
             assertEquals("JSONObject[\"url\"] not found.", e.getMessage());
         }
     }
 
     @Test
     public void ConvertDateFormat() {
-        String longDateFormat = "2020-11-13T17:21:01+0000";
+        String longDateFormat = "2020-12-12T17:21:01+0000";
         try {
-            assertEquals("01 december  2020", JSONParser.convertDate(longDateFormat));
+            assertEquals("12 december  2020", JSONParser.convertDate(longDateFormat));
 
         } catch (Exception e) {
             e.printStackTrace();

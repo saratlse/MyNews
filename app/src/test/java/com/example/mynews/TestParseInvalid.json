@@ -6,13 +6,13 @@
   "num_results": 20,
   "results": [
     {
-      "uri": "nyt://article/d656074f-fe2e-501d-bf52-8386a7addecca",
+      "uri": "nyt://article/d656074f-fe2e-501d-bf52-8386a7addecc",
       "url": "https://www.nytimes.com/2020/11/25/opinion/meghan-markle-miscarriage.html",
       "id": 100000007469162,
       "asset_id": 100000007469162,
       "source": "New York Times",
       "published_date": "2020-11-25",
-      "updated": "2020-11-26 18:22:26",
+      "updated": "2020-12-02 16:09:41",
       "section": "Opinion",
       "subsection": "",
       "nytdsection": "opinion",
@@ -68,290 +68,25 @@
       "eta_id": 0
     },
     {
-      "uri": "nyt://article/98e31a6a-1107-546f-a68d-36df13ce9b24",
-      "url": "https://www.nytimes.com/2020/11/19/style/rudy-giuliani-hair.html",
-      "id": 100000007463764,
-      "asset_id": 100000007463764,
+      "uri": "nyt://article/6bb97b0e-475e-5888-a484-962f2c241b3a",
+      "url": "https://www.nytimes.com/2020/11/28/us/monolith-utah-disappeared.html",
+      "id": 100000007477435,
+      "asset_id": 100000007477435,
       "source": "New York Times",
-      "published_date": "2020-11-19",
-      "updated": "2020-11-24 10:32:42",
-      "section": "Style",
-      "subsection": "",
-      "nytdsection": "style",
-      "adx_keywords": "Dyes and Dyestuffs;Hair;Giuliani, Rudolph W",
-      "column": null,
-      "byline": "By Jonah Engel Bromwich",
-      "type": "Article",
-      "title": "Whatever It Is, It’s Probably Not Hair Dye",
-      "abstract": "Hairdressers weigh in on Rudy Giuliani’s drip problem.",
-      "des_facet": [
-        "Dyes and Dyestuffs",
-        "Hair"
-      ],
-      "org_facet": [],
-      "per_facet": [
-        "Giuliani, Rudolph W"
-      ],
-      "geo_facet": [],
-      "media": [
-        {
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Rudolph W. Giuliani, President Trump’s personal attorney, at a news conference on Thursday about the results of the 2020 presidential election.",
-          "copyright": "Jonathan Ernst/Reuters",
-          "approved_for_syndication": 1,
-          "media-metadata": [
-            {
-              "url": "https://static01.nyt.com/images/2020/11/19/fashion/19rudy-hair/19rudy-hair-thumbStandard.jpg",
-              "format": "Standard Thumbnail",
-              "height": 75,
-              "width": 75
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/19/fashion/19rudy-hair/19rudy-hair-mediumThreeByTwo210.jpg",
-              "format": "mediumThreeByTwo210",
-              "height": 140,
-              "width": 210
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/19/fashion/19rudy-hair/19rudy-hair-mediumThreeByTwo440.jpg",
-              "format": "mediumThreeByTwo440",
-              "height": 293,
-              "width": 440
-            }
-          ]
-        }
-      ],
-      "eta_id": 0
-    },
-    {
-      "uri": "nyt://article/403637d5-d8f5-50be-ad38-417d13c15f23",
-      "url": "https://www.nytimes.com/2020/11/18/world/asia/covid-cleaning.html",
-      "id": 100000007366844,
-      "asset_id": 100000007366844,
-      "source": "New York Times",
-      "published_date": "2020-11-18",
-      "updated": "2020-11-23 09:18:26",
-      "section": "World",
-      "subsection": "Asia Pacific",
-      "nytdsection": "world",
-      "adx_keywords": "Coronavirus Risks and Safety Concerns;Coronavirus (2019-nCoV);Cleaning Services;Hygiene and Cleanliness;Hong Kong",
-      "column": null,
-      "byline": "By Mike Ives and Apoorva Mandavilli",
-      "type": "Article",
-      "title": "The Coronavirus Is Airborne Indoors. Why Are We Still Scrubbing Surfaces?",
-      "abstract": "Scientists who initially warned about contaminated surfaces now say that the virus spreads primarily through inhaled droplets, and that there is little to no evidence that deep cleaning mitigates the threat indoors.",
-      "des_facet": [
-        "Coronavirus Risks and Safety Concerns",
-        "Coronavirus (2019-nCoV)",
-        "Cleaning Services",
-        "Hygiene and Cleanliness"
-      ],
-      "org_facet": [],
-      "per_facet": [],
-      "geo_facet": [
-        "Hong Kong"
-      ],
-      "media": [
-        {
-          "type": "image",
-          "subtype": "photo",
-          "caption": "People buying disinfectant at a shopping mall in Hong Kong.",
-          "copyright": "Lam Yik Fei for The New York Times",
-          "approved_for_syndication": 1,
-          "media-metadata": [
-            {
-              "url": "https://static01.nyt.com/images/2020/11/21/world/19virus-hk-hygiene03/19virus-hk-hygiene03-thumbStandard.jpg",
-              "format": "Standard Thumbnail",
-              "height": 75,
-              "width": 75
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/21/world/19virus-hk-hygiene03/merlin_180083316_747a5b09-7aff-43df-8741-786497b990bb-mediumThreeByTwo210.jpg",
-              "format": "mediumThreeByTwo210",
-              "height": 140,
-              "width": 210
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/21/world/19virus-hk-hygiene03/merlin_180083316_747a5b09-7aff-43df-8741-786497b990bb-mediumThreeByTwo440.jpg",
-              "format": "mediumThreeByTwo440",
-              "height": 293,
-              "width": 440
-            }
-          ]
-        }
-      ],
-      "eta_id": 0
-    },
-    {
-      "uri": "nyt://article/4d6da2d9-6e3d-5c32-a7f3-9285dda2b6d6",
-      "url": "https://www.nytimes.com/2020/11/19/nyregion/trump-fraud-investigations-taxes.html",
-      "id": 100000007460324,
-      "asset_id": 100000007460324,
-      "source": "New York Times",
-      "published_date": "2020-11-19",
-      "updated": "2020-11-24 17:17:32",
-      "section": "New York",
-      "subsection": "",
-      "nytdsection": "new york",
-      "adx_keywords": "Trump Tax Returns;Income Tax;Tax Evasion;United States Politics and Government;Consultants;Trump, Donald J;Trump, Ivanka;Trump, Eric F (1984- );James, Letitia;Vance, Cyrus R Jr;Cohen, Michael D (1966- );Clifford, Stephanie (1979- );Internal Revenue Service;Trump Organization;Trump, Donald J, Foundation;TTT Consulting LLC",
-      "column": null,
-      "byline": "By Danny Hakim, Mike McIntire, William K. Rashbaum and Ben Protess",
-      "type": "Article",
-      "title": "Trump Tax Write-Offs Are Ensnared in 2 New York Fraud Investigations",
-      "abstract": "Inquiries into the president and his businesses, one criminal and one civil, are now looking at tax deductions taken on consulting fees. Some of the payments appear to have gone to Ivanka Trump.",
-      "des_facet": [
-        "Trump Tax Returns",
-        "Income Tax",
-        "Tax Evasion",
-        "United States Politics and Government",
-        "Consultants"
-      ],
-      "org_facet": [
-        "Internal Revenue Service",
-        "Trump Organization",
-        "Trump, Donald J, Foundation",
-        "TTT Consulting LLC"
-      ],
-      "per_facet": [
-        "Trump, Donald J",
-        "Trump, Ivanka",
-        "Trump, Eric F (1984- )",
-        "James, Letitia",
-        "Vance, Cyrus R Jr",
-        "Cohen, Michael D (1966- )",
-        "Clifford, Stephanie (1979- )"
-      ],
-      "geo_facet": [],
-      "media": [
-        {
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Eric, Ivanka and Donald Trump Jr. with their father at a hotel event in Vancouver, British Columbia. Ms. Trump seems to have been paid as a consultant for the project while also working for the family business.",
-          "copyright": "Andy Clark/Reuters",
-          "approved_for_syndication": 1,
-          "media-metadata": [
-            {
-              "url": "https://static01.nyt.com/images/2020/11/18/multimedia/18NYAG-Trump/18NYAG-Trump-thumbStandard.jpg",
-              "format": "Standard Thumbnail",
-              "height": 75,
-              "width": 75
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/18/multimedia/18NYAG-Trump/18NYAG-Trump-mediumThreeByTwo210.jpg",
-              "format": "mediumThreeByTwo210",
-              "height": 140,
-              "width": 210
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/18/multimedia/18NYAG-Trump/18NYAG-Trump-mediumThreeByTwo440.jpg",
-              "format": "mediumThreeByTwo440",
-              "height": 293,
-              "width": 440
-            }
-          ]
-        }
-      ],
-      "eta_id": 0
-    },
-    {
-      "uri": "nyt://article/0e9f1b56-ca77-5200-bdf2-ee5bc42f4b54",
-      "url": "https://www.nytimes.com/2020/11/23/us/politics/biden-nominees.html",
-      "id": 100000007467947,
-      "asset_id": 100000007467947,
-      "source": "New York Times",
-      "published_date": "2020-11-23",
-      "updated": "2020-11-25 20:44:41",
-      "section": "U.S.",
-      "subsection": "Politics",
-      "nytdsection": "u.s.",
-      "adx_keywords": "Appointments and Executive Changes;Presidential Transition (US);United States Politics and Government;United States International Relations;United Nations Framework Convention on Climate Change;Minorities;Women and Girls;Hispanic-Americans;Biden, Joseph R Jr;Yellen, Janet L;Mayorkas, Alejandro;Haines, Avril D;Kerry, John;Blinken, Antony J;Sullivan, Jacob J (1976- );Thomas-Greenfield, Linda;Treasury Department;State Department;Homeland Security Department;Office of the Director of National Intelligence;National Security Council",
-      "column": null,
-      "byline": "By Michael Crowley and Jeanna Smialek",
-      "type": "Article",
-      "title": "Biden Will Nominate First Women to Lead Treasury and Intelligence, and First Latino to Run Homeland Security",
-      "abstract": "John Kerry, the former secretary of state, will be the international climate czar, signaling the new administration’s commitment to fighting climate change.",
-      "des_facet": [
-        "Appointments and Executive Changes",
-        "Presidential Transition (US)",
-        "United States Politics and Government",
-        "United States International Relations",
-        "United Nations Framework Convention on Climate Change",
-        "Minorities",
-        "Women and Girls",
-        "Hispanic-Americans"
-      ],
-      "org_facet": [
-        "Treasury Department",
-        "State Department",
-        "Homeland Security Department",
-        "Office of the Director of National Intelligence",
-        "National Security Council"
-      ],
-      "per_facet": [
-        "Biden, Joseph R Jr",
-        "Yellen, Janet L",
-        "Mayorkas, Alejandro",
-        "Haines, Avril D",
-        "Kerry, John",
-        "Blinken, Antony J",
-        "Sullivan, Jacob J (1976- )",
-        "Thomas-Greenfield, Linda"
-      ],
-      "geo_facet": [],
-      "media": [
-        {
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Janet L. Yellen, the former Federal Reserve chair, will be thrust into negotiating for more aid with what is expected to be a divided Congress.",
-          "copyright": "Lexey Swall for The New York Times",
-          "approved_for_syndication": 1,
-          "media-metadata": [
-            {
-              "url": "https://static01.nyt.com/images/2020/11/23/us/politics/23dc-biden-cabinet-yellin/merlin_129510059_c2272a86-3d2c-4048-b25f-78cd1cba6f9b-thumbStandard.jpg",
-              "format": "Standard Thumbnail",
-              "height": 75,
-              "width": 75
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/23/us/politics/23dc-biden-cabinet-yellin/merlin_129510059_c2272a86-3d2c-4048-b25f-78cd1cba6f9b-mediumThreeByTwo210.jpg",
-              "format": "mediumThreeByTwo210",
-              "height": 140,
-              "width": 210
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/23/us/politics/23dc-biden-cabinet-yellin/merlin_129510059_c2272a86-3d2c-4048-b25f-78cd1cba6f9b-mediumThreeByTwo440.jpg",
-              "format": "mediumThreeByTwo440",
-              "height": 293,
-              "width": 440
-            }
-          ]
-        }
-      ],
-      "eta_id": 0
-    },
-    {
-      "uri": "nyt://article/5859fbaa-effa-5e2a-b455-2a8cd1256b76",
-      "url": "https://www.nytimes.com/2020/11/24/us/Utah-monolith-red-rock-country.html",
-      "id": 100000007470710,
-      "asset_id": 100000007470710,
-      "source": "New York Times",
-      "published_date": "2020-11-24",
-      "updated": "2020-11-25 12:22:51",
+      "published_date": "2020-11-28",
+      "updated": "2020-12-01 07:57:50",
       "section": "U.S.",
       "subsection": "",
       "nytdsection": "u.s.",
-      "adx_keywords": "Art;Sculpture;Deserts;Federal Lands;Bureau of Land Management;Utah",
+      "adx_keywords": "Art;Sculpture;Bureau of Land Management;Utah",
       "column": null,
-      "byline": "By Alan Yuhas",
+      "byline": "By Bryan Pietsch",
       "type": "Article",
-      "title": "A Weird Monolith Is Found in the Utah Desert",
-      "abstract": "A team surveying bighorn sheep for Utah’s wildlife agency found the strange object, 10 to 12 feet tall, embedded in the ground in a remote part of Red Rock Country. It’s probably art, officials said.",
+      "title": "That Mysterious Monolith in the Utah Desert? It’s Gone, Officials Say",
+      "abstract": "The metal structure has been removed, Utah officials said on Saturday, adding that they had not taken it down.",
       "des_facet": [
         "Art",
-        "Sculpture",
-        "Deserts",
-        "Federal Lands"
+        "Sculpture"
       ],
       "org_facet": [
         "Bureau of Land Management"
@@ -364,86 +99,24 @@
         {
           "type": "image",
           "subtype": "photo",
-          "caption": "",
-          "copyright": "Utah Department of Public Safety/EPA-EFE, via Shutterstock",
+          "caption": "A metal object was found in the remote Utah desert last week by state workers.",
+          "copyright": "Utah Department of Public Safety, via Associated Press",
           "approved_for_syndication": 1,
           "media-metadata": [
             {
-              "url": "https://static01.nyt.com/images/2020/11/24/multimedia/24xp-monolith4/24xp-monolith4-thumbStandard-v2.jpg",
+              "url": "https://static01.nyt.com/images/2020/11/28/us/politics/28xp-monolith-photo/28xp-monolith-photo-thumbStandard.jpg",
               "format": "Standard Thumbnail",
               "height": 75,
               "width": 75
             },
             {
-              "url": "https://static01.nyt.com/images/2020/11/24/multimedia/24xp-monolith4/24xp-monolith4-mediumThreeByTwo210-v4.jpg",
+              "url": "https://static01.nyt.com/images/2020/11/28/us/politics/28xp-monolith-photo/28xp-monolith-photo-mediumThreeByTwo210.jpg",
               "format": "mediumThreeByTwo210",
               "height": 140,
               "width": 210
             },
             {
-              "url": "https://static01.nyt.com/images/2020/11/24/multimedia/24xp-monolith4/24xp-monolith4-mediumThreeByTwo440-v4.jpg",
-              "format": "mediumThreeByTwo440",
-              "height": 293,
-              "width": 440
-            }
-          ]
-        }
-      ],
-      "eta_id": 0
-    },
-    {
-      "uri": "nyt://article/d37124da-40b1-58ed-80f7-d9960a079836",
-      "url": "https://www.nytimes.com/2020/11/19/opinion/trump-supporters.html",
-      "id": 100000007450265,
-      "asset_id": 100000007450265,
-      "source": "New York Times",
-      "published_date": "2020-11-19",
-      "updated": "2020-11-23 13:05:21",
-      "section": "Opinion",
-      "subsection": "",
-      "nytdsection": "opinion",
-      "adx_keywords": "Presidential Election of 2020;Race and Ethnicity;Discrimination;United States Politics and Government;Voting and Voters;Muslims and Islam;Muslim Americans;Trump, Donald J",
-      "column": null,
-      "byline": "By Wajahat Ali",
-      "type": "Article",
-      "title": "‘Reach Out to Trump Supporters,’ They Said. I Tried.",
-      "abstract": "I give up.",
-      "des_facet": [
-        "Presidential Election of 2020",
-        "Race and Ethnicity",
-        "Discrimination",
-        "United States Politics and Government",
-        "Voting and Voters",
-        "Muslims and Islam",
-        "Muslim Americans"
-      ],
-      "org_facet": [],
-      "per_facet": [
-        "Trump, Donald J"
-      ],
-      "geo_facet": [],
-      "media": [
-        {
-          "type": "image",
-          "subtype": "photo",
-          "caption": "The Million MAGA March in Washington, last week.",
-          "copyright": "Jordan Gale for The New York Times",
-          "approved_for_syndication": 1,
-          "media-metadata": [
-            {
-              "url": "https://static01.nyt.com/images/2020/11/19/opinion/19ali-01/19ali-01-thumbStandard.jpg",
-              "format": "Standard Thumbnail",
-              "height": 75,
-              "width": 75
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/19/opinion/19ali-01/merlin_180034455_fffd4514-bb16-432c-a54f-fa54d2970cf7-mediumThreeByTwo210.jpg",
-              "format": "mediumThreeByTwo210",
-              "height": 140,
-              "width": 210
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/19/opinion/19ali-01/merlin_180034455_fffd4514-bb16-432c-a54f-fa54d2970cf7-mediumThreeByTwo440.jpg",
+              "url": "https://static01.nyt.com/images/2020/11/28/us/politics/28xp-monolith-photo/28xp-monolith-photo-mediumThreeByTwo440.jpg",
               "format": "mediumThreeByTwo440",
               "height": 293,
               "width": 440
@@ -460,7 +133,7 @@
       "asset_id": 100000007473549,
       "source": "New York Times",
       "published_date": "2020-11-25",
-      "updated": "2020-11-26 13:28:21",
+      "updated": "2020-12-02 09:46:50",
       "section": "Business",
       "subsection": "",
       "nytdsection": "business",
@@ -516,59 +189,128 @@
       "eta_id": 0
     },
     {
-      "uri": "nyt://article/f56455fc-5c79-5367-8e41-d1f3561ef489",
-      "url": "https://www.nytimes.com/2020/11/22/us/politics/biden-antony-blinken-secretary-of-state.html",
-      "id": 100000007461569,
-      "asset_id": 100000007461569,
+      "uri": "nyt://article/77845a39-f036-520f-8cca-553c9d8274f6",
+      "url": "https://www.nytimes.com/2020/11/26/us/supreme-court-coronavirus-religion-new-york.html",
+      "id": 100000007463062,
+      "asset_id": 100000007463062,
       "source": "New York Times",
-      "published_date": "2020-11-22",
-      "updated": "2020-11-23 11:25:44",
+      "published_date": "2020-11-26",
+      "updated": "2020-11-26 14:14:52",
+      "section": "U.S.",
+      "subsection": "",
+      "nytdsection": "u.s.",
+      "adx_keywords": "Suits and Litigation (Civil);Coronavirus (2019-nCoV);Decisions and Verdicts;Freedom of Religion;Shutdowns (Institutional);Places of Worship;Cuomo, Andrew M;Barrett, Amy Coney;Supreme Court (US);Roman Catholic Church;New York City",
+      "column": null,
+      "byline": "By Adam Liptak",
+      "type": "Article",
+      "title": "Splitting 5 to 4, Supreme Court Backs Religious Challenge to Cuomo’s Virus Shutdown Order",
+      "abstract": "Justice Amy Coney Barrett played a decisive role in the decision, which took the opposite approach of earlier court rulings related to coronavirus restrictions in California and Nevada.",
+      "des_facet": [
+        "Suits and Litigation (Civil)",
+        "Coronavirus (2019-nCoV)",
+        "Decisions and Verdicts",
+        "Freedom of Religion",
+        "Shutdowns (Institutional)",
+        "Places of Worship"
+      ],
+      "org_facet": [
+        "Supreme Court (US)",
+        "Roman Catholic Church"
+      ],
+      "per_facet": [
+        "Cuomo, Andrew M",
+        "Barrett, Amy Coney"
+      ],
+      "geo_facet": [
+        "New York City"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Easter Mass was live-streamed from a mostly empty Catholic church in Brooklyn in April.",
+          "copyright": "Ryan Christopher Jones for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2020/11/19/us/politics/00dc-scotus-church/00dc-scotus-church-thumbStandard-v2.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/11/19/us/politics/00dc-scotus-church/00dc-scotus-church-mediumThreeByTwo210-v3.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/11/19/us/politics/00dc-scotus-church/00dc-scotus-church-mediumThreeByTwo440-v3.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/5248fea5-88e0-5544-a72b-77fdd3064e78",
+      "url": "https://www.nytimes.com/2020/12/01/us/politics/rudy-giuliani-pardon.html",
+      "id": 100000007480846,
+      "asset_id": 100000007480846,
+      "source": "New York Times",
+      "published_date": "2020-12-01",
+      "updated": "2020-12-02 17:13:00",
       "section": "U.S.",
       "subsection": "Politics",
       "nytdsection": "u.s.",
-      "adx_keywords": "Appointments and Executive Changes;United States International Relations;United States Politics and Government;Presidential Transition (US);Biden, Joseph R Jr;Blinken, Antony J;Obama, Barack;State Department",
+      "adx_keywords": "Amnesties, Commutations and Pardons;Presidential Election of 2020;Trump-Ukraine Whistle-Blower Complaint and Impeachment Inquiry;Russian Interference in 2016 US Elections and Ties to Trump Associates;United States Politics and Government;Presidents and Presidency (US);Giuliani, Rudolph W;Trump, Donald J;Trump, Ivanka;Trump, Donald J Jr;Trump, Eric F (1984- )",
       "column": null,
-      "byline": "By Lara Jakes, Michael Crowley and David E. Sanger",
+      "byline": "By Maggie Haberman and Michael S. Schmidt",
       "type": "Article",
-      "title": "Biden Chooses Antony Blinken, Defender of Global Alliances, as Secretary of State",
-      "abstract": "The president-elect is also expected to name Jake Sullivan, another close aide of his, as national security adviser, and Linda Thomas-Greenfield, a 35-year Foreign Service veteran, as his ambassador to the U.N.",
+      "title": "Trump Has Discussed With Advisers Pardons for His 3 Eldest Children and Giuliani",
+      "abstract": "Rudolph W. Giuliani, who is promoting baseless claims of widespread election fraud, talked about a pardon with President Trump as recently as last week.",
       "des_facet": [
-        "Appointments and Executive Changes",
-        "United States International Relations",
+        "Amnesties, Commutations and Pardons",
+        "Presidential Election of 2020",
+        "Trump-Ukraine Whistle-Blower Complaint and Impeachment Inquiry",
+        "Russian Interference in 2016 US Elections and Ties to Trump Associates",
         "United States Politics and Government",
-        "Presidential Transition (US)"
+        "Presidents and Presidency (US)"
       ],
-      "org_facet": [
-        "State Department"
-      ],
+      "org_facet": [],
       "per_facet": [
-        "Biden, Joseph R Jr",
-        "Blinken, Antony J",
-        "Obama, Barack"
+        "Giuliani, Rudolph W",
+        "Trump, Donald J",
+        "Trump, Ivanka",
+        "Trump, Donald J Jr",
+        "Trump, Eric F (1984- )"
       ],
       "geo_facet": [],
       "media": [
         {
           "type": "image",
           "subtype": "photo",
-          "caption": "Antony J. Blinken began his career at the State Department during the Clinton administration.",
-          "copyright": "Jose Luis Magana/Associated Press",
+          "caption": "A pardon for Rudolph W. Giuliani, President Trump’s lawyer, is certain to prompt accusations that Mr. Trump has used his power to obstruct investigations and insulate himself and his allies. ",
+          "copyright": "Erin Schaff/The New York Times",
           "approved_for_syndication": 1,
           "media-metadata": [
             {
-              "url": "https://static01.nyt.com/images/2020/11/23/us/politics/00dc-state-blinken-print/merlin_179822205_c7163a55-8518-42d3-a90f-11d21aa5e9fa-thumbStandard.jpg",
+              "url": "https://static01.nyt.com/images/2020/12/01/us/politics/01transition-briefing-rudy-giuliani-pardon1/01transition-briefing-rudy-giuliani-pardon1-thumbStandard.jpg",
               "format": "Standard Thumbnail",
               "height": 75,
               "width": 75
             },
             {
-              "url": "https://static01.nyt.com/images/2020/11/23/us/politics/00dc-state-blinken-print/merlin_179822205_c7163a55-8518-42d3-a90f-11d21aa5e9fa-mediumThreeByTwo210.jpg",
+              "url": "https://static01.nyt.com/images/2020/12/01/us/politics/01transition-briefing-rudy-giuliani-pardon1/01transition-briefing-rudy-giuliani-pardon1-mediumThreeByTwo210.jpg",
               "format": "mediumThreeByTwo210",
               "height": 140,
               "width": 210
             },
             {
-              "url": "https://static01.nyt.com/images/2020/11/23/us/politics/00dc-state-blinken-print/merlin_179822205_c7163a55-8518-42d3-a90f-11d21aa5e9fa-mediumThreeByTwo440.jpg",
+              "url": "https://static01.nyt.com/images/2020/12/01/us/politics/01transition-briefing-rudy-giuliani-pardon1/01transition-briefing-rudy-giuliani-pardon1-mediumThreeByTwo440.jpg",
               "format": "mediumThreeByTwo440",
               "height": 293,
               "width": 440
@@ -579,190 +321,57 @@
       "eta_id": 0
     },
     {
-      "uri": "nyt://article/b555087e-747c-5350-81a9-0a1b78a85024",
-      "url": "https://www.nytimes.com/2020/11/24/us/politics/ivanka-jared.html",
-      "id": 100000007461416,
-      "asset_id": 100000007461416,
+      "uri": "nyt://article/edfb7f02-ac48-5b65-ad7f-062e6cd36189",
+      "url": "https://www.nytimes.com/2020/12/01/arts/design/utah-monolith-removed-instagram.html",
+      "id": 100000007478060,
+      "asset_id": 100000007478060,
       "source": "New York Times",
-      "published_date": "2020-11-24",
-      "updated": "2020-11-26 17:21:13",
-      "section": "U.S.",
-      "subsection": "Politics",
-      "nytdsection": "u.s.",
-      "adx_keywords": "Presidential Election of 2020;United States Politics and Government;Kushner, Jared;Trump, Ivanka;Trump, Donald J;Washington (DC);Park Avenue (Manhattan, NY)",
+      "published_date": "2020-12-01",
+      "updated": "2020-12-02 14:23:54",
+      "section": "Arts",
+      "subsection": "Art & Design",
+      "nytdsection": "arts",
+      "adx_keywords": "Sculpture;Deserts;Federal Lands;Art;McCracken, John;Utah",
       "column": null,
-      "byline": "By Elizabeth Williamson",
+      "byline": "By Serge F. Kovaleski, Deborah Solomon and Zoe Rosenberg",
       "type": "Article",
-      "title": "As Their D.C. Days Dwindle, Ivanka and Jared Look for a New Beginning",
-      "abstract": "The end of President Trump’s time in office leaves his daughter Ivanka Trump and his son-in-law, Jared Kushner, looking for a new home — but they appear to have plans in New Jersey.",
+      "title": "How a Mysterious Monolith Vanished Overnight (It Wasn’t Aliens)",
+      "abstract": "A photographer said four men dismantled the mysterious shiny object that has captivated the country. Two Utah residents said they took part in the removal.",
       "des_facet": [
-        "Presidential Election of 2020",
-        "United States Politics and Government"
+        "Sculpture",
+        "Deserts",
+        "Federal Lands",
+        "Art"
       ],
       "org_facet": [],
       "per_facet": [
-        "Kushner, Jared",
-        "Trump, Ivanka",
-        "Trump, Donald J"
+        "McCracken, John"
       ],
       "geo_facet": [
-        "Washington (DC)",
-        "Park Avenue (Manhattan, NY)"
+        "Utah"
       ],
       "media": [
         {
           "type": "image",
           "subtype": "photo",
-          "caption": "Ivanka Trump and Jared Kushner with two of their children in September. The couple found an occasionally awkward reception in Washington, where only 4 percent of residents voted for President Trump in 2016.",
-          "copyright": "Doug Mills/The New York Times",
+          "caption": "Ross Bernards took moonlit photographs of his friend Peter Jans atop the monolith in southeastern Utah on Nov. 27. Moments later they witnessed its removal.",
+          "copyright": "Ross Bernards",
           "approved_for_syndication": 1,
           "media-metadata": [
             {
-              "url": "https://static01.nyt.com/images/2020/11/19/us/politics/19DC-JAREDIVANKA-3/19DC-JAREDIVANKA-3-thumbStandard-v2.jpg",
+              "url": "https://static01.nyt.com/images/2020/11/30/us/30monolith1/30monolith1-thumbStandard-v2.jpg",
               "format": "Standard Thumbnail",
               "height": 75,
               "width": 75
             },
             {
-              "url": "https://static01.nyt.com/images/2020/11/19/us/politics/19DC-JAREDIVANKA-3/19DC-JAREDIVANKA-3-mediumThreeByTwo210-v2.jpg",
+              "url": "https://static01.nyt.com/images/2020/11/30/us/30monolith1/30monolith1-mediumThreeByTwo210-v3.jpg",
               "format": "mediumThreeByTwo210",
               "height": 140,
               "width": 210
             },
             {
-              "url": "https://static01.nyt.com/images/2020/11/19/us/politics/19DC-JAREDIVANKA-3/19DC-JAREDIVANKA-3-mediumThreeByTwo440-v2.jpg",
-              "format": "mediumThreeByTwo440",
-              "height": 293,
-              "width": 440
-            }
-          ]
-        }
-      ],
-      "eta_id": 0
-    },
-    {
-      "uri": "nyt://article/8dfb74cf-c563-5101-8208-f59bd1aa0a36",
-      "url": "https://www.nytimes.com/2020/11/19/us/politics/trump-election.html",
-      "id": 100000007463745,
-      "asset_id": 100000007463745,
-      "source": "New York Times",
-      "published_date": "2020-11-19",
-      "updated": "2020-11-22 10:26:42",
-      "section": "U.S.",
-      "subsection": "Politics",
-      "nytdsection": "u.s.",
-      "adx_keywords": "Presidential Election of 2020;Presidential Election of 1876;United States Politics and Government;State Legislatures;Electoral College;Absentee Voting;Voter Fraud (Election Fraud);Rumors and Misinformation;Trump, Donald J;Hayes, Rutherford Birchard;Biden, Joseph R Jr;Republican Party;Michigan;Arizona;Georgia",
-      "column": null,
-      "byline": "By David E. Sanger",
-      "type": "Article",
-      "title": "Trump’s Attempts to Overturn the Election Are Unparalleled in U.S. History",
-      "abstract": "The president’s push to prevent states from certifying electors and get legislators to override voters’ choice eclipses even the bitter 1876 election as an audacious use of brute political force.",
-      "des_facet": [
-        "Presidential Election of 2020",
-        "Presidential Election of 1876",
-        "United States Politics and Government",
-        "State Legislatures",
-        "Electoral College",
-        "Absentee Voting",
-        "Voter Fraud (Election Fraud)",
-        "Rumors and Misinformation"
-      ],
-      "org_facet": [
-        "Republican Party"
-      ],
-      "per_facet": [
-        "Trump, Donald J",
-        "Hayes, Rutherford Birchard",
-        "Biden, Joseph R Jr"
-      ],
-      "geo_facet": [
-        "Michigan",
-        "Arizona",
-        "Georgia"
-      ],
-      "media": [
-        {
-          "type": "image",
-          "subtype": "photo",
-          "caption": "President Trump’s strategy has become clear over two days of increasingly frenetic action by an executive who is weeks away from losing power.",
-          "copyright": "Anna Moneymaker for The New York Times",
-          "approved_for_syndication": 1,
-          "media-metadata": [
-            {
-              "url": "https://static01.nyt.com/images/2020/11/19/us/politics/19dc-assess/merlin_179990463_82cabfc9-b554-499e-9eee-722808c61eed-thumbStandard.jpg",
-              "format": "Standard Thumbnail",
-              "height": 75,
-              "width": 75
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/19/us/politics/19dc-assess/merlin_179990463_82cabfc9-b554-499e-9eee-722808c61eed-mediumThreeByTwo210.jpg",
-              "format": "mediumThreeByTwo210",
-              "height": 140,
-              "width": 210
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/19/us/politics/19dc-assess/merlin_179990463_82cabfc9-b554-499e-9eee-722808c61eed-mediumThreeByTwo440.jpg",
-              "format": "mediumThreeByTwo440",
-              "height": 293,
-              "width": 440
-            }
-          ]
-        }
-      ],
-      "eta_id": 0
-    },
-    {
-      "uri": "nyt://article/adb4aaf4-702b-58d4-aa8b-2d4c29f6468f",
-      "url": "https://www.nytimes.com/2020/11/24/nyregion/williamsburg-jewish-wedding-coronavirus-covid-masks.html",
-      "id": 100000007470773,
-      "asset_id": 100000007470773,
-      "source": "New York Times",
-      "published_date": "2020-11-24",
-      "updated": "2020-11-26 09:37:15",
-      "section": "New York",
-      "subsection": "",
-      "nytdsection": "new york",
-      "adx_keywords": "Hasidism;Coronavirus (2019-nCoV);Fines (Penalties);Weddings and Engagements;Disease Rates;New York City;Williamsburg (Brooklyn, NY)",
-      "column": null,
-      "byline": "By Liam Stack",
-      "type": "Article",
-      "title": "$15,000 Fine After Secret Hasidic Wedding Draws Thousands of Guests",
-      "abstract": "“This was amazingly irresponsible,” Mayor Bill de Blasio said of the event in Williamsburg, Brooklyn.",
-      "des_facet": [
-        "Hasidism",
-        "Coronavirus (2019-nCoV)",
-        "Fines (Penalties)",
-        "Weddings and Engagements",
-        "Disease Rates"
-      ],
-      "org_facet": [],
-      "per_facet": [],
-      "geo_facet": [
-        "New York City",
-        "Williamsburg (Brooklyn, NY)"
-      ],
-      "media": [
-        {
-          "type": "image",
-          "subtype": "photo",
-          "caption": "A video of a wedding in Brooklyn circulated widely on the internet, leading city officials to issue a fine.",
-          "copyright": "",
-          "approved_for_syndication": 1,
-          "media-metadata": [
-            {
-              "url": "https://static01.nyt.com/images/2020/11/24/nyregion/24nyvirus-weddings/24nyvirus-weddings-thumbStandard.jpg",
-              "format": "Standard Thumbnail",
-              "height": 75,
-              "width": 75
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/24/nyregion/24nyvirus-weddings/24nyvirus-weddings-mediumThreeByTwo210-v2.jpg",
-              "format": "mediumThreeByTwo210",
-              "height": 140,
-              "width": 210
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/24/nyregion/24nyvirus-weddings/24nyvirus-weddings-mediumThreeByTwo440-v2.jpg",
+              "url": "https://static01.nyt.com/images/2020/11/30/us/30monolith1/30monolith1-mediumThreeByTwo440-v3.jpg",
               "format": "mediumThreeByTwo440",
               "height": 293,
               "width": 440
@@ -833,293 +442,95 @@
       "eta_id": 0
     },
     {
-      "uri": "nyt://article/7d0a0eb2-08a0-5710-a505-69b7a521109e",
-      "url": "https://www.nytimes.com/2020/11/20/us/politics/Tucker-Carlson-trump.html",
-      "id": 100000007466397,
-      "asset_id": 100000007466397,
+      "uri": "nyt://article/972adb87-30eb-5113-a593-8fe33a9337d1",
+      "url": "https://www.nytimes.com/2020/11/26/opinion/pope-francis-covid.html",
+      "id": 100000007459592,
+      "asset_id": 100000007459592,
       "source": "New York Times",
-      "published_date": "2020-11-20",
-      "updated": "2020-11-23 15:46:49",
-      "section": "U.S.",
-      "subsection": "Politics",
-      "nytdsection": "u.s.",
-      "adx_keywords": "Television;Voter Fraud (Election Fraud);Conspiracy Theories;Presidential Election of 2020;Rumors and Misinformation;News and News Media;Conservatism (US Politics);Carlson, Tucker;Powell, Sidney (Attorney);Trump, Donald J;Fox News Channel;Republican Party",
+      "published_date": "2020-11-26",
+      "updated": "2020-12-01 09:56:24",
+      "section": "Opinion",
+      "subsection": "",
+      "nytdsection": "opinion",
+      "adx_keywords": "Coronavirus (2019-nCoV);Christians and Christianity;Francis;Roman Catholic Church",
       "column": null,
-      "byline": "By Jeremy W. Peters",
+      "byline": "By Pope Francis",
       "type": "Article",
-      "title": "Tucker Carlson Dared Question a Trump Lawyer. The Backlash Was Quick.",
-      "abstract": "The president’s allies quickly closed ranks behind Sidney Powell and her pro-Trump conspiracy theory, accusing the Fox host of betrayal.",
+      "title": "Pope Francis: A Crisis Reveals What Is in Our Hearts",
+      "abstract": "To come out of this pandemic better than we went in, we must let ourselves be touched by others’ pain.",
       "des_facet": [
-        "Television",
-        "Voter Fraud (Election Fraud)",
-        "Conspiracy Theories",
+        "Coronavirus (2019-nCoV)",
+        "Christians and Christianity"
+      ],
+      "org_facet": [
+        "Roman Catholic Church"
+      ],
+      "per_facet": [
+        "Francis"
+      ],
+      "geo_facet": [],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "   ",
+          "copyright": "Illustration by Najeebah Al-Ghadban; photographs by Getty Images",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2020/11/29/opinion/sunday/26pope/26pope-thumbStandard-v4.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/11/29/opinion/sunday/26pope/26pope-mediumThreeByTwo210-v3.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/11/29/opinion/sunday/26pope/26pope-mediumThreeByTwo440-v3.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/15e7ebd9-29a4-5c41-be25-bae1ecbd14de",
+      "url": "https://www.nytimes.com/2020/11/27/opinion/trump-democrats-coronavirus.html",
+      "id": 100000007469120,
+      "asset_id": 100000007469120,
+      "source": "New York Times",
+      "published_date": "2020-11-27",
+      "updated": "2020-11-30 02:02:12",
+      "section": "Opinion",
+      "subsection": "",
+      "nytdsection": "opinion",
+      "adx_keywords": "Presidential Election of 2020;Voting and Voters;Polls and Public Opinion;Coronavirus (2019-nCoV);United States Economy;United States Politics and Government;Trump, Donald J;Biden, Joseph R Jr;Democratic Party;Republican Party",
+      "column": null,
+      "byline": "By Will Wilkinson",
+      "type": "Article",
+      "title": "Why Did So Many Americans Vote for Trump?",
+      "abstract": "To the dismay of Democrats, the president’s strategy of ignoring the pandemic mostly worked for Republicans.",
+      "des_facet": [
         "Presidential Election of 2020",
-        "Rumors and Misinformation",
-        "News and News Media",
-        "Conservatism (US Politics)"
-      ],
-      "org_facet": [
-        "Fox News Channel",
-        "Republican Party"
-      ],
-      "per_facet": [
-        "Carlson, Tucker",
-        "Powell, Sidney (Attorney)",
-        "Trump, Donald J"
-      ],
-      "geo_facet": [],
-      "media": [
-        {
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Sidney Powell, an election lawyer for President Trump, has laid out a conspiracy theory that voting machines were hacked and millions of votes were stolen from the president.",
-          "copyright": "Erin Schaff/The New York Times",
-          "approved_for_syndication": 1,
-          "media-metadata": [
-            {
-              "url": "https://static01.nyt.com/images/2020/11/21/us/20conservative-media/21dc-lawsuits-thumbStandard.jpg",
-              "format": "Standard Thumbnail",
-              "height": 75,
-              "width": 75
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/21/us/20conservative-media/merlin_180237978_467ba8af-8fee-4ac1-adf5-484f22e3f1f2-mediumThreeByTwo210.jpg",
-              "format": "mediumThreeByTwo210",
-              "height": 140,
-              "width": 210
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/21/us/20conservative-media/merlin_180237978_467ba8af-8fee-4ac1-adf5-484f22e3f1f2-mediumThreeByTwo440.jpg",
-              "format": "mediumThreeByTwo440",
-              "height": 293,
-              "width": 440
-            }
-          ]
-        }
-      ],
-      "eta_id": 0
-    },
-    {
-      "uri": "nyt://article/c91219f5-7090-5281-9550-04c2143721ef",
-      "url": "https://www.nytimes.com/2020/11/19/business/economy/mnuchin-fed-emergency-programs.html",
-      "id": 100000007464153,
-      "asset_id": 100000007464153,
-      "source": "New York Times",
-      "published_date": "2020-11-19",
-      "updated": "2020-11-20 02:59:21",
-      "section": "Business",
-      "subsection": "Economy",
-      "nytdsection": "business",
-      "adx_keywords": "Credit and Debt;Federal Aid (US);United States Politics and Government;Coronavirus (2019-nCoV);Mnuchin, Steven T;Federal Reserve System;Treasury Department",
-      "column": null,
-      "byline": "By Jeanna Smialek and Alan Rappeport",
-      "type": "Article",
-      "title": "Mnuchin to End Key Fed Emergency Programs, Limiting Biden",
-      "abstract": "The Treasury Department asked the Federal Reserve to return unused funds, downsizing the next secretary’s ability to restart the economic support.",
-      "des_facet": [
-        "Credit and Debt",
-        "Federal Aid (US)",
-        "United States Politics and Government",
-        "Coronavirus (2019-nCoV)"
-      ],
-      "org_facet": [
-        "Federal Reserve System",
-        "Treasury Department"
-      ],
-      "per_facet": [
-        "Mnuchin, Steven T"
-      ],
-      "geo_facet": [],
-      "media": [
-        {
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Steven Mnuchin, the Treasury secretary, at the White House in October. He said he would not extend emergency loan programs that are set to expire at the end of the year.",
-          "copyright": "Stefani Reynolds for The New York Times",
-          "approved_for_syndication": 1,
-          "media-metadata": [
-            {
-              "url": "https://static01.nyt.com/images/2020/11/20/us/20dc-fedtreasury-print1/19dc-fedtreasury-thumbStandard.jpg",
-              "format": "Standard Thumbnail",
-              "height": 75,
-              "width": 75
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/20/us/20dc-fedtreasury-print1/19dc-fedtreasury-mediumThreeByTwo210.jpg",
-              "format": "mediumThreeByTwo210",
-              "height": 140,
-              "width": 210
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/20/us/20dc-fedtreasury-print1/19dc-fedtreasury-mediumThreeByTwo440.jpg",
-              "format": "mediumThreeByTwo440",
-              "height": 293,
-              "width": 440
-            }
-          ]
-        }
-      ],
-      "eta_id": 0
-    },
-    {
-      "uri": "nyt://article/27ec9712-b801-5b66-a6b2-0894f45a1906",
-      "url": "https://www.nytimes.com/2020/11/21/upshot/coronavirus-test-thanksgiving-plans.html",
-      "id": 100000007465840,
-      "asset_id": 100000007465840,
-      "source": "New York Times",
-      "published_date": "2020-11-21",
-      "updated": "2020-11-23 14:53:02",
-      "section": "The Upshot",
-      "subsection": "",
-      "nytdsection": "the upshot",
-      "adx_keywords": "Coronavirus (2019-nCoV);Content Type: Service;Coronavirus Risks and Safety Concerns;Tests (Medical);Thanksgiving Day;United States",
-      "column": null,
-      "byline": "By Claire Cain Miller, Katherine J. Wu and Margot Sanger-Katz",
-      "type": "Article",
-      "title": "No, a Negative Coronavirus Test Does Not Mean You Can Safely Socialize",
-      "abstract": "A negative test is helpful, scientists and doctors say. But it doesn’t mean you should skip other measures, like quarantining, masking and distancing.",
-      "des_facet": [
+        "Voting and Voters",
+        "Polls and Public Opinion",
         "Coronavirus (2019-nCoV)",
-        "Content Type: Service",
-        "Coronavirus Risks and Safety Concerns",
-        "Tests (Medical)",
-        "Thanksgiving Day"
-      ],
-      "org_facet": [],
-      "per_facet": [],
-      "geo_facet": [
-        "United States"
-      ],
-      "media": [
-        {
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Lining up for a Covid test in Manhattan this month.",
-          "copyright": "Peter Foley/EPA, via Shutterstock",
-          "approved_for_syndication": 1,
-          "media-metadata": [
-            {
-              "url": "https://static01.nyt.com/images/2020/11/20/upshot/00up-testing/00up-testing-thumbStandard.jpg",
-              "format": "Standard Thumbnail",
-              "height": 75,
-              "width": 75
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/20/upshot/00up-testing/00up-testing-mediumThreeByTwo210.jpg",
-              "format": "mediumThreeByTwo210",
-              "height": 140,
-              "width": 210
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/20/upshot/00up-testing/00up-testing-mediumThreeByTwo440.jpg",
-              "format": "mediumThreeByTwo440",
-              "height": 293,
-              "width": 440
-            }
-          ]
-        }
-      ],
-      "eta_id": 0
-    },
-    {
-      "uri": "nyt://article/394497c4-e159-5e93-a9ab-36e62dccb899",
-      "url": "https://www.nytimes.com/2020/11/17/health/coronavirus-immunity.html",
-      "id": 100000007456461,
-      "asset_id": 100000007456461,
-      "source": "New York Times",
-      "published_date": "2020-11-17",
-      "updated": "2020-11-22 11:17:17",
-      "section": "Health",
-      "subsection": "",
-      "nytdsection": "health",
-      "adx_keywords": "Immune System;Coronavirus (2019-nCoV);Antibodies;Vaccination and Immunization;SARS (Severe Acute Respiratory Syndrome);your-feed-science;La Jolla (Calif)",
-      "column": null,
-      "byline": "By Apoorva Mandavilli",
-      "type": "Article",
-      "title": "Immunity to the Coronavirus May Last Years, New Data Hint",
-      "abstract": "Blood samples from recovered patients suggest a powerful, long-lasting immune response, researchers reported.",
-      "des_facet": [
-        "Immune System",
-        "Coronavirus (2019-nCoV)",
-        "Antibodies",
-        "Vaccination and Immunization",
-        "SARS (Severe Acute Respiratory Syndrome)",
-        "your-feed-science"
-      ],
-      "org_facet": [],
-      "per_facet": [],
-      "geo_facet": [
-        "La Jolla (Calif)"
-      ],
-      "media": [
-        {
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Blood was drawn for a Covid-19 antibody test at the University of Arizona in Tucson earlier this year.",
-          "copyright": "Cheney Orr/Reuters",
-          "approved_for_syndication": 1,
-          "media-metadata": [
-            {
-              "url": "https://static01.nyt.com/images/2020/11/17/science/17VIRUS-IMMUNE1/17VIRUS-IMMUNE1-thumbStandard-v2.jpg",
-              "format": "Standard Thumbnail",
-              "height": 75,
-              "width": 75
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/17/science/17VIRUS-IMMUNE1/17VIRUS-IMMUNE1-mediumThreeByTwo210-v2.jpg",
-              "format": "mediumThreeByTwo210",
-              "height": 140,
-              "width": 210
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/17/science/17VIRUS-IMMUNE1/17VIRUS-IMMUNE1-mediumThreeByTwo440-v2.jpg",
-              "format": "mediumThreeByTwo440",
-              "height": 293,
-              "width": 440
-            }
-          ]
-        }
-      ],
-      "eta_id": 0
-    },
-    {
-      "uri": "nyt://article/b8e76fec-dc3f-5404-beed-1da11e51cc04",
-      "url": "https://www.nytimes.com/2020/11/22/business/economy/biden-coronavirus-stimulus-recession.html",
-      "id": 100000007461990,
-      "asset_id": 100000007461990,
-      "source": "New York Times",
-      "published_date": "2020-11-22",
-      "updated": "2020-11-23 10:07:44",
-      "section": "Business",
-      "subsection": "Economy",
-      "nytdsection": "business",
-      "adx_keywords": "United States Economy;Recession and Depression;Stimulus (Economic);Coronavirus Aid, Relief, and Economic Security Act (2020);Coronavirus (2019-nCoV);Presidential Transition (US);United States Politics and Government;Federal Budget (US);Labor and Jobs;Unemployment;Small Business;Law and Legislation;Biden, Joseph R Jr;House of Representatives;Senate;Democratic Party;Republican Party",
-      "column": null,
-      "byline": "By Jim Tankersley and Emily Cochrane",
-      "type": "Article",
-      "title": "Biden Team, Pushing Quick Stimulus Deal, Prepares for Renewed Recession",
-      "abstract": "Economists warn that lawmakers must pass aid now, as a renewed coronavirus surge chills consumer spending and business activity.",
-      "des_facet": [
         "United States Economy",
-        "Recession and Depression",
-        "Stimulus (Economic)",
-        "Coronavirus Aid, Relief, and Economic Security Act (2020)",
-        "Coronavirus (2019-nCoV)",
-        "Presidential Transition (US)",
-        "United States Politics and Government",
-        "Federal Budget (US)",
-        "Labor and Jobs",
-        "Unemployment",
-        "Small Business",
-        "Law and Legislation"
+        "United States Politics and Government"
       ],
       "org_facet": [
-        "House of Representatives",
-        "Senate",
         "Democratic Party",
         "Republican Party"
       ],
       "per_facet": [
+        "Trump, Donald J",
         "Biden, Joseph R Jr"
       ],
       "geo_facet": [],
@@ -1127,24 +538,24 @@
         {
           "type": "image",
           "subtype": "photo",
-          "caption": "President-elect Joseph R. Biden Jr. could sign executive orders on his first day in office that could mitigate or avoid an economic cliff of expiring protections for renters, homeowners and some borrowers, which economists fear could hasten a contraction.",
-          "copyright": "Ruth Fremson/The New York Times",
+          "caption": "Supporters of President Trump gathered outside the Walter Reed National Military Medical Center while he was being treated for Covid-19.",
+          "copyright": "Damon Winter/The New York Times",
           "approved_for_syndication": 1,
           "media-metadata": [
             {
-              "url": "https://static01.nyt.com/images/2020/11/23/us/00dc-bidenstimulus-print/00dc-bidenstimulus01-thumbStandard-v2.jpg",
+              "url": "https://static01.nyt.com/images/2020/11/27/opinion/27wilkinsonWeb/27wilkinsonWeb-thumbStandard.jpg",
               "format": "Standard Thumbnail",
               "height": 75,
               "width": 75
             },
             {
-              "url": "https://static01.nyt.com/images/2020/11/23/us/00dc-bidenstimulus-print/00dc-bidenstimulus01-mediumThreeByTwo210-v2.jpg",
+              "url": "https://static01.nyt.com/images/2020/11/27/opinion/27wilkinsonWeb/merlin_178067448_508c4e3f-9b53-4bfe-9c42-b82761536375-mediumThreeByTwo210.jpg",
               "format": "mediumThreeByTwo210",
               "height": 140,
               "width": 210
             },
             {
-              "url": "https://static01.nyt.com/images/2020/11/23/us/00dc-bidenstimulus-print/00dc-bidenstimulus01-mediumThreeByTwo440-v2.jpg",
+              "url": "https://static01.nyt.com/images/2020/11/27/opinion/27wilkinsonWeb/merlin_178067448_508c4e3f-9b53-4bfe-9c42-b82761536375-mediumThreeByTwo440.jpg",
               "format": "mediumThreeByTwo440",
               "height": 293,
               "width": 440
@@ -1155,62 +566,181 @@
       "eta_id": 0
     },
     {
-      "uri": "nyt://article/00453889-025e-5bba-a279-af36e50f73a7",
-      "url": "https://www.nytimes.com/2020/11/23/books/review/best-books.html",
-      "id": 100000007465302,
-      "asset_id": 100000007465302,
+      "uri": "nyt://article/5859fbaa-effa-5e2a-b455-2a8cd1256b76",
+      "url": "https://www.nytimes.com/2020/11/24/us/Utah-monolith-red-rock-country.html",
+      "id": 100000007470710,
+      "asset_id": 100000007470710,
       "source": "New York Times",
-      "published_date": "2020-11-23",
-      "updated": "2020-11-26 04:31:52",
-      "section": "Books",
-      "subsection": "Book Review",
-      "nytdsection": "books",
-      "adx_keywords": "Books and Literature;Two Thousand Twenty;Millet, Lydia;McBride, James;O'Farrell, Maggie;Akhtar, Ayad;Bennett, Brit;Kolker, Robert;Obama, Barack;Shapiro, James S (1955- );Wiener, Anna;MacMillan, Margaret O (1943- )",
+      "published_date": "2020-11-24",
+      "updated": "2020-12-01 03:08:06",
+      "section": "U.S.",
+      "subsection": "",
+      "nytdsection": "u.s.",
+      "adx_keywords": "Art;Sculpture;Deserts;Federal Lands;Bureau of Land Management;Utah",
       "column": null,
-      "byline": "",
+      "byline": "By Alan Yuhas",
       "type": "Article",
-      "title": "The 10 Best Books of 2020",
-      "abstract": "The editors of The Times Book Review choose the best fiction and nonfiction titles this year.",
+      "title": "A Weird Monolith Is Found in the Utah Desert",
+      "abstract": "A team surveying bighorn sheep for Utah’s wildlife agency found the strange object, 10 to 12 feet tall, embedded in the ground in a remote part of Red Rock Country. It’s probably art, officials said.",
       "des_facet": [
-        "Books and Literature",
-        "Two Thousand Twenty"
+        "Art",
+        "Sculpture",
+        "Deserts",
+        "Federal Lands"
+      ],
+      "org_facet": [
+        "Bureau of Land Management"
+      ],
+      "per_facet": [],
+      "geo_facet": [
+        "Utah"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "",
+          "copyright": "Utah Department of Public Safety/EPA-EFE, via Shutterstock",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2020/11/24/multimedia/24xp-monolith4/24xp-monolith4-thumbStandard-v2.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/11/24/multimedia/24xp-monolith4/24xp-monolith4-mediumThreeByTwo210-v4.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/11/24/multimedia/24xp-monolith4/24xp-monolith4-mediumThreeByTwo440-v4.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/3f040dff-0256-562a-b495-ef1abcd2854a",
+      "url": "https://www.nytimes.com/2020/11/28/obituaries/tony-hsieh-dead.html",
+      "id": 100000007477075,
+      "asset_id": 100000007477075,
+      "source": "New York Times",
+      "published_date": "2020-11-28",
+      "updated": "2020-11-30 10:58:35",
+      "section": "Obituaries",
+      "subsection": "",
+      "nytdsection": "obituaries",
+      "adx_keywords": "Deaths (Obituaries);E-Commerce;Shoes and Boots;Entrepreneurship;Hsieh, Tony;Zappos;Las Vegas (Nev)",
+      "column": null,
+      "byline": "By Glenn Rifkin",
+      "type": "Article",
+      "title": "Tony Hsieh, Longtime Chief of Zappos, Is Dead at 46",
+      "abstract": "In the early days of online retailing, he realized that the key to success was making people feel comfortable and secure shopping on the internet.",
+      "des_facet": [
+        "Deaths (Obituaries)",
+        "E-Commerce",
+        "Shoes and Boots",
+        "Entrepreneurship"
+      ],
+      "org_facet": [
+        "Zappos"
+      ],
+      "per_facet": [
+        "Hsieh, Tony"
+      ],
+      "geo_facet": [
+        "Las Vegas (Nev)"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Tony Hsieh in 2013. He led Zappos, the online shoe retailer, for two decades.",
+          "copyright": "Cory Morse/The Grand Rapids Press, via Associated Press",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2020/11/29/multimedia/20hsieh-print1/20hsieh-image2-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/11/29/multimedia/20hsieh-print1/20hsieh-image2-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/11/29/multimedia/20hsieh-print1/20hsieh-image2-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/e151a91d-c2c6-566c-8ba3-aa326b98beaf",
+      "url": "https://www.nytimes.com/2020/11/28/us/Biden-cat-dogs-German-shepherd.html",
+      "id": 100000007477207,
+      "asset_id": 100000007477207,
+      "source": "New York Times",
+      "published_date": "2020-11-28",
+      "updated": "2020-11-30 06:46:47",
+      "section": "U.S.",
+      "subsection": "",
+      "nytdsection": "u.s.",
+      "adx_keywords": "Cats;White House Building (Washington, DC);Presidents and Presidency (US);Pets;United States Politics and Government;Biden, Joseph R Jr;Biden, Jill Tracy Jacobs",
+      "column": null,
+      "byline": "By Allyson Waller",
+      "type": "Article",
+      "title": "A Cat Is Said to Be Joining the Bidens in the White House",
+      "abstract": "The last cat to live in the White House, India, belonged to President George W. Bush.",
+      "des_facet": [
+        "Cats",
+        "White House Building (Washington, DC)",
+        "Presidents and Presidency (US)",
+        "Pets",
+        "United States Politics and Government"
       ],
       "org_facet": [],
       "per_facet": [
-        "Millet, Lydia",
-        "McBride, James",
-        "O'Farrell, Maggie",
-        "Akhtar, Ayad",
-        "Bennett, Brit",
-        "Kolker, Robert",
-        "Obama, Barack",
-        "Shapiro, James S (1955- )",
-        "Wiener, Anna",
-        "MacMillan, Margaret O (1943- )"
+        "Biden, Joseph R Jr",
+        "Biden, Jill Tracy Jacobs"
       ],
       "geo_facet": [],
       "media": [
         {
           "type": "image",
           "subtype": "photo",
-          "caption": "",
-          "copyright": "Luis Mazón",
+          "caption": "President Bill Clinton owned two pets, a cat named Socks and a dog named Buddy.",
+          "copyright": "Marcy Nighswander/Associated Press",
           "approved_for_syndication": 1,
           "media-metadata": [
             {
-              "url": "https://static01.nyt.com/images/2020/12/13/books/review/13TenBest-Cover-HED_Sub01/13TenBest-Cover-HED_Sub01-thumbStandard.jpg",
+              "url": "https://static01.nyt.com/images/2020/11/28/multimedia/28xp-biden-cat-photo/28xp-biden-cat-photo-thumbStandard.jpg",
               "format": "Standard Thumbnail",
               "height": 75,
               "width": 75
             },
             {
-              "url": "https://static01.nyt.com/images/2020/12/13/books/review/13TenBest-Cover-HED_Sub01/13TenBest-Cover-HED_Sub01-mediumThreeByTwo210.jpg",
+              "url": "https://static01.nyt.com/images/2020/11/28/multimedia/28xp-biden-cat-photo/28xp-biden-cat-photo-mediumThreeByTwo210.jpg",
               "format": "mediumThreeByTwo210",
               "height": 140,
               "width": 210
             },
             {
-              "url": "https://static01.nyt.com/images/2020/12/13/books/review/13TenBest-Cover-HED_Sub01/13TenBest-Cover-HED_Sub01-mediumThreeByTwo440.jpg",
+              "url": "https://static01.nyt.com/images/2020/11/28/multimedia/28xp-biden-cat-photo/28xp-biden-cat-photo-mediumThreeByTwo440.jpg",
               "format": "mediumThreeByTwo440",
               "height": 293,
               "width": 440
@@ -1221,53 +751,498 @@
       "eta_id": 0
     },
     {
-      "uri": "nyt://article/9267afc6-4b3b-5ab0-a03b-735c63dea523",
-      "url": "https://www.nytimes.com/2020/11/20/opinion/sunday/covid-bubble-thanksgiving-family.html",
-      "id": 100000007461068,
-      "asset_id": 100000007461068,
+      "uri": "nyt://article/409519bd-0b16-58c5-b6e3-65a6fcb361b0",
+      "url": "https://www.nytimes.com/2020/11/27/business/mckinsey-purdue-oxycontin-opioids.html",
+      "id": 100000007473989,
+      "asset_id": 100000007473989,
       "source": "New York Times",
-      "published_date": "2020-11-20",
-      "updated": "2020-11-22 08:51:59",
-      "section": "Opinion",
-      "subsection": "Sunday Review",
-      "nytdsection": "opinion",
-      "adx_keywords": "Coronavirus (2019-nCoV);Contact Tracing (Public Health);Families and Family Life;Thanksgiving Day",
+      "published_date": "2020-11-27",
+      "updated": "2020-12-01 13:46:42",
+      "section": "Business",
+      "subsection": "",
+      "nytdsection": "business",
+      "adx_keywords": "OxyContin (Drug);Opioids and Opiates;Pain-Relieving Drugs;Deaths (Fatalities);Drug Abuse and Traffic;Suits and Litigation (Civil);Consultants;Sackler Family;Sackler, Raymond (1920-2017);Sackler, Richard (1945- );McKinsey & Co;Purdue Pharma;CVS Caremark Corporation;Food and Drug Administration",
       "column": null,
-      "byline": "By Farhad Manjoo",
+      "byline": "By Walt Bogdanich and Michael Forsythe",
       "type": "Article",
-      "title": "I Traced My Covid-19 Bubble and It’s Enormous",
-      "abstract": "And if you have kids, yours probably is, too.",
+      "title": "McKinsey Proposed Paying Pharmacy Companies Rebates for OxyContin Overdoses",
+      "abstract": "Court filings reveal consultants’ talk of a records purge during the opioid crisis, and shed new light on sales advice given to members of the billionaire Sackler family and their drug company, Purdue Pharma.",
+      "des_facet": [
+        "OxyContin (Drug)",
+        "Opioids and Opiates",
+        "Pain-Relieving Drugs",
+        "Deaths (Fatalities)",
+        "Drug Abuse and Traffic",
+        "Suits and Litigation (Civil)",
+        "Consultants"
+      ],
+      "org_facet": [
+        "McKinsey & Co",
+        "Purdue Pharma",
+        "CVS Caremark Corporation",
+        "Food and Drug Administration"
+      ],
+      "per_facet": [
+        "Sackler Family",
+        "Sackler, Raymond (1920-2017)",
+        "Sackler, Richard (1945- )"
+      ],
+      "geo_facet": [],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Jeffrey A. Rosen, deputy attorney general, discussed criminal charges last month against Purdue Pharma, the maker of OxyContin.",
+          "copyright": "Yuri Gripas/Reuters",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2020/11/25/us/politics/00mckinsey2/00mckinsey2-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/11/25/us/politics/00mckinsey2/00mckinsey2-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/11/25/us/politics/00mckinsey2/00mckinsey2-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/3fd06fba-0861-516c-9d0b-aa096877a143",
+      "url": "https://www.nytimes.com/2020/11/26/us/rifts-supreme-court-trump.html",
+      "id": 100000007475206,
+      "asset_id": 100000007475206,
+      "source": "New York Times",
+      "published_date": "2020-11-26",
+      "updated": "2020-11-27 10:04:25",
+      "section": "U.S.",
+      "subsection": "",
+      "nytdsection": "u.s.",
+      "adx_keywords": "Coronavirus (2019-nCoV);United States Politics and Government;Freedom of Religion;Barrett, Amy Coney;Cuomo, Andrew M;Roberts, John G Jr;Supreme Court (US);New York State",
+      "column": null,
+      "byline": "By Adam Liptak",
+      "type": "Article",
+      "title": "Midnight Ruling Exposes Rifts at a Supreme Court Transformed by Trump",
+      "abstract": "The justices issued six opinions, several of them unusually bitter, in upholding challenges from churches and synagogues to state pandemic restrictions on religious services.",
       "des_facet": [
         "Coronavirus (2019-nCoV)",
-        "Contact Tracing (Public Health)",
-        "Families and Family Life",
-        "Thanksgiving Day"
+        "United States Politics and Government",
+        "Freedom of Religion"
+      ],
+      "org_facet": [
+        "Supreme Court (US)"
+      ],
+      "per_facet": [
+        "Barrett, Amy Coney",
+        "Cuomo, Andrew M",
+        "Roberts, John G Jr"
+      ],
+      "geo_facet": [
+        "New York State"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "On Wednesday, the Supreme Court rejected restrictions on religious services in New York.",
+          "copyright": "Anna Moneymaker for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2020/11/26/us/politics/26dc-scotus-church2/26dc-scotus-church2-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/11/26/us/politics/26dc-scotus-church2/merlin_179867886_213386e0-8796-4854-9304-b952b1ebff05-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/11/26/us/politics/26dc-scotus-church2/merlin_179867886_213386e0-8796-4854-9304-b952b1ebff05-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/3e9b1dcb-54d1-5794-9146-6ffe5762026c",
+      "url": "https://www.nytimes.com/2020/12/01/movies/elliot-page-transgender-juno.html",
+      "id": 100000007481197,
+      "asset_id": 100000007481197,
+      "source": "New York Times",
+      "published_date": "2020-12-01",
+      "updated": "2020-12-02 06:31:21",
+      "section": "Movies",
+      "subsection": "",
+      "nytdsection": "movies",
+      "adx_keywords": "Transgender and Transsexuals;Content Type: Personal Profile;Actors and Actresses;Television;Movies;Homosexuality and Bisexuality;Page, Elliot (1987- )",
+      "column": null,
+      "byline": "By Maya Salam",
+      "type": "Article",
+      "title": "Elliot Page, Oscar-Nominated ‘Juno’ Star, Announces He Is Transgender",
+      "abstract": "“Hi friends, I want to share with you that I am trans, my pronouns are he/they and my name is Elliot,” Page wrote in a statement that he posted on Tuesday.",
+      "des_facet": [
+        "Transgender and Transsexuals",
+        "Content Type: Personal Profile",
+        "Actors and Actresses",
+        "Television",
+        "Movies",
+        "Homosexuality and Bisexuality"
       ],
       "org_facet": [],
+      "per_facet": [
+        "Page, Elliot (1987- )"
+      ],
+      "geo_facet": [],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "&ldquo;My joy is real, but it is also fragile,&rdquo; Elliot Page wrote in a statement announcing he is transgender.",
+          "copyright": "Rich Polk/Getty Images for IMDb",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2020/12/02/arts/01elliotpage/01elliotpage-thumbStandard-v3.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/12/02/arts/01elliotpage/01elliotpage-mediumThreeByTwo210-v3.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/12/02/arts/01elliotpage/01elliotpage-mediumThreeByTwo440-v3.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/9ff9efc2-8c0c-57af-9ae9-6da61b6f569b",
+      "url": "https://www.nytimes.com/2020/11/30/opinion/trump-conspiracy-germany-1918.html",
+      "id": 100000007473926,
+      "asset_id": 100000007473926,
+      "source": "New York Times",
+      "published_date": "2020-11-30",
+      "updated": "2020-12-02 03:17:22",
+      "section": "Opinion",
+      "subsection": "",
+      "nytdsection": "opinion",
+      "adx_keywords": "World War I (1914-18);Conspiracy Theories;Presidential Election of 2020;Hitler, Adolf;Trump, Donald J;Germany",
+      "column": null,
+      "byline": "By Jochen Bittner",
+      "type": "Article",
+      "title": "1918 Germany Has a Warning for America",
+      "abstract": "Donald Trump’s “Stop the Steal” campaign recalls one of the most disastrous political lies of the 20th century.",
+      "des_facet": [
+        "World War I (1914-18)",
+        "Conspiracy Theories",
+        "Presidential Election of 2020"
+      ],
+      "org_facet": [],
+      "per_facet": [
+        "Hitler, Adolf",
+        "Trump, Donald J"
+      ],
+      "geo_facet": [
+        "Germany"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "",
+          "copyright": "Getty Images",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2020/11/30/opinion/30bittnerWeb/30bittnerWeb-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/11/30/opinion/30bittnerWeb/30bittnerWeb-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/11/30/opinion/30bittnerWeb/30bittnerWeb-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/230f3011-2069-5a4b-8cb7-8c069528d1ac",
+      "url": "https://www.nytimes.com/2020/12/01/world/asia/korea-bts-law-military-deferment.html",
+      "id": 100000007480532,
+      "asset_id": 100000007480532,
+      "source": "New York Times",
+      "published_date": "2020-12-01",
+      "updated": "2020-12-02 11:57:43",
+      "section": "World",
+      "subsection": "Asia Pacific",
+      "nytdsection": "world",
+      "adx_keywords": "K-Pop;Defense and Military Forces;Draft and Recruitment (Military);Law and Legislation;BTS (Music Group);South Korea",
+      "column": null,
+      "byline": "By Choe Sang-Hun",
+      "type": "Article",
+      "title": "New ‘BTS Law’ Is Passed in South Korea. An Army of Fans Rejoices.",
+      "abstract": "The oldest member of BTS was saved at the last minute from having to join the military under the country’s conscription system.",
+      "des_facet": [
+        "K-Pop",
+        "Defense and Military Forces",
+        "Draft and Recruitment (Military)",
+        "Law and Legislation"
+      ],
+      "org_facet": [
+        "BTS (Music Group)"
+      ],
       "per_facet": [],
+      "geo_facet": [
+        "South Korea"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "South Korea revised a law to let top K-pop stars postpone their military service until they turn 30.",
+          "copyright": "Lee Jin-Man/Associated Press",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2020/12/01/world/01skorea-kpop/01skorea-kpop-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/12/01/world/01skorea-kpop/01skorea-kpop-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/12/01/world/01skorea-kpop/01skorea-kpop-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/e9175bde-34be-5d28-8c50-5c3699e88e0c",
+      "url": "https://www.nytimes.com/2020/11/29/nyregion/schools-reopening-partially.html",
+      "id": 100000007477693,
+      "asset_id": 100000007477693,
+      "source": "New York Times",
+      "published_date": "2020-11-29",
+      "updated": "2020-11-30 08:02:27",
+      "section": "New York",
+      "subsection": "",
+      "nytdsection": "new york",
+      "adx_keywords": "Education (K-12);Coronavirus Reopenings;Coronavirus (2019-nCoV);Teachers and School Employees;Education (Pre-School);Disease Rates;de Blasio, Bill;New York City",
+      "column": null,
+      "byline": "By Eliza Shapiro",
+      "type": "Article",
+      "title": "New York City Will Reopen Elementary Schools and Reduce Hybrid Learning",
+      "abstract": "Mayor Bill de Blasio announced an abrupt shift in managing schools during the pandemic. Officials had faced criticism that they prioritized activities like indoor dining over children’s well-being.",
+      "des_facet": [
+        "Education (K-12)",
+        "Coronavirus Reopenings",
+        "Coronavirus (2019-nCoV)",
+        "Teachers and School Employees",
+        "Education (Pre-School)",
+        "Disease Rates"
+      ],
+      "org_facet": [],
+      "per_facet": [
+        "de Blasio, Bill"
+      ],
+      "geo_facet": [
+        "New York City"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Students outside of their Brooklyn public school on Nov. 16, shortly before Mayor Bill de Blasio shut all city classrooms. ",
+          "copyright": "Sarah Blesener for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2020/11/29/us/29nyvirus-schools1/29nyvirus-schools1-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/11/29/us/29nyvirus-schools1/merlin_180101661_6c11a59c-13ed-411a-81ef-14287750988a-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/11/29/us/29nyvirus-schools1/merlin_180101661_6c11a59c-13ed-411a-81ef-14287750988a-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/91b2587e-8538-5956-96b7-575b770e8d8c",
+      "url": "https://www.nytimes.com/2020/11/27/world/europe/trump-who-tedros-china-virus.html",
+      "id": 100000007460865,
+      "asset_id": 100000007460865,
+      "source": "New York Times",
+      "published_date": "2020-11-27",
+      "updated": "2020-11-28 10:29:32",
+      "section": "World",
+      "subsection": "Europe",
+      "nytdsection": "world",
+      "adx_keywords": "United States Politics and Government;United States International Relations;Coronavirus (2019-nCoV);Tedros Adhanom Ghebreyesus;Trump, Donald J;Bremberg, Andrew;World Health Organization;China",
+      "column": null,
+      "byline": "By Matt Apuzzo, Noah Weiland and Selam Gebrekidan",
+      "type": "Article",
+      "title": "Trump Gave W.H.O. a List of Demands. Hours Later, He Walked Away.",
+      "abstract": "When President Trump quit the health organization, he left a list of seven demands on the table. Here they are.",
+      "des_facet": [
+        "United States Politics and Government",
+        "United States International Relations",
+        "Coronavirus (2019-nCoV)"
+      ],
+      "org_facet": [
+        "World Health Organization"
+      ],
+      "per_facet": [
+        "Tedros Adhanom Ghebreyesus",
+        "Trump, Donald J",
+        "Bremberg, Andrew"
+      ],
+      "geo_facet": [
+        "China"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "President Trump announced in May that the United States would leave the World Health Organization. The move stunned the agency and U.S. diplomats alike.",
+          "copyright": "Erin Schaff/The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2020/11/23/world/00trump-who-1/00trump-who-1-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/11/23/world/00trump-who-1/merlin_172963686_c0cacd1b-0547-47cd-9d95-5fe654a93dad-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2020/11/23/world/00trump-who-1/merlin_172963686_c0cacd1b-0547-47cd-9d95-5fe654a93dad-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/85f40092-eb4e-5c56-9726-684d6b5713e7",
+      "url": "https://www.nytimes.com/2020/11/26/opinion/republican-disinformation.html",
+      "id": 100000007471310,
+      "asset_id": 100000007471310,
+      "source": "New York Times",
+      "published_date": "2020-11-26",
+      "updated": "2020-11-30 02:02:11",
+      "section": "Opinion",
+      "subsection": "",
+      "nytdsection": "opinion",
+      "adx_keywords": "United States Politics and Government;Right-Wing Extremism and Alt-Right;Rauch, Jonathan (1960- );Republican Party",
+      "column": null,
+      "byline": "By David Brooks",
+      "type": "Article",
+      "title": "The Rotting of the Republican Mind",
+      "abstract": "When one party becomes detached from reality.",
+      "des_facet": [
+        "United States Politics and Government",
+        "Right-Wing Extremism and Alt-Right"
+      ],
+      "org_facet": [
+        "Republican Party"
+      ],
+      "per_facet": [
+        "Rauch, Jonathan (1960- )"
+      ],
       "geo_facet": [],
       "media": [
         {
           "type": "image",
           "subtype": "photo",
           "caption": "",
-          "copyright": "Tomi Um",
+          "copyright": "Dan Anderson/EPA, via Shutterstock",
           "approved_for_syndication": 1,
           "media-metadata": [
             {
-              "url": "https://static01.nyt.com/images/2020/11/19/us/20manjoo-promo-promo-1605823875232/20manjoo-promo-promo-1605823875232-thumbStandard.jpg",
+              "url": "https://static01.nyt.com/images/2020/11/26/opinion/26Brooks/26Brooks-thumbStandard.jpg",
               "format": "Standard Thumbnail",
               "height": 75,
               "width": 75
             },
             {
-              "url": "https://static01.nyt.com/images/2020/11/19/us/20manjoo-promo-promo-1605823875232/20manjoo-promo-promo-1605823875232-mediumThreeByTwo210.jpg",
+              "url": "https://static01.nyt.com/images/2020/11/26/opinion/26Brooks/26Brooks-mediumThreeByTwo210.jpg",
               "format": "mediumThreeByTwo210",
               "height": 140,
               "width": 210
             },
             {
-              "url": "https://static01.nyt.com/images/2020/11/19/us/20manjoo-promo-promo-1605823875232/20manjoo-promo-promo-1605823875232-mediumThreeByTwo440.jpg",
+              "url": "https://static01.nyt.com/images/2020/11/26/opinion/26Brooks/26Brooks-mediumThreeByTwo440.jpg",
               "format": "mediumThreeByTwo440",
               "height": 293,
               "width": 440

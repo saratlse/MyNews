@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Objects;
 
 public class JSONParser {
@@ -24,7 +25,9 @@ public class JSONParser {
         List articles = new ArrayList<>();
         try {
 
+
             JSONArray newsArray = response.getJSONArray("results");
+
 
             for (int i = 0; i < newsArray.length(); i++) {
                 JSONObject newObject = newsArray.getJSONObject(i);
@@ -81,15 +84,6 @@ public class JSONParser {
         }
 
     }
-
-    public List<Articles> parseAPIResponse(String toString) {
-        return null;
-    }
-
-
-    //public List<Articles> parseAPIResponse(String toString) {
-    //    return null;
-  //  }
 }
 
 
