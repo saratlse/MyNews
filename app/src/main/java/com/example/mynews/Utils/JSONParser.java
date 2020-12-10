@@ -18,14 +18,13 @@ import java.util.Objects;
 
 public class JSONParser {
 
-
-    private static String date;
+    private  String dateFormat = "";
 
     public List parseAPIResponse(JSONObject response) {
         List articles = new ArrayList<>();
         try {
 
-
+           // JSONObject newObject = response.getJSONObject("");
             JSONArray newsArray = response.getJSONArray("results");
 
 
@@ -67,22 +66,19 @@ public class JSONParser {
             e.printStackTrace();
         }
         return articles;
-
     }
 
 
-    public static String convertDate(String longDateFormat) {
-        //The SimpleDateFormat that will be use to check our JSON query value
+    public static String convertDate(String date) {
+
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
         try {
             Date shortDate = dateFormat.parse(date);
-            //Returning the date they way I want it to look
             return new SimpleDateFormat("dd MMMM yyyy", Locale.US).format(Objects.requireNonNull(shortDate));
 
         } catch (ParseException e) {
             return "";
         }
-
     }
 }
 

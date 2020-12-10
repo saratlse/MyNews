@@ -3,16 +3,12 @@ package com.example.mynews;
 import com.example.mynews.Utils.JSONParser;
 import com.example.mynews.View.Articles;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.Test;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
@@ -80,12 +76,12 @@ public class JsonParserTest {
             while ((line = bufferedReader.readLine()) != null) {
                 stringBuilder.append(line);
             }
+
             JSONParser jsonParser= new JSONParser();
             JSONObject jsonObject = new JSONObject(stringBuilder.toString());
             newsList = jsonObject.getJSONObject(stringBuilder.toString());
 
            //assertTrue(newsList.isEmpty());
-
 
 
         } catch (Exception e) {
@@ -94,14 +90,13 @@ public class JsonParserTest {
     }
 
     @Test
-    public void ConvertDateFormat() {
-        String longDateFormat = "2020-12-12T17:21:01+0000";
-        try {
-            assertEquals("12 december  2020", JSONParser.convertDate(longDateFormat));
+    public  void convertDate() {
 
+        String dateFormat = "2020-12-12T17:21:01+0000";
+        try {
+            assertEquals("12 December 2020", JSONParser.convertDate(dateFormat));
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }
