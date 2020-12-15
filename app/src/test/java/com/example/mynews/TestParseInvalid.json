@@ -67,65 +67,7 @@
       ],
       "eta_id": 0
     },
-    {
-      "uri": "nyt://article/6bb97b0e-475e-5888-a484-962f2c241b3a",
-      "url": "https://www.nytimes.com/2020/11/28/us/monolith-utah-disappeared.html",
-      "id": 100000007477435,
-      "asset_id": 100000007477435,
-      "source": "New York Times",
-      "published_date": "2020-11-28",
-      "updated": "2020-12-01 07:57:50",
-      "section": "U.S.",
-      "subsection": "",
-      "nytdsection": "u.s.",
-      "adx_keywords": "Art;Sculpture;Bureau of Land Management;Utah",
-      "column": null,
-      "byline": "By Bryan Pietsch",
-      "type": "Article",
-      "title": "That Mysterious Monolith in the Utah Desert? It’s Gone, Officials Say",
-      "abstract": "The metal structure has been removed, Utah officials said on Saturday, adding that they had not taken it down.",
-      "des_facet": [
-        "Art",
-        "Sculpture"
-      ],
-      "org_facet": [
-        "Bureau of Land Management"
-      ],
-      "per_facet": [],
-      "geo_facet": [
-        "Utah"
-      ],
-      "media": [
-        {
-          "type": "image",
-          "subtype": "photo",
-          "caption": "A metal object was found in the remote Utah desert last week by state workers.",
-          "copyright": "Utah Department of Public Safety, via Associated Press",
-          "approved_for_syndication": 1,
-          "media-metadata": [
-            {
-              "url": "https://static01.nyt.com/images/2020/11/28/us/politics/28xp-monolith-photo/28xp-monolith-photo-thumbStandard.jpg",
-              "format": "Standard Thumbnail",
-              "height": 75,
-              "width": 75
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/28/us/politics/28xp-monolith-photo/28xp-monolith-photo-mediumThreeByTwo210.jpg",
-              "format": "mediumThreeByTwo210",
-              "height": 140,
-              "width": 210
-            },
-            {
-              "url": "https://static01.nyt.com/images/2020/11/28/us/politics/28xp-monolith-photo/28xp-monolith-photo-mediumThreeByTwo440.jpg",
-              "format": "mediumThreeByTwo440",
-              "height": 293,
-              "width": 440
-            }
-          ]
-        }
-      ],
-      "eta_id": 0
-    },
+
     {
       "uri": "nyt://article/32f75689-40c6-52a8-9a47-f822a72fa7ad",
       "url": "https://www.nytimes.com/2020/11/25/business/coronavirus-vaccine-astrazeneca-oxford.html",
