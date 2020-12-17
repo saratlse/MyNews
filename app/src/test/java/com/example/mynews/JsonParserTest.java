@@ -23,25 +23,11 @@ import static org.junit.Assert.assertTrue;
 /**
  * Example local unit test, which will execute on the development machine (host).
  *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- * @see <a href https://ssaurel.medium.com/parse-and-write-json-data-in-java-with-gson-a61f8772e786>Documentation useful</a>
+ * @see <a href= https://mkyong.com/tutorials/java-json-tutorials/</a>
+ * @see <a href = https://ssaurel.medium.com/parse-and-write-json-data-in-java-with-gson-a61f8772e786>Documentation useful</a>
  */
 public class JsonParserTest {
 
-    /*JSONParser parser = new JSONParser();
-    try{
-        //creating an objet would like to parse the file will be reading
-        try {
-            Object object = parser.parseAPIResponse(new FileReader("TestParseValid.json"));
-            //will gona work the object into a JsonObject
-            JSONObject jsonObject = (JSONObject)object;
-
-        } catch (FileNotFoundException fileNotFoundException) {
-            fileNotFoundException.printStackTrace();
-        }
-
-    }
-}*/
 @Test
    public void JsonIsCorrectResponse() {
         List<Articles> newsList;
@@ -55,7 +41,7 @@ public class JsonParserTest {
             while ((inputLine = bufferedReader.readLine()) != null) {
                 stringBuilder.append(inputLine);
             }
-            //JSONObject response = new JSONObject(response.toString());
+
             JSONParser parser = new JSONParser();
             JSONObject jsonObject = new JSONObject(stringBuilder.toString());
             newsList = parser.parseAPIResponse(jsonObject);
@@ -91,7 +77,8 @@ public class JsonParserTest {
             newsList = parser.parseAPIResponse(jsonObject);
 
 
-           assertNotEquals(20, newsList.size());
+            //miss one article 
+             assertNotEquals(20, newsList.size());
 
 
         } catch (IOException | JSONException e) {
@@ -102,7 +89,7 @@ public class JsonParserTest {
     }
 
     @Test
-    public  void convertDate() {
+    public  void dateConvertTest() {
         String dateFormat = "2020-12-12T17:21:01+0000";
         try {
             assertEquals("12 December 2020", JSONParser.convertDate(dateFormat));

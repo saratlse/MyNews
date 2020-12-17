@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Objects;
 
 import static androidx.core.content.ContextCompat.startActivity;
+import static com.example.mynews.Controllers.MainActivity.KEY_URL;
 
 public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.TopStoriesViewHolder> {
     private List<Articles> articlesList;
@@ -52,10 +53,10 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.To
         Picasso.get().load(imageUrl).into(holder.articleImage);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), WebViewActivity.class);
-                intent.putExtra("url",articles.getUrl());
-                v.getContext().startActivities(new Intent[]{intent});
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), WebViewActivity.class);
+                intent.putExtra(KEY_URL,articles.getUrl());
+                view.getContext().startActivity(intent);
             }
         });
     }
@@ -65,7 +66,7 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.To
         return articlesList.size();
     }
 
-    public class TopStoriesViewHolder extends RecyclerView.ViewHolder  {
+    public class TopStoriesViewHolder extends RecyclerView.ViewHolder {
         private ImageView articleImage;
         private TextView articleDescription, articleSubsection, articleCategory, articleDate;
 
@@ -76,30 +77,17 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.To
             articleDate = itemView.findViewById(R.id.articleDate);
             articleDescription = itemView.findViewById(R.id.articleDescription);
             articleImage = itemView.findViewById(R.id.articleImage);
-
-
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    //Toast.makeText(context,"my webview is clicked",Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(view.getContext(), WebViewActivity.class);
-                    intent.putExtra("url",articlesList.get(0).getUrl());
-                  //  intent.putExtra("url", "https://www.nytimes.com/subscription?campaignId=7UXFY&ds_c=71700000074377394&gclid=Cj0KCQiAqdP9BRDVARIsAGSZ8AllWN-ve3Ld3Y3mRU02FW72QWFfc5vKBkCLGXt16cZauEgYr-WrYVsaAik9EALw_wcB&gclsrc=aw.ds");
-                    view.getContext().startActivities(new Intent[]{intent});
-                }
-            });
+          //  itemView.setOnClickListener(this);
 
 
         }
 
-      /*  @Override
-        public void onClick(View view) {
-           Intent intent = new Intent(view.getContext(), WebViewActivity.class);
-           intent.putExtra("KEY_URL",articlesList.get(getAdapterPosition()).getUrl());
-           intent.putExtra("url", "https://www.nytimes.com/subscription?campaignId=7UXFY&ds_c=71700000074377394&gclid=Cj0KCQiAqdP9BRDVARIsAGSZ8AllWN-ve3Ld3Y3mRU02FW72QWFfc5vKBkCLGXt16cZauEgYr-WrYVsaAik9EALw_wcB&gclsrc=aw.ds");
-          // view.getContext().startActivities(new Intent[]{intent});
-
-        }*/
+       // @Override
+    //    public void onClick(View view) {
+    //        Intent intent = new Intent(view.getContext(), WebViewActivity.class);
+           //  intent.putExtra(KEY_URL,articlesList.get(position));
+           // intent.putExtra("url", "https://www.nytimes.com/subscription?campaignId=7UXFY&ds_c=71700000074377394&gclid=Cj0KCQiAqdP9BRDVARIsAGSZ8AllWN-ve3Ld3Y3mRU02FW72QWFfc5vKBkCLGXt16cZauEgYr-WrYVsaAik9EALw_wcB&gclsrc=aw.ds");
+       //     view.getContext().startActivities(new Intent[]{intent});
+       // }
     }
 }

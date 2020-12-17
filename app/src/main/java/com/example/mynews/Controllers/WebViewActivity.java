@@ -28,7 +28,7 @@ import static com.example.mynews.Controllers.MainActivity.KEY_URL;
 public class WebViewActivity extends AppCompatActivity {
     @BindView(R.id.webView)
     WebView webView;
-    String url ="";
+    String url ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,18 +37,19 @@ public class WebViewActivity extends AppCompatActivity {
         //Get WebView
         WebView webView = findViewById(R.id.webView);
 
+
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebViewClient(new WebViewClient());
+
         //Get the transferred data from the source activity
-        Intent intent = getIntent();
-        url = intent.getStringExtra(KEY_URL);
 
-
+        url = getIntent().getStringExtra(KEY_URL);
 
         // Open the webView in the app instead of a browser
         webView.getUrl();
         webView.loadUrl(url);
 
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.setWebViewClient(new WebViewClient());
+
         webView.setWebChromeClient(new WebChromeClient(){
             @Override
             public void onProgressChanged(WebView view, int newProgress) {
