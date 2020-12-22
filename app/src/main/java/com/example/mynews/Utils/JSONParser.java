@@ -57,9 +57,7 @@ public class JSONParser {
                         mediaIndex = mediaArray2.getJSONObject(0);
                     }
                 }
-
-
-                articles.add(new Articles(newObject.getString("title"), sectionObject, subSectionObject, dateObject, mediaIndex.getString("url")));
+                articles.add(new Articles(newObject.getString("title"), sectionObject, subSectionObject, dateObject, mediaIndex.getString("url"),newObject.getString("url")));
 
             }
         } catch (JSONException e) {

@@ -78,10 +78,8 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
 
         @Override
         public void onClick(View view) {
-
             Intent intent = new Intent(view.getContext(), WebViewActivity.class);
-         //  intent.putExtra("url",articlesList.get(getAdapterPosition()).getUrl());
-           intent.putExtra("url", "https://www.nytimes.com/subscription?campaignId=7UXFY&ds_c=71700000074377394&gclid=Cj0KCQiAqdP9BRDVARIsAGSZ8AllWN-ve3Ld3Y3mRU02FW72QWFfc5vKBkCLGXt16cZauEgYr-WrYVsaAik9EALw_wcB&gclsrc=aw.ds");
+            intent.putExtra("url",articlesList.get(getAdapterPosition()).getUrl());
             view.getContext().startActivities(new Intent[]{intent});
         }
     }

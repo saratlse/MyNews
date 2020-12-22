@@ -7,7 +7,7 @@ public class Articles {
 
 
 
-    public Articles(String section, String subsection,String title, String date, String imageUrl) {
+    public Articles(String section, String subsection,String title, String date, String imageUrl, String url) {
         this.title = title;
         this.date = date;
         this.section = section;

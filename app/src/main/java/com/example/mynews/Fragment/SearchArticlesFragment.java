@@ -130,9 +130,10 @@ public class SearchArticlesFragment extends Fragment {
 
                         String dateObject = newObject.getString("published_date");
                         JSONArray multimediaArray = newObject.getJSONArray("multimedia");
-                        JSONObject mediaObject = multimediaArray.getJSONObject(0);
+                        JSONObject mediaIndex = multimediaArray.getJSONObject(0);
+                        articles.add(new Articles(newObject.getString("title"), sectionObject, subSectionObject, dateObject, mediaIndex.getString("url"),newObject.getString("url")));
 
-                        articles.add(new Articles(sectionObject,subSectionObject,newObject.getString("title"),dateObject,mediaObject.getString("url")));
+                       // articles.add(new Articles(sectionObject,subSectionObject,newObject.getString("title"),dateObject,mediaObject.getString("url")));
                         capitalize(subSectionObject);
                     }
                     searchArticlesViewModel.setItemByArticle(articles);
