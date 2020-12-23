@@ -3,6 +3,14 @@
 
     <!-- TOOLBAR -->
     <dimen name="fragmentTitle">18sp</dimen>
+    <dimen name="small_margin">15dp</dimen>
 
+
+    <!-- Item recycler view  -->
+    <dimen name="recycler_text_margin">10dp</dimen>
+    <dimen name="recycler_image_width">75dip</dimen>
+    <dimen name="recycler_image_height">75dip</dimen>
+    <dimen name="recycler_image_margin">15dip</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
 </resources>
