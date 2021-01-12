@@ -6,6 +6,7 @@
 
     <color name="colorDivider">#ECECEC</color>
 
+
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/colorToolBarBackground</item>
         <item name="colorPrimaryDark">@color/colorToolbarTop</item>
@@ -15,6 +16,7 @@
     <style name="Toolbar.TitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textSize">21sp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:actionMenuTextColor">#ECECEC</item>
     </style>
 
     <style name="MyTabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">

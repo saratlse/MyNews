@@ -12,6 +12,7 @@
     //COLOR TAB
 
     <color name="colorTabLayoutBackground">#00BCD4</color>
+    <color name="menu">#FFFFFF</color>
 
 
     //PICKER COLOR

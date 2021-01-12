@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
 
 
     <item
@@ -10,12 +13,20 @@
         app:showAsAction="ifRoom|collapseActionView"
         />
 
+    <item android:id="@+id/action_notifications"
+        android:title="Notifications"
+        app:showAsAction="never" />
 
-    <item
-        android:id="@+id/menu"
-        android:icon="@drawable/menu_three_point"
-        android:title="@string/Menu"
-        app:showAsAction="always" />
+    <item android:id="@+id/action_help"
+        android:title="@string/Help"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_about"
+        android:title="@string/About"
+        app:showAsAction="never">
+
+
+    </item>
 
 
 </menu>

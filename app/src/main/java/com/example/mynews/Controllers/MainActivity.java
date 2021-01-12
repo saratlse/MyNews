@@ -121,9 +121,10 @@ public class MainActivity extends AppCompatActivity  {
     }
 
 
-    public boolean onCreateOptionsMenu(final Menu menu) {
+    public boolean onCreateOptionsMenu( Menu menu) {
         this.getMenuInflater().inflate(R.menu.menu, menu);
         MenuItem item = menu.findItem(R.id.search);
+
        // SearchView searchView =(SearchView)item.getActionView();
       //  searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
         //   @Override
@@ -139,17 +140,30 @@ public class MainActivity extends AppCompatActivity  {
         return super.onCreateOptionsMenu(menu);
     }
 
-    public boolean onOptionsItemSelected(final MenuItem item) {
+    public boolean onOptionsItemSelected( MenuItem item) {
 
         switch (item.getItemId()) {
 
-            case R.id.menu:
-                Toast.makeText(this, "Notifications", Toast.LENGTH_LONG).show();
-                break;
             case R.id.search:
                 Intent searchIntent = new Intent(this, SearchArticlesActivity.class);
                 startActivityForResult(searchIntent,0000);
                 break;
+
+            case R.id.action_notifications:
+                Intent notificationsIntent = new Intent(this, NotificationsActivity.class);
+                startActivity(notificationsIntent);
+                break;
+
+            case R.id.action_help:
+                Intent helpIntent = new Intent(this, HelpActivity.class);
+                startActivity(helpIntent);
+                break;
+
+            case R.id.action_about:
+                Intent aboutIntent = new Intent(this, AboutActivity.class);
+                startActivity(aboutIntent);
+                break;
+
             default:
               return super.onOptionsItemSelected(item);
 
