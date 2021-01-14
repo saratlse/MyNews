@@ -4,6 +4,8 @@ package com.example.mynews.Controllers;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Switch;
+import android.widget.TextView;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
 import androidx.appcompat.widget.Toolbar;
@@ -26,7 +28,7 @@ public class NotificationsActivity_ViewBinding implements Unbinder {
     this.target = target;
 
     target.mToolbar = Utils.findRequiredViewAsType(source, R.id.toolbar, "field 'mToolbar'", Toolbar.class);
-    target.mSearchQueryTerm = Utils.findRequiredViewAsType(source, R.id.search_query_term_editText, "field 'mSearchQueryTerm'", EditText.class);
+    target.editTextSearchNotification = Utils.findRequiredViewAsType(source, R.id.search_query_term_editText, "field 'editTextSearchNotification'", EditText.class);
     target.mSearchBeginDate = Utils.findRequiredViewAsType(source, R.id.search_begin_date, "field 'mSearchBeginDate'", EditText.class);
     target.mSearchEndDate = Utils.findRequiredViewAsType(source, R.id.search_end_date, "field 'mSearchEndDate'", EditText.class);
     target.mCheckBoxArts = Utils.findRequiredViewAsType(source, R.id.search_articles_arts, "field 'mCheckBoxArts'", CheckBox.class);
@@ -35,6 +37,8 @@ public class NotificationsActivity_ViewBinding implements Unbinder {
     target.mCheckBoxPolitics = Utils.findRequiredViewAsType(source, R.id.search_articles_politics, "field 'mCheckBoxPolitics'", CheckBox.class);
     target.mCheckboxSports = Utils.findRequiredViewAsType(source, R.id.search_articles_sports, "field 'mCheckboxSports'", CheckBox.class);
     target.mCheckBoxTravel = Utils.findRequiredViewAsType(source, R.id.search_articles_travel, "field 'mCheckBoxTravel'", CheckBox.class);
+    target.oncePerDay = Utils.findRequiredViewAsType(source, R.id.once_per_day, "field 'oncePerDay'", TextView.class);
+    target.notificationSwitch = Utils.findRequiredViewAsType(source, R.id.notification_switch, "field 'notificationSwitch'", Switch.class);
   }
 
   @Override
@@ -45,7 +49,7 @@ public class NotificationsActivity_ViewBinding implements Unbinder {
     this.target = null;
 
     target.mToolbar = null;
-    target.mSearchQueryTerm = null;
+    target.editTextSearchNotification = null;
     target.mSearchBeginDate = null;
     target.mSearchEndDate = null;
     target.mCheckBoxArts = null;
@@ -54,5 +58,7 @@ public class NotificationsActivity_ViewBinding implements Unbinder {
     target.mCheckBoxPolitics = null;
     target.mCheckboxSports = null;
     target.mCheckBoxTravel = null;
+    target.oncePerDay = null;
+    target.notificationSwitch = null;
   }
 }

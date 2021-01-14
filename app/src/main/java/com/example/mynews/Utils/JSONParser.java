@@ -6,25 +6,24 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.FileReader;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 import java.util.Objects;
 
 public class JSONParser {
 
-    private  String dateFormat = "";
+    private String dateFormat = "";
 
     public List parseAPIResponse(JSONObject response) {
         List articles = new ArrayList<>();
         try {
 
-           // JSONObject newObject = response.getJSONObject("");
+            // JSONObject newObject = response.getJSONObject("");
             JSONArray newsArray = response.getJSONArray("results");
 
 
@@ -32,8 +31,11 @@ public class JSONParser {
                 JSONObject newObject = newsArray.getJSONObject(i);
                 String sectionObject = newObject.getString("section");
                 String subSectionObject = newObject.getString("subsection");
-                String dateObject = newObject.getString("published_date");
+                dateFormat = newObject.getString("published_date");
                 JSONObject mediaIndex = new JSONObject();
+                capitalize(sectionObject);
+
+
 
 
                 //MOST POPULAR//
@@ -57,7 +59,8 @@ public class JSONParser {
                         mediaIndex = mediaArray2.getJSONObject(0);
                     }
                 }
-                articles.add(new Articles(newObject.getString("title"), sectionObject, subSectionObject, dateObject, mediaIndex.getString("url"),newObject.getString("url")));
+
+                articles.add(new Articles(newObject.getString("title"), sectionObject, subSectionObject, convertDate(dateFormat), mediaIndex.getString("url"), newObject.getString("url")));
 
             }
         } catch (JSONException e) {
@@ -67,27 +70,41 @@ public class JSONParser {
     }
 
 
-    public static String convertDate(String date) {
 
+    public String convertDate(String date) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
         try {
             Date shortDate = dateFormat.parse(date);
-            return new SimpleDateFormat("dd MMMM yyyy", Locale.US).format(Objects.requireNonNull(shortDate));
+            return new SimpleDateFormat("dd/MM/yy", Locale.US).format(Objects.requireNonNull(shortDate));
 
         } catch (ParseException e) {
             return "";
         }
     }
-}
+
+    public static String reformatCategory(String category, String sub_category){
+
+        String output_category = category;
+        String output_category_sub_category = category + " > " + sub_category;
+
+        if (sub_category == null) {
+            return output_category;
+        }
+        if (sub_category.isEmpty() || category.equals(sub_category)) {
+            return output_category;
+        } else {
+            return output_category_sub_category;
+        }
+    }
 
 
-  /*private String capitalize(String sectionObject) {
-        if (sectionObject.length() > 0){
-            sectionObject = sectionObject.substring(0,1).toUpperCase() + sectionObject.substring(1).toLowerCase();
+    private String capitalize(String sectionObject) {
+        if (sectionObject.length() > 0) {
+            sectionObject = sectionObject.substring(0, 1).toUpperCase() + sectionObject.substring(1).toLowerCase();
         }
         return sectionObject;
-
-    }*/
+    }
+}
 
 
                 //show > between section and subsection
